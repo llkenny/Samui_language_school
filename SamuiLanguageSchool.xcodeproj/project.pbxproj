@@ -27,6 +27,8 @@
 		50CBE0562FA3566B00C53932 /* SamuiLanguageSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamuiLanguageSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CBE0672FA3566C00C53932 /* SamuiLanguageSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamuiLanguageSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CBE0712FA3566C00C53932 /* SamuiLanguageSchoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamuiLanguageSchoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CBE0892FA358D600C53932 /* Agent.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Agent.md; sourceTree = "<group>"; };
+		50CBE08A2FA358D600C53932 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +94,8 @@
 				50CBE06A2FA3566C00C53932 /* SamuiLanguageSchoolTests */,
 				50CBE0742FA3566C00C53932 /* SamuiLanguageSchoolUITests */,
 				50CBE0572FA3566B00C53932 /* Products */,
+				50CBE0892FA358D600C53932 /* Agent.md */,
+				50CBE08A2FA358D600C53932 /* Readme.md */,
 			);
 			sourceTree = "<group>";
 		};
