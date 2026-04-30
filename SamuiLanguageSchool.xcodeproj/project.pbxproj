@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		50CBE0682FA3566C00C53932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CBE04E2FA3566B00C53932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50CBE0552FA3566B00C53932;
+			remoteInfo = SamuiLanguageSchool;
+		};
+		50CBE0722FA3566C00C53932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50CBE04E2FA3566B00C53932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50CBE0552FA3566B00C53932;
+			remoteInfo = SamuiLanguageSchool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50CBE0562FA3566B00C53932 /* SamuiLanguageSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamuiLanguageSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CBE0672FA3566C00C53932 /* SamuiLanguageSchoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamuiLanguageSchoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CBE0712FA3566C00C53932 /* SamuiLanguageSchoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamuiLanguageSchoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		50CBE0792FA3566C00C53932 /* Exceptions for "SamuiLanguageSchool" folder in "SamuiLanguageSchool" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 50CBE0552FA3566B00C53932 /* SamuiLanguageSchool */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		50CBE0582FA3566B00C53932 /* SamuiLanguageSchool */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				50CBE0792FA3566C00C53932 /* Exceptions for "SamuiLanguageSchool" folder in "SamuiLanguageSchool" target */,
+			);
+			path = SamuiLanguageSchool;
+			sourceTree = "<group>";
+		};
+		50CBE06A2FA3566C00C53932 /* SamuiLanguageSchoolTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SamuiLanguageSchoolTests;
+			sourceTree = "<group>";
+		};
+		50CBE0742FA3566C00C53932 /* SamuiLanguageSchoolUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SamuiLanguageSchoolUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50CBE0532FA3566B00C53932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE0642FA3566C00C53932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE06E2FA3566C00C53932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50CBE04D2FA3566B00C53932 = {
+			isa = PBXGroup;
+			children = (
+				50CBE0582FA3566B00C53932 /* SamuiLanguageSchool */,
+				50CBE06A2FA3566C00C53932 /* SamuiLanguageSchoolTests */,
+				50CBE0742FA3566C00C53932 /* SamuiLanguageSchoolUITests */,
+				50CBE0572FA3566B00C53932 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50CBE0572FA3566B00C53932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50CBE0562FA3566B00C53932 /* SamuiLanguageSchool.app */,
+				50CBE0672FA3566C00C53932 /* SamuiLanguageSchoolTests.xctest */,
+				50CBE0712FA3566C00C53932 /* SamuiLanguageSchoolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50CBE0552FA3566B00C53932 /* SamuiLanguageSchool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50CBE07A2FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchool" */;
+			buildPhases = (
+				50CBE0522FA3566B00C53932 /* Sources */,
+				50CBE0532FA3566B00C53932 /* Frameworks */,
+				50CBE0542FA3566B00C53932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				50CBE0582FA3566B00C53932 /* SamuiLanguageSchool */,
+			);
+			name = SamuiLanguageSchool;
+			packageProductDependencies = (
+			);
+			productName = SamuiLanguageSchool;
+			productReference = 50CBE0562FA3566B00C53932 /* SamuiLanguageSchool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50CBE0662FA3566C00C53932 /* SamuiLanguageSchoolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50CBE07F2FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchoolTests" */;
+			buildPhases = (
+				50CBE0632FA3566C00C53932 /* Sources */,
+				50CBE0642FA3566C00C53932 /* Frameworks */,
+				50CBE0652FA3566C00C53932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50CBE0692FA3566C00C53932 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				50CBE06A2FA3566C00C53932 /* SamuiLanguageSchoolTests */,
+			);
+			name = SamuiLanguageSchoolTests;
+			packageProductDependencies = (
+			);
+			productName = SamuiLanguageSchoolTests;
+			productReference = 50CBE0672FA3566C00C53932 /* SamuiLanguageSchoolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50CBE0702FA3566C00C53932 /* SamuiLanguageSchoolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50CBE0822FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchoolUITests" */;
+			buildPhases = (
+				50CBE06D2FA3566C00C53932 /* Sources */,
+				50CBE06E2FA3566C00C53932 /* Frameworks */,
+				50CBE06F2FA3566C00C53932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50CBE0732FA3566C00C53932 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				50CBE0742FA3566C00C53932 /* SamuiLanguageSchoolUITests */,
+			);
+			name = SamuiLanguageSchoolUITests;
+			packageProductDependencies = (
+			);
+			productName = SamuiLanguageSchoolUITests;
+			productReference = 50CBE0712FA3566C00C53932 /* SamuiLanguageSchoolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50CBE04E2FA3566B00C53932 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					50CBE0552FA3566B00C53932 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					50CBE0662FA3566C00C53932 = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 50CBE0552FA3566B00C53932;
+					};
+					50CBE0702FA3566C00C53932 = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 50CBE0552FA3566B00C53932;
+					};
+				};
+			};
+			buildConfigurationList = 50CBE0512FA3566B00C53932 /* Build configuration list for PBXProject "SamuiLanguageSchool" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50CBE04D2FA3566B00C53932;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 50CBE0572FA3566B00C53932 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50CBE0552FA3566B00C53932 /* SamuiLanguageSchool */,
+				50CBE0662FA3566C00C53932 /* SamuiLanguageSchoolTests */,
+				50CBE0702FA3566C00C53932 /* SamuiLanguageSchoolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50CBE0542FA3566B00C53932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE0652FA3566C00C53932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE06F2FA3566C00C53932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50CBE0522FA3566B00C53932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE0632FA3566C00C53932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50CBE06D2FA3566C00C53932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50CBE0692FA3566C00C53932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50CBE0552FA3566B00C53932 /* SamuiLanguageSchool */;
+			targetProxy = 50CBE0682FA3566C00C53932 /* PBXContainerItemProxy */;
+		};
+		50CBE0732FA3566C00C53932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50CBE0552FA3566B00C53932 /* SamuiLanguageSchool */;
+			targetProxy = 50CBE0722FA3566C00C53932 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		50CBE07B2FA3566C00C53932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SamuiLanguageSchool/SamuiLanguageSchool.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SamuiLanguageSchool/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50CBE07C2FA3566C00C53932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SamuiLanguageSchool/SamuiLanguageSchool.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SamuiLanguageSchool/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		50CBE07D2FA3566C00C53932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50CBE07E2FA3566C00C53932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50CBE0802FA3566C00C53932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchoolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamuiLanguageSchool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SamuiLanguageSchool";
+			};
+			name = Debug;
+		};
+		50CBE0812FA3566C00C53932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchoolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamuiLanguageSchool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SamuiLanguageSchool";
+			};
+			name = Release;
+		};
+		50CBE0832FA3566C00C53932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchoolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SamuiLanguageSchool;
+			};
+			name = Debug;
+		};
+		50CBE0842FA3566C00C53932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y3DHLE65YM;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.SamuiLanguageSchoolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SamuiLanguageSchool;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50CBE0512FA3566B00C53932 /* Build configuration list for PBXProject "SamuiLanguageSchool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CBE07D2FA3566C00C53932 /* Debug */,
+				50CBE07E2FA3566C00C53932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50CBE07A2FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CBE07B2FA3566C00C53932 /* Debug */,
+				50CBE07C2FA3566C00C53932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50CBE07F2FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchoolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CBE0802FA3566C00C53932 /* Debug */,
+				50CBE0812FA3566C00C53932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50CBE0822FA3566C00C53932 /* Build configuration list for PBXNativeTarget "SamuiLanguageSchoolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50CBE0832FA3566C00C53932 /* Debug */,
+				50CBE0842FA3566C00C53932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50CBE04E2FA3566B00C53932 /* Project object */;
+}
