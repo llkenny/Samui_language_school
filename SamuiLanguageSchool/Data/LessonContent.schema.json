@@ -1,0 +1,626 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://samuilanguageschool.local/schemas/lesson-content.schema.json",
+  "title": "Samui Language School Lesson Content",
+  "description": "Reusable lesson content for app screens generated from Samui Language School grammar PDFs.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "$ref": "#/$defs/lesson"
+  },
+  "$defs": {
+    "localizedText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "estimatedMinutes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileName",
+        "pageCount"
+      ],
+      "properties": {
+        "fileName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "extractionMethod": {
+          "type": "string"
+        }
+      }
+    },
+    "level": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "label"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "descriptor": {
+          "type": "string"
+        }
+      }
+    },
+    "screenSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "themeTitle",
+        "levelLabel",
+        "lessonBadge",
+        "shortDescription",
+        "estimatedReadTimeLabel"
+      ],
+      "properties": {
+        "themeTitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "levelLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lessonBadge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shortDescription": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimatedReadTimeLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primaryPracticeLabel": {
+          "type": "string"
+        },
+        "progressLabel": {
+          "type": "string"
+        }
+      }
+    },
+    "learningPathStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "instructions"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "difficultyGuideEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rating",
+        "label",
+        "taskIds"
+      ],
+      "properties": {
+        "rating": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "taskIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "contentBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "paragraph",
+            "ruleList",
+            "formula",
+            "example",
+            "exampleList",
+            "table",
+            "callout",
+            "comparison",
+            "modelText",
+            "checklist"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "formula": {
+          "type": "string"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "incorrect": {
+          "type": "string"
+        },
+        "correct": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "calloutType": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "contentBlocks"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contentBlocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          }
+        },
+        "warmUpTask": {
+          "$ref": "#/$defs/practiceTask"
+        }
+      }
+    },
+    "theorySection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "order",
+        "contentBlocks",
+        "tryItTaskIds"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "contentBlocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contentBlock"
+          }
+        },
+        "tryItTaskIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "practiceTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "kind",
+        "mode",
+        "difficulty",
+        "estimatedMinutes",
+        "instructions",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceLabel": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "tryIt",
+            "activity",
+            "warmUp"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "noticing",
+            "practice",
+            "production",
+            "review"
+          ]
+        },
+        "difficulty": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "estimatedMinutes": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/estimatedMinutes"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stimulus": {
+          "type": "string"
+        },
+        "supportingPrompts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/taskItem"
+          }
+        }
+      }
+    },
+    "taskItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "prompt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "gapFill",
+            "multipleChoice",
+            "rewrite",
+            "sorting",
+            "labeling",
+            "errorCorrection",
+            "tableCompletion",
+            "paragraphWriting",
+            "speakingPrompt",
+            "freeResponse"
+          ]
+        },
+        "number": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context": {
+          "type": "string"
+        },
+        "answerType": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "targetForm": {
+          "type": "string"
+        },
+        "targetForms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "text": {
+          "type": "string"
+        },
+        "original": {
+          "type": "string"
+        },
+        "newSubject": {
+          "type": "string"
+        },
+        "checklist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "answerEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "answer": {
+          "type": [
+            "string",
+            "number",
+            "array",
+            "object",
+            "null"
+          ]
+        },
+        "acceptedAnswers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sampleAnswers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "errorType": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "answerKeyTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskId",
+        "entries"
+      ],
+      "properties": {
+        "taskId": {
+          "type": "string"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/answerEntry"
+          }
+        },
+        "teacherNotes": {
+          "type": "string"
+        }
+      }
+    },
+    "lesson": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "level",
+        "subtitle",
+        "estimatedMinutes",
+        "tags",
+        "source",
+        "screenSummary",
+        "learningPath",
+        "objectives",
+        "difficultyGuide",
+        "theorySections",
+        "practiceTasks",
+        "answerKey"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "$ref": "#/$defs/level"
+        },
+        "subtitle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimatedMinutes": {
+          "$ref": "#/$defs/estimatedMinutes"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "screenSummary": {
+          "$ref": "#/$defs/screenSummary"
+        },
+        "learningPath": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/learningPathStep"
+          }
+        },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "difficultyGuide": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/difficultyGuideEntry"
+          }
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "theorySections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/theorySection"
+          },
+          "minItems": 1
+        },
+        "practiceTasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/practiceTask"
+          },
+          "minItems": 1
+        },
+        "answerKey": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/answerKeyTask"
+          },
+          "minItems": 1
+        },
+        "selfAssessment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
