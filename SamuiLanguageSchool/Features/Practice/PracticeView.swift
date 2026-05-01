@@ -90,7 +90,7 @@ struct PracticeView: View {
                 taskIntroCard(task: task)
 
                 if let item = currentItem(in: task) {
-                    itemCard(item: item, task: task, answerKey: answerKey(in: lesson, for: task))
+                    itemCard(item: item, lesson: lesson, task: task, answerKey: answerKey(in: lesson, for: task))
                 }
             }
             .padding(.horizontal, SLSSpacing.lg)
@@ -149,6 +149,7 @@ struct PracticeView: View {
 
     private func itemCard(
         item: LessonContentModel.TaskItem,
+        lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask,
         answerKey: LessonContentModel.AnswerKeyTask?
     ) -> some View {
@@ -184,7 +185,7 @@ struct PracticeView: View {
                 }
 
                 itemHints(item)
-                responseInput(for: item)
+                responseInput(for: item, lesson: lesson)
 
                 if let evaluation = evaluations[item.id] {
                     feedbackCard(evaluation: evaluation)
@@ -226,7 +227,10 @@ struct PracticeView: View {
     }
 
     @ViewBuilder
-    private func responseInput(for item: LessonContentModel.TaskItem) -> some View {
+    private func responseInput(
+        for item: LessonContentModel.TaskItem,
+        lesson: LessonContentModel
+    ) -> some View {
         switch item.type {
         case .multipleChoice, .labeling:
             optionList(options: item.options ?? [], item: item)
@@ -236,7 +240,17 @@ struct PracticeView: View {
             SpeakingCompletionCard(isComplete: evaluations[item.id] != nil)
         case .paragraphWriting, .freeResponse:
             textEditor(for: item, minHeight: 150)
-        case .gapFill, .rewrite, .errorCorrection, .tableCompletion:
+        case .gapFill, .tableCompletion:
+            let options = PracticeAnswerOptionBank.options(
+                from: lesson,
+                itemTypes: [.gapFill, .tableCompletion]
+            )
+            if options.isEmpty {
+                textEditor(for: item, minHeight: 92)
+            } else {
+                optionList(options: options, item: item)
+            }
+        case .rewrite, .errorCorrection:
             textEditor(for: item, minHeight: 92)
         }
     }
