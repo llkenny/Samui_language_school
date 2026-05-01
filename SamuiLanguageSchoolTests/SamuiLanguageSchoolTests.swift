@@ -131,6 +131,94 @@ struct SamuiLanguageSchoolTests {
     }
 
     @MainActor
+    @Test func practiceAnswerOptionBankDedupesNormalizedAnswers() async throws {
+        let options = PracticeAnswerOptionBank.options(from: Self.answerKey(entries: [
+            Self.answerEntry(itemId: "item-1", answer: .string("The")),
+            Self.answerEntry(itemId: "item-2", answer: .string("the"))
+        ]))
+
+        #expect(options == ["The"])
+    }
+
+    @MainActor
+    @Test func practiceAnswerOptionBankIncludesAcceptedAnswers() async throws {
+        let options = PracticeAnswerOptionBank.options(from: Self.answerKey(entries: [
+            Self.answerEntry(
+                itemId: "item-1",
+                answer: nil,
+                acceptedAnswers: ["a response", "an answer"]
+            )
+        ]))
+
+        #expect(options == ["a response", "an answer"])
+    }
+
+    @MainActor
+    @Test func practiceAnswerOptionBankFlattensArrayAnswers() async throws {
+        let options = PracticeAnswerOptionBank.options(from: Self.answerKey(entries: [
+            Self.answerEntry(itemId: "item-1", answer: .array([.string("an"), .string("a")])),
+            Self.answerEntry(itemId: "item-2", answer: .string("zero article"))
+        ]))
+
+        #expect(options == ["an", "a", "zero article"])
+    }
+
+    @MainActor
+    @Test func practiceAnswerOptionBankUsesLessonWideShortAnswerEntries() async throws {
+        let lesson = Self.lesson(
+            tasks: [
+                Self.practiceTask(
+                    id: "first-short-task",
+                    items: [
+                        Self.taskItem(id: "item-1", type: .gapFill),
+                        Self.taskItem(id: "item-2", type: .gapFill)
+                    ]
+                ),
+                Self.practiceTask(
+                    id: "second-short-task",
+                    items: [
+                        Self.taskItem(id: "item-3", type: .tableCompletion)
+                    ]
+                ),
+                Self.practiceTask(
+                    id: "rewrite-task",
+                    items: [
+                        Self.taskItem(id: "item-4", type: .rewrite)
+                    ]
+                )
+            ],
+            answerKey: [
+                Self.answerKey(
+                    taskId: "first-short-task",
+                    entries: [
+                        Self.answerEntry(itemId: "item-1", answer: .string("the")),
+                        Self.answerEntry(itemId: "item-2", answer: .string("a"))
+                    ]
+                ),
+                Self.answerKey(
+                    taskId: "second-short-task",
+                    entries: [
+                        Self.answerEntry(itemId: "item-3", answer: .array([.string("an"), .string("zero article")]))
+                    ]
+                ),
+                Self.answerKey(
+                    taskId: "rewrite-task",
+                    entries: [
+                        Self.answerEntry(itemId: "item-4", answer: .string("Rewrite this full sentence."))
+                    ]
+                )
+            ]
+        )
+
+        let options = PracticeAnswerOptionBank.options(
+            from: lesson,
+            itemTypes: [.gapFill, .tableCompletion]
+        )
+
+        #expect(options == ["the", "a", "an", "zero article"])
+    }
+
+    @MainActor
     @Test func practiceTaskResolverUsesRequestedTaskWhenValid() async throws {
         let lesson = Self.lesson(tasks: [
             Self.practiceTask(id: "first-task"),
@@ -208,7 +296,10 @@ struct SamuiLanguageSchoolTests {
         )
     }
 
-    private static func lesson(tasks: [LessonContentModel.PracticeTask]) -> LessonContentModel {
+    private static func lesson(
+        tasks: [LessonContentModel.PracticeTask],
+        answerKey: [LessonContentModel.AnswerKeyTask] = []
+    ) -> LessonContentModel {
         LessonContentModel(
             id: "lesson",
             title: "Lesson",
@@ -240,12 +331,15 @@ struct SamuiLanguageSchoolTests {
                 )
             ],
             practiceTasks: tasks,
-            answerKey: [],
+            answerKey: answerKey,
             selfAssessment: nil
         )
     }
 
-    private static func practiceTask(id: String) -> LessonContentModel.PracticeTask {
+    private static func practiceTask(
+        id: String,
+        items: [LessonContentModel.TaskItem] = []
+    ) -> LessonContentModel.PracticeTask {
         LessonContentModel.PracticeTask(
             id: id,
             title: "Task",
@@ -257,7 +351,7 @@ struct SamuiLanguageSchoolTests {
             instructions: "Instructions",
             stimulus: nil,
             supportingPrompts: nil,
-            items: []
+            items: items
         )
     }
 }

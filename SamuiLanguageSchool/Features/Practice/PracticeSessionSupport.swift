@@ -49,6 +49,58 @@ enum PracticeEvaluationState: Equatable {
     case reviewed
 }
 
+enum PracticeAnswerOptionBank {
+    static func options(
+        from lesson: LessonContentModel,
+        itemTypes: [LessonContentModel.TaskItemType]
+    ) -> [String] {
+        let eligibleItemIDs = Set(
+            lesson.practiceTasks
+                .flatMap(\.items)
+                .filter { itemTypes.contains($0.type) }
+                .map(\.id)
+        )
+
+        let entries = lesson.answerKey
+            .flatMap(\.entries)
+            .filter { eligibleItemIDs.contains($0.itemId) }
+
+        return options(from: entries)
+    }
+
+    static func options(from answerKey: LessonContentModel.AnswerKeyTask?) -> [String] {
+        guard let answerKey else {
+            return []
+        }
+
+        return options(from: answerKey.entries)
+    }
+
+    private static func options(from entries: [LessonContentModel.AnswerEntry]) -> [String] {
+        var options: [String] = []
+        var seenOptions = Set<String>()
+
+        for entry in entries {
+            for candidate in PracticeAnswerEvaluator.answerCandidates(from: entry) {
+                let option = candidate.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !option.isEmpty else {
+                    continue
+                }
+
+                let normalizedOption = PracticeAnswerEvaluator.normalized(option)
+                guard !seenOptions.contains(normalizedOption) else {
+                    continue
+                }
+
+                options.append(option)
+                seenOptions.insert(normalizedOption)
+            }
+        }
+
+        return options
+    }
+}
+
 enum PracticeAnswerEvaluator {
     static func evaluate(
         response: String,
@@ -199,7 +251,7 @@ enum PracticeAnswerEvaluator {
         )
     }
 
-    private static func answerCandidates(from entry: LessonContentModel.AnswerEntry) -> [String] {
+    static func answerCandidates(from entry: LessonContentModel.AnswerEntry) -> [String] {
         var candidates = entry.acceptedAnswers ?? []
 
         if let answer = entry.answer {
@@ -213,7 +265,7 @@ enum PracticeAnswerEvaluator {
         return candidates
     }
 
-    private static func normalized(_ value: String) -> String {
+    static func normalized(_ value: String) -> String {
         let trimmed = value
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .trimmingCharacters(in: CharacterSet(charactersIn: ".,!?;:"))
