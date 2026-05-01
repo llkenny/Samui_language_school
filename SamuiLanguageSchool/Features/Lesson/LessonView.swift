@@ -300,9 +300,10 @@ private struct DifficultyGuideRow: View {
                     .foregroundStyle(SLSColors.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
-                Text(taskTitles.joined(separator: ", "))
+                Text(DifficultyGuideTitleFormatter.listText(for: taskTitles))
                     .font(.system(size: 15, weight: .regular))
                     .foregroundStyle(SLSColors.textSecondary)
+                    .lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
@@ -312,6 +313,37 @@ private struct DifficultyGuideRow: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.lessonSurface)
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
+    }
+}
+
+enum DifficultyGuideTitleFormatter {
+    nonisolated static func listText(for titles: [String]) -> String {
+        titles
+            .map(formattedTitle)
+            .joined(separator: "\n")
+    }
+
+    nonisolated static func formattedTitle(_ title: String) -> String {
+        let prefix = "Activity "
+
+        guard title.hasPrefix(prefix) else {
+            return title
+        }
+
+        let titleWithoutPrefix = title.dropFirst(prefix.count)
+
+        guard let separatorRange = titleWithoutPrefix.range(of: " - ") else {
+            return title
+        }
+
+        let activityNumber = titleWithoutPrefix[..<separatorRange.lowerBound]
+
+        guard !activityNumber.isEmpty, activityNumber.allSatisfy(\.isNumber) else {
+            return title
+        }
+
+        let activityTitle = titleWithoutPrefix[separatorRange.upperBound...]
+        return "\(activityNumber) - \(activityTitle)"
     }
 }
 
