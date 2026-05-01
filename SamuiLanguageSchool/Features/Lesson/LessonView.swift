@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct LessonView: View {
+    @EnvironmentObject private var progress: ProgressEnvironment
     @StateObject private var viewModel: LessonViewModel
 
     var onBack: () -> Void
-    var onStartPractice: () -> Void
+    var onStartOrContinue: (LessonContentModel, ProgressEnvironment.Destination) -> Void
 
     init(
         viewModel: @autoclosure @escaping () -> LessonViewModel = LessonViewModel(),
         onBack: @escaping () -> Void,
-        onStartPractice: @escaping () -> Void
+        onStartOrContinue: @escaping (LessonContentModel, ProgressEnvironment.Destination) -> Void
     ) {
         _viewModel = StateObject(wrappedValue: viewModel())
         self.onBack = onBack
-        self.onStartPractice = onStartPractice
+        self.onStartOrContinue = onStartOrContinue
     }
 
     var body: some View {
@@ -35,12 +36,29 @@ struct LessonView: View {
             }
 
             SLSBottomActionBar(
-                title: viewModel.primaryPracticeLabel,
+                title: primaryActionTitle,
                 isEnabled: viewModel.lesson != nil,
-                action: onStartPractice
+                action: startOrContinue
             )
         }
         .navigationBarBackButtonHidden()
+    }
+
+    private var primaryActionTitle: String {
+        guard let lesson = viewModel.lesson else {
+            return "Start"
+        }
+
+        return progress.actionTitle(for: lesson)
+    }
+
+    private func startOrContinue() {
+        guard let lesson = viewModel.lesson,
+              let destination = progress.startOrContinueDestination(for: lesson) else {
+            return
+        }
+
+        onStartOrContinue(lesson, destination)
     }
 
     @ViewBuilder
@@ -368,5 +386,6 @@ private struct SectionHeader: View {
 }
 
 #Preview {
-    LessonView(onBack: {}, onStartPractice: {})
+    LessonView(onBack: {}, onStartOrContinue: { _, _ in })
+        .environmentObject(ProgressEnvironment())
 }

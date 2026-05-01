@@ -9,41 +9,57 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var path: [Route] = []
+    @StateObject private var progress = ProgressEnvironment()
 
     var body: some View {
         NavigationStack(path: $path) {
             StartView {
-                path.append(.lesson)
+                path.append(.lesson(progress.currentLessonID))
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
-                case .lesson:
+                case .lesson(let lessonID):
                     LessonView(
+                        viewModel: LessonViewModel(lessonID: lessonID),
                         onBack: pop,
-                        onStartPractice: { path.append(.practice) }
+                        onStartOrContinue: navigateToProgressDestination
                     )
-                case .theory:
+                case .theory(let lessonID, let sectionID):
                     TheoryView(
+                        lessonID: lessonID,
+                        sectionID: sectionID,
                         onBack: pop,
-                        onStartPractice: { path.append(.practice) }
+                        onStartPractice: { taskID in
+                            path.append(.practice(lessonID: lessonID, taskID: taskID))
+                        }
                     )
-                case .practice:
-                    PracticeView(onBack: pop)
+                case .practice(let lessonID, let taskID):
+                    PracticeView(lessonID: lessonID, taskID: taskID, onBack: pop)
                 }
             }
         }
+        .environmentObject(progress)
     }
 
     private func pop() {
         guard !path.isEmpty else { return }
         path.removeLast()
     }
+
+    private func navigateToProgressDestination(lesson: LessonContentModel, destination: ProgressEnvironment.Destination) {
+        switch destination {
+        case .theory(let sectionID):
+            path.append(.theory(lessonID: lesson.id, sectionID: sectionID))
+        case .practice(let taskID):
+            path.append(.practice(lessonID: lesson.id, taskID: taskID))
+        }
+    }
 }
 
 private enum Route: Hashable {
-    case lesson
-    case theory
-    case practice
+    case lesson(String?)
+    case theory(lessonID: String, sectionID: String)
+    case practice(lessonID: String, taskID: String?)
 }
 
 #Preview {
