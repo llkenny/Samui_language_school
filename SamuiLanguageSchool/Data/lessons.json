@@ -1,0 +1,3828 @@
+[
+  {
+    "id": "articles-discourse-part-2",
+    "title": "Articles in Discourse - Part 2",
+    "level": {
+      "code": "B1-B2",
+      "label": "B1-B2",
+      "descriptor": "Intermediate to Upper-Intermediate"
+    },
+    "subtitle": "Use articles accurately across paragraphs, with abstract nouns, and in high-frequency fixed phrases.",
+    "estimatedMinutes": {
+      "min": 70,
+      "max": 85
+    },
+    "tags": [
+      "grammar",
+      "articles",
+      "discourse",
+      "abstract-nouns",
+      "speaking",
+      "writing"
+    ],
+    "source": {
+      "fileName": "articles discourse b1b2 part2.pdf",
+      "pageCount": 11,
+      "extractionMethod": "PDFKit selectable text extraction"
+    },
+    "screenSummary": {
+      "themeTitle": "Articles in Discourse",
+      "levelLabel": "B1-B2",
+      "lessonBadge": "Lesson: Articles Part 2",
+      "shortDescription": "Track a/an and the across paragraphs, use articles with abstract nouns, and handle shared-reference nouns like the internet and the weather.",
+      "estimatedReadTimeLabel": "70-85 min",
+      "primaryPracticeLabel": "Start Article Practice",
+      "progressLabel": "3 theory sections, 7 activities"
+    },
+    "learningPath": [
+      {
+        "id": "read-notice",
+        "title": "Read & Notice",
+        "instructions": "Read each section. Try the embedded Try It tasks before reading on."
+      },
+      {
+        "id": "practise-build",
+        "title": "Practise & Build",
+        "instructions": "Work through Activities 1-5. Check your answers in the Answer Key."
+      },
+      {
+        "id": "use-it",
+        "title": "Use It",
+        "instructions": "Complete Activities 6-7. Write and speak in extended, natural language."
+      }
+    ],
+    "objectives": [
+      "Explain how a/an introduces a referent and the tracks it across a paragraph.",
+      "Write articles correctly in a full paragraph, not just isolated sentences.",
+      "Choose the correct article with abstract nouns.",
+      "Use the correctly before the internet, the weather, the government, and similar high-frequency nouns.",
+      "Identify article errors at paragraph level, where context determines the answer.",
+      "Write an extended paragraph with accurate article tracking.",
+      "Manage article tracking in natural spoken narrative."
+    ],
+    "difficultyGuide": [
+      {
+        "rating": "*",
+        "label": "Activity 1 - Noticing",
+        "taskIds": [
+          "articles-activity-1"
+        ]
+      },
+      {
+        "rating": "**",
+        "label": "Activities 2, 3 & 4 - Controlled practice",
+        "taskIds": [
+          "articles-activity-2",
+          "articles-activity-3",
+          "articles-activity-4"
+        ]
+      },
+      {
+        "rating": "***",
+        "label": "Activities 5, 6 & 7 - Production",
+        "taskIds": [
+          "articles-activity-5",
+          "articles-activity-6",
+          "articles-activity-7"
+        ]
+      }
+    ],
+    "theorySections": [
+      {
+        "id": "article-tracking-system",
+        "title": "Section 1 - Articles as a tracking system",
+        "order": 1,
+        "tryItTaskIds": [
+          "articles-try-it-a"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "In real language, articles work across a whole paragraph as a tracking system, not only sentence by sentence."
+          },
+          {
+            "type": "ruleList",
+            "items": [
+              "a/an = \"I am introducing something new. You do not know which one yet.\"",
+              "the = \"You now know which one I mean. We share that information.\"",
+              "Once you introduce something with a/an, every reference to that same thing afterwards uses the."
+            ]
+          },
+          {
+            "type": "example",
+            "title": "Tracking system at work",
+            "text": "Last week, I rented [a] motorbike from [a] shop near the market. [The] motorbike was almost new, but [the] shop owner warned me that [the] brakes needed checking. I found [a] mechanic nearby. [The] mechanic fixed it in twenty minutes.",
+            "items": [
+              "a motorbike -> introduced for the first time",
+              "the motorbike -> we both know which one now",
+              "a shop -> introduced for the first time",
+              "the shop owner -> the owner of that same shop, now identifiable",
+              "a mechanic -> new person introduced",
+              "the mechanic -> that same mechanic"
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Article tracking situations",
+            "columns": [
+              "Situation",
+              "Article",
+              "Example"
+            ],
+            "rows": [
+              {
+                "situation": "First time you mention this noun",
+                "article": "a/an",
+                "example": "I spoke to a manager about the contract."
+              },
+              {
+                "situation": "Same noun, mentioned again",
+                "article": "the",
+                "example": "The manager called back the next day."
+              },
+              {
+                "situation": "Part of something already introduced",
+                "article": "the",
+                "example": "I bought a motorbike. The brakes needed work."
+              },
+              {
+                "situation": "Category member of something already named",
+                "article": "the",
+                "example": "We visited a beach resort. The pool was clean."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "title": "Using the before anything has been introduced",
+            "incorrect": "I moved into the apartment last week. The building was modern.",
+            "correct": "I moved into an apartment last week. The building was modern.",
+            "explanation": "This is the first mention of the apartment, so the reader does not know which one yet. Use a/an to introduce it, then the afterwards."
+          }
+        ]
+      },
+      {
+        "id": "abstract-nouns-and-articles",
+        "title": "Section 2 - Abstract nouns and articles",
+        "order": 2,
+        "tryItTaskIds": [
+          "articles-try-it-b"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Abstract nouns follow the same rules as concrete nouns, but the signals are less obvious. Ask whether the meaning is general or specific and identifiable."
+          },
+          {
+            "type": "table",
+            "title": "Articles with abstract nouns",
+            "columns": [
+              "Article",
+              "When",
+              "Example"
+            ],
+            "rows": [
+              {
+                "article": "zero article",
+                "when": "General, unspecified concept or quality",
+                "example": "Patience is important when dealing with visa applications."
+              },
+              {
+                "article": "the",
+                "when": "A specific instance of the concept that is already known or identifiable",
+                "example": "The patience she showed during the complaint was impressive."
+              },
+              {
+                "article": "a/an",
+                "when": "A particular kind or instance of the abstract noun, often with an adjective",
+                "example": "She has a good knowledge of Thai customs. / It was an experience I will never forget."
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Common abstract nouns",
+            "columns": [
+              "Noun",
+              "General",
+              "Specific"
+            ],
+            "rows": [
+              {
+                "noun": "advice",
+                "general": "Advice is useful when you are new here.",
+                "specific": "The advice she gave me helped a lot."
+              },
+              {
+                "noun": "information",
+                "general": "Information about visa renewals is online.",
+                "specific": "The information in that document was wrong."
+              },
+              {
+                "noun": "progress",
+                "general": "Progress takes time when learning a language.",
+                "specific": "The progress she made this month was clear."
+              },
+              {
+                "noun": "experience",
+                "general": "Experience is valuable in this industry.",
+                "specific": "The experience I had at that resort changed things."
+              },
+              {
+                "noun": "knowledge",
+                "general": "Knowledge of Thai makes daily life easier.",
+                "specific": "The knowledge he gained saved the project."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "She gave me the advice to apply early.",
+            "correct": "She gave me advice to apply early. / She gave me the advice I needed to apply early.",
+            "explanation": "Use zero article for advice in general. Use the when the specific advice is identifiable."
+          }
+        ]
+      },
+      {
+        "id": "generic-the-shared-systems",
+        "title": "Section 3 - Generic the: the internet, the weather, and similar nouns",
+        "order": 3,
+        "tryItTaskIds": [
+          "articles-try-it-c"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Some nouns take the because they refer to a concept or system shared by everyone. They are not second mentions; they are already shared references."
+          },
+          {
+            "type": "table",
+            "title": "Shared-reference nouns",
+            "columns": [
+              "Noun",
+              "Why it takes the",
+              "Example"
+            ],
+            "rows": [
+              {
+                "noun": "the internet",
+                "why": "One global system we all share",
+                "example": "I do most of my client work over the internet."
+              },
+              {
+                "noun": "the weather",
+                "why": "One shared atmospheric condition",
+                "example": "The weather in November can be unpredictable."
+              },
+              {
+                "noun": "the government",
+                "why": "One governing body in a given country",
+                "example": "The government changed the visa rules last year."
+              },
+              {
+                "noun": "the environment",
+                "why": "One shared natural world",
+                "example": "Working remotely is better for the environment."
+              },
+              {
+                "noun": "the economy",
+                "why": "One national or global economic system",
+                "example": "The economy on the island depends on tourism."
+              },
+              {
+                "noun": "the media",
+                "why": "One collective information system",
+                "example": "The media covered the new tax rules this week."
+              }
+            ]
+          },
+          {
+            "type": "comparison",
+            "items": [
+              "the internet / the weather / the government: always the because they are shared systems",
+              "technology / nature / politics: zero article because they are general abstract concepts",
+              "He is interested in technology.",
+              "The internet is full of information about it."
+            ]
+          }
+        ]
+      }
+    ],
+    "practiceTasks": [
+      {
+        "id": "articles-try-it-a",
+        "title": "Try It A - Second mentions",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Each gap is the second or later mention of a noun. Write the in every gap.",
+        "items": [
+          {
+            "id": "articles-try-it-a-1",
+            "type": "gapFill",
+            "prompt": "I signed a new work contract last Friday. ___ contract starts on the first of next month.",
+            "number": 1,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-a-2",
+            "type": "gapFill",
+            "prompt": "She found a language school near Chaweng. ___ school offers evening classes.",
+            "number": 2,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-a-3",
+            "type": "gapFill",
+            "prompt": "We hired a driver for the airport run. ___ driver arrived on time and helped with the bags.",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-a-4",
+            "type": "gapFill",
+            "prompt": "He bought a second-hand laptop. ___ screen had a small scratch, but it worked well.",
+            "number": 4,
+            "answerType": "article"
+          }
+        ],
+        "sourceLabel": "Try it A"
+      },
+      {
+        "id": "articles-try-it-b",
+        "title": "Try It B - Abstract nouns",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write zero article, the, or a/an in the gap.",
+        "items": [
+          {
+            "id": "articles-try-it-b-1",
+            "type": "gapFill",
+            "prompt": "___ information about the ferry schedule is on the company website.",
+            "number": 1,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-b-2",
+            "type": "gapFill",
+            "prompt": "___ information he sent me yesterday was out of date.",
+            "number": 2,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-b-3",
+            "type": "gapFill",
+            "prompt": "It takes ___ patience to deal with slow bureaucracy.",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-b-4",
+            "type": "gapFill",
+            "prompt": "I have ___ good knowledge of Word and Excel for this kind of admin work.",
+            "number": 4,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-b-5",
+            "type": "gapFill",
+            "prompt": "___ progress the team made last month was really encouraging.",
+            "number": 5,
+            "answerType": "article"
+          }
+        ],
+        "sourceLabel": "Try it B"
+      },
+      {
+        "id": "articles-try-it-c",
+        "title": "Try It C - Generic the or zero article",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write the or zero article in the gap.",
+        "items": [
+          {
+            "id": "articles-try-it-c-1",
+            "type": "gapFill",
+            "prompt": "___ weather during the rainy season makes construction work difficult.",
+            "number": 1,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-c-2",
+            "type": "gapFill",
+            "prompt": "She works in ___ media - she edits online content for a Thai news platform.",
+            "number": 2,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-c-3",
+            "type": "gapFill",
+            "prompt": "___ technology is changing how small businesses manage bookings here.",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-c-4",
+            "type": "gapFill",
+            "prompt": "___ government has introduced a new long-term visa for remote workers.",
+            "number": 4,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-c-5",
+            "type": "gapFill",
+            "prompt": "I use ___ internet to manage all my invoices and client communication.",
+            "number": 5,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-try-it-c-6",
+            "type": "gapFill",
+            "prompt": "___ nature on the island is one of the main reasons people stay.",
+            "number": 6,
+            "answerType": "article"
+          }
+        ],
+        "sourceLabel": "Try it C"
+      },
+      {
+        "id": "articles-activity-1",
+        "title": "Activity 1 - Trace the tracking system",
+        "kind": "activity",
+        "mode": "noticing",
+        "difficulty": "*",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Read the paragraph. Underline every noun phrase with a/an. Then draw an arrow from each underlined noun phrase to the later use of the that refers to the same thing.",
+        "items": [
+          {
+            "id": "articles-activity-1-count",
+            "type": "freeResponse",
+            "prompt": "How many a/an -> the pairs did you find?",
+            "answerType": "count"
+          }
+        ],
+        "sourceLabel": "Activity 1",
+        "stimulus": "Last month, I took on a new client based in Germany. The client needed a full rebrand for their hotel group on Samui. I found a local graphic designer who agreed to help. The designer had worked with foreign companies before, so she understood what was needed. We set up a project schedule and agreed on a deadline. The deadline turned out to be tight, but we managed. I rented a small meeting room above a cafe in Chaweng for the presentation. The room had a projector, which helped. The client was happy with the result."
+      },
+      {
+        "id": "articles-activity-2",
+        "title": "Activity 2 - Articles across a paragraph",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 15,
+          "max": 15
+        },
+        "instructions": "Write a, an, the, or zero article in each gap. Read the whole paragraph first before filling in any gaps.",
+        "items": [
+          {
+            "id": "articles-activity-2-1",
+            "type": "gapFill",
+            "prompt": "Gap 1",
+            "number": 1,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-2",
+            "type": "gapFill",
+            "prompt": "Gap 2",
+            "number": 2,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-3",
+            "type": "gapFill",
+            "prompt": "Gap 3",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-4",
+            "type": "gapFill",
+            "prompt": "Gap 4",
+            "number": 4,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-5",
+            "type": "gapFill",
+            "prompt": "Gap 5",
+            "number": 5,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-6",
+            "type": "gapFill",
+            "prompt": "Gap 6",
+            "number": 6,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-7",
+            "type": "gapFill",
+            "prompt": "Gap 7",
+            "number": 7,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-8",
+            "type": "gapFill",
+            "prompt": "Gap 8",
+            "number": 8,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-9",
+            "type": "gapFill",
+            "prompt": "Gap 9",
+            "number": 9,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-10",
+            "type": "gapFill",
+            "prompt": "Gap 10",
+            "number": 10,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-11",
+            "type": "gapFill",
+            "prompt": "Gap 11",
+            "number": 11,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-12",
+            "type": "gapFill",
+            "prompt": "Gap 12",
+            "number": 12,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-13",
+            "type": "gapFill",
+            "prompt": "Gap 13",
+            "number": 13,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-14",
+            "type": "gapFill",
+            "prompt": "Gap 14",
+            "number": 14,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-15",
+            "type": "gapFill",
+            "prompt": "Gap 15",
+            "number": 15,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-16",
+            "type": "gapFill",
+            "prompt": "Gap 16",
+            "number": 16,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-2-17",
+            "type": "gapFill",
+            "prompt": "Gap 17",
+            "number": 17,
+            "answerType": "article"
+          }
+        ],
+        "sourceLabel": "Activity 2",
+        "stimulus": "(1) ___ colleague of mine moved to Samui from (2) ___ UK two years ago. She came with (3) ___ clear plan: she wanted to open (4) ___ small cafe near (5) ___ beach. (6) ___ plan took longer than expected to put into action. First, she needed to find (7) ___ suitable property. After three months, she found (8) ___ place she liked in Ban Tai. (9) ___ landlord was cooperative, and they signed (10) ___ lease quickly. She spent the first month doing (11) ___ renovation work. (12) ___ renovation was more expensive than she had budgeted for, but (13) ___ result was worth it. She now uses (14) ___ internet to manage most of her bookings, and says that (15) ___ experience of starting (16) ___ business on the island has changed how she thinks about (17) ___ risk."
+      },
+      {
+        "id": "articles-activity-3",
+        "title": "Activity 3 - Abstract nouns: a, the, or zero article",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Write a, an, the, or zero article in the gap. Each sentence focuses on an abstract noun.",
+        "items": [
+          {
+            "id": "articles-activity-3-1",
+            "type": "gapFill",
+            "prompt": "___ advice the manager gave me was clear and direct.",
+            "number": 1,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-2",
+            "type": "gapFill",
+            "prompt": "Moving to a new country always takes ___ courage.",
+            "number": 2,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-3",
+            "type": "gapFill",
+            "prompt": "She has ___ impressive knowledge of employment law.",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-4",
+            "type": "gapFill",
+            "prompt": "___ progress they have made on the new site is ahead of schedule.",
+            "number": 4,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-5",
+            "type": "gapFill",
+            "prompt": "___ patience is essential when you are dealing with visa offices.",
+            "number": 5,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-6",
+            "type": "gapFill",
+            "prompt": "That was ___ experience I had not expected to find so useful.",
+            "number": 6,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-7",
+            "type": "gapFill",
+            "prompt": "___ information about the new work permit is on the ministry website.",
+            "number": 7,
+            "answerType": "article"
+          },
+          {
+            "id": "articles-activity-3-8",
+            "type": "gapFill",
+            "prompt": "I admired ___ calm she showed when the power went out mid-presentation.",
+            "number": 8,
+            "answerType": "article"
+          }
+        ],
+        "sourceLabel": "Activity 3"
+      },
+      {
+        "id": "articles-activity-4",
+        "title": "Activity 4 - Generic the or zero article",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 8,
+          "max": 8
+        },
+        "instructions": "Circle the correct choice. One answer is correct each time.",
+        "items": [
+          {
+            "id": "articles-activity-4-1",
+            "type": "multipleChoice",
+            "prompt": "___ has made it much easier to manage a business remotely.",
+            "number": 1,
+            "options": [
+              "The internet",
+              "Internet"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-2",
+            "type": "multipleChoice",
+            "prompt": "Most of my work involves ___ in some way.",
+            "number": 2,
+            "options": [
+              "the technology",
+              "technology"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-3",
+            "type": "multipleChoice",
+            "prompt": "___ was perfect for the boat trip.",
+            "number": 3,
+            "options": [
+              "The weather",
+              "Weather"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-4",
+            "type": "multipleChoice",
+            "prompt": "She studied ___ at university in Chiang Mai.",
+            "number": 4,
+            "options": [
+              "the economics",
+              "economics"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-5",
+            "type": "multipleChoice",
+            "prompt": "___ on the island is heavily dependent on tourism.",
+            "number": 5,
+            "options": [
+              "The economy",
+              "Economy"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-6",
+            "type": "multipleChoice",
+            "prompt": "___ covered the storm damage on the east coast.",
+            "number": 6,
+            "options": [
+              "The media",
+              "Media"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-7",
+            "type": "multipleChoice",
+            "prompt": "I mainly use ___ for video calls and sending invoices.",
+            "number": 7,
+            "options": [
+              "the internet",
+              "internet"
+            ],
+            "answerType": "article choice"
+          },
+          {
+            "id": "articles-activity-4-8",
+            "type": "multipleChoice",
+            "prompt": "___ announced changes to the work permit system.",
+            "number": 8,
+            "options": [
+              "The government",
+              "Government"
+            ],
+            "answerType": "article choice"
+          }
+        ],
+        "sourceLabel": "Activity 4"
+      },
+      {
+        "id": "articles-activity-5",
+        "title": "Activity 5 - Paragraph error correction",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 12,
+          "max": 12
+        },
+        "instructions": "The paragraph contains six article errors. Find each one, write the correction, and note the error type.",
+        "items": [
+          {
+            "id": "articles-activity-5-1",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 1.",
+            "number": 1,
+            "answerType": "correction"
+          },
+          {
+            "id": "articles-activity-5-2",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 2.",
+            "number": 2,
+            "answerType": "correction"
+          },
+          {
+            "id": "articles-activity-5-3",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 3.",
+            "number": 3,
+            "answerType": "correction"
+          },
+          {
+            "id": "articles-activity-5-4",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 4.",
+            "number": 4,
+            "answerType": "correction"
+          },
+          {
+            "id": "articles-activity-5-5",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 5.",
+            "number": 5,
+            "answerType": "correction"
+          },
+          {
+            "id": "articles-activity-5-6",
+            "type": "errorCorrection",
+            "prompt": "Find and correct article error 6.",
+            "number": 6,
+            "answerType": "correction"
+          }
+        ],
+        "sourceLabel": "Activity 5",
+        "stimulus": "Last year, I started working as an online English tutor. A work was slow at first, but I gradually built up a client list. The clients were mostly professionals who needed English for their jobs. After six months, I found a regular student, a finance manager based in Netherlands. Student had a good level but struggled with the business writing. I suggested we work on a actual emails from her job. The advice worked well. The progress she made over three months was the clear sign that the method was right. I also started posting on an internet to promote my tutoring. The response surprised me. I now have a full schedule and have hired a colleague to help."
+      },
+      {
+        "id": "articles-activity-6",
+        "title": "Activity 6 - Write a paragraph",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 15,
+          "max": 15
+        },
+        "instructions": "Write a paragraph of 6-8 sentences on one prompt. Then swap with a partner and use the peer review checklist.",
+        "items": [
+          {
+            "id": "articles-activity-6-a",
+            "type": "paragraphWriting",
+            "prompt": "Tell the story of how you found your current home, job, or a service provider you use regularly.",
+            "number": "A"
+          },
+          {
+            "id": "articles-activity-6-b",
+            "type": "paragraphWriting",
+            "prompt": "Describe a decision you made recently - a purchase, a change of plan, or something you organised.",
+            "number": "B"
+          },
+          {
+            "id": "articles-activity-6-c",
+            "type": "paragraphWriting",
+            "prompt": "Describe a challenge you faced when settling into life on Samui, and how you handled it.",
+            "number": "C"
+          }
+        ],
+        "sourceLabel": "Activity 6",
+        "supportingPrompts": [
+          "Does the writer introduce new nouns with a/an?",
+          "Does the writer use the when referring back to the same noun?",
+          "Are abstract nouns used with the correct article?",
+          "Does the paragraph use the internet / the weather / the government correctly, if any of these appear?",
+          "Can you find any article errors?"
+        ]
+      },
+      {
+        "id": "articles-activity-7",
+        "title": "Activity 7 - Spoken narrative",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 15,
+          "max": 15
+        },
+        "instructions": "Tell your partner a story using one prompt. Try to manage the a/an -> the tracking system naturally as you speak.",
+        "items": [
+          {
+            "id": "articles-activity-7-1",
+            "type": "speakingPrompt",
+            "prompt": "Tell your partner about a time you dealt with a difficult situation on Samui or in another country.",
+            "targetForm": "a -> the tracking"
+          },
+          {
+            "id": "articles-activity-7-2",
+            "type": "speakingPrompt",
+            "prompt": "Describe how you found a home, a job, or a person who helped you here.",
+            "targetForm": "a -> the tracking"
+          },
+          {
+            "id": "articles-activity-7-3",
+            "type": "speakingPrompt",
+            "prompt": "Talk about something you have learned to do since living here - a skill, a habit, or a way of thinking.",
+            "targetForm": "a/an + abstract noun"
+          },
+          {
+            "id": "articles-activity-7-4",
+            "type": "speakingPrompt",
+            "prompt": "What do you think about the economy or the environment on Samui? Give your opinion with examples.",
+            "targetForm": "generic the"
+          },
+          {
+            "id": "articles-activity-7-5",
+            "type": "speakingPrompt",
+            "prompt": "Tell your partner about a plan that did not work out as expected.",
+            "targetForm": "a -> the tracking + abstract nouns"
+          }
+        ],
+        "sourceLabel": "Activity 7",
+        "supportingPrompts": [
+          "Round 1: speak for 60 seconds without stopping.",
+          "Round 2: your partner asks two follow-up questions.",
+          "Listener: write down any article that sounded wrong and discuss it after the round."
+        ]
+      }
+    ],
+    "answerKey": [
+      {
+        "taskId": "articles-try-it-a",
+        "entries": [
+          {
+            "itemId": "articles-try-it-a-1",
+            "answer": "the",
+            "explanation": "Each gap is a second mention of an already-introduced noun."
+          },
+          {
+            "itemId": "articles-try-it-a-2",
+            "answer": "the",
+            "explanation": "Each gap is a second mention of an already-introduced noun."
+          },
+          {
+            "itemId": "articles-try-it-a-3",
+            "answer": "the",
+            "explanation": "Each gap is a second mention of an already-introduced noun."
+          },
+          {
+            "itemId": "articles-try-it-a-4",
+            "answer": "the",
+            "explanation": "Each gap is a second mention of an already-introduced noun."
+          }
+        ]
+      },
+      {
+        "taskId": "articles-try-it-b",
+        "entries": [
+          {
+            "itemId": "articles-try-it-b-1",
+            "answer": "zero article",
+            "explanation": "General information."
+          },
+          {
+            "itemId": "articles-try-it-b-2",
+            "answer": "The",
+            "explanation": "Specific, identifiable information."
+          },
+          {
+            "itemId": "articles-try-it-b-3",
+            "answer": "zero article",
+            "explanation": "Patience in general."
+          },
+          {
+            "itemId": "articles-try-it-b-4",
+            "answer": "a",
+            "explanation": "A good knowledge = a particular kind."
+          },
+          {
+            "itemId": "articles-try-it-b-5",
+            "answer": "The",
+            "explanation": "The progress they made = specific."
+          }
+        ]
+      },
+      {
+        "taskId": "articles-try-it-c",
+        "entries": [
+          {
+            "itemId": "articles-try-it-c-1",
+            "answer": "The"
+          },
+          {
+            "itemId": "articles-try-it-c-2",
+            "answer": "the"
+          },
+          {
+            "itemId": "articles-try-it-c-3",
+            "answer": "zero article"
+          },
+          {
+            "itemId": "articles-try-it-c-4",
+            "answer": "The"
+          },
+          {
+            "itemId": "articles-try-it-c-5",
+            "answer": "the"
+          },
+          {
+            "itemId": "articles-try-it-c-6",
+            "answer": "zero article"
+          }
+        ]
+      },
+      {
+        "taskId": "articles-activity-1",
+        "entries": [
+          {
+            "itemId": "articles-activity-1-count",
+            "answer": "5-7 pairs",
+            "sampleAnswers": [
+              "a new client -> The client",
+              "a local graphic designer -> The designer",
+              "a deadline -> The deadline",
+              "a small meeting room -> The room"
+            ],
+            "notes": "Accept 5-7 pairs depending on how students interpret indirect references such as a full rebrand, a project schedule, and a projector."
+          }
+        ]
+      },
+      {
+        "taskId": "articles-activity-2",
+        "entries": [
+          {
+            "itemId": "articles-activity-2-1",
+            "answer": "A",
+            "explanation": "First mention of this colleague"
+          },
+          {
+            "itemId": "articles-activity-2-2",
+            "answer": "the",
+            "explanation": "Shared knowledge: the UK"
+          },
+          {
+            "itemId": "articles-activity-2-3",
+            "answer": "a",
+            "explanation": "First mention of this plan"
+          },
+          {
+            "itemId": "articles-activity-2-4",
+            "answer": "a",
+            "explanation": "First mention; one cafe among many"
+          },
+          {
+            "itemId": "articles-activity-2-5",
+            "answer": "the",
+            "explanation": "Shared knowledge: the nearby beach"
+          },
+          {
+            "itemId": "articles-activity-2-6",
+            "answer": "The",
+            "explanation": "Second mention of the plan"
+          },
+          {
+            "itemId": "articles-activity-2-7",
+            "answer": "a",
+            "explanation": "First mention; one property"
+          },
+          {
+            "itemId": "articles-activity-2-8",
+            "answer": "a",
+            "explanation": "First mention of this place"
+          },
+          {
+            "itemId": "articles-activity-2-9",
+            "answer": "The",
+            "explanation": "The landlord belongs to the place just identified"
+          },
+          {
+            "itemId": "articles-activity-2-10",
+            "answer": "a",
+            "explanation": "First mention of this lease"
+          },
+          {
+            "itemId": "articles-activity-2-11",
+            "answer": "zero article",
+            "explanation": "Uncountable noun with general meaning"
+          },
+          {
+            "itemId": "articles-activity-2-12",
+            "answer": "The",
+            "explanation": "Second mention of the renovation work"
+          },
+          {
+            "itemId": "articles-activity-2-13",
+            "answer": "the",
+            "explanation": "Second mention: the result of that renovation"
+          },
+          {
+            "itemId": "articles-activity-2-14",
+            "answer": "the",
+            "explanation": "Generic the: the internet"
+          },
+          {
+            "itemId": "articles-activity-2-15",
+            "answer": "the",
+            "explanation": "Specific experience of this action"
+          },
+          {
+            "itemId": "articles-activity-2-16",
+            "answer": "a",
+            "explanation": "First mention; one business"
+          },
+          {
+            "itemId": "articles-activity-2-17",
+            "answer": "zero article",
+            "explanation": "Risk as a general abstract concept"
+          }
+        ]
+      },
+      {
+        "taskId": "articles-activity-3",
+        "entries": [
+          {
+            "itemId": "articles-activity-3-1",
+            "answer": "The",
+            "explanation": "Specific advice given by the manager"
+          },
+          {
+            "itemId": "articles-activity-3-2",
+            "answer": "zero article",
+            "explanation": "Courage as a general abstract quality"
+          },
+          {
+            "itemId": "articles-activity-3-3",
+            "answer": "an",
+            "explanation": "A particular kind of knowledge; adjective signals a/an"
+          },
+          {
+            "itemId": "articles-activity-3-4",
+            "answer": "The",
+            "explanation": "Specific, identifiable progress"
+          },
+          {
+            "itemId": "articles-activity-3-5",
+            "answer": "zero article",
+            "explanation": "Patience in general"
+          },
+          {
+            "itemId": "articles-activity-3-6",
+            "answer": "an",
+            "explanation": "A particular experience"
+          },
+          {
+            "itemId": "articles-activity-3-7",
+            "answer": "zero article",
+            "explanation": "Information in general"
+          },
+          {
+            "itemId": "articles-activity-3-8",
+            "answer": "the",
+            "explanation": "Specific calm shown by an identified person"
+          }
+        ]
+      },
+      {
+        "taskId": "articles-activity-4",
+        "entries": [
+          {
+            "itemId": "articles-activity-4-1",
+            "answer": "The internet",
+            "explanation": "One shared global system"
+          },
+          {
+            "itemId": "articles-activity-4-2",
+            "answer": "technology",
+            "explanation": "General abstract field"
+          },
+          {
+            "itemId": "articles-activity-4-3",
+            "answer": "The weather",
+            "explanation": "Shared atmospheric system"
+          },
+          {
+            "itemId": "articles-activity-4-4",
+            "answer": "economics",
+            "explanation": "Academic discipline takes zero article"
+          },
+          {
+            "itemId": "articles-activity-4-5",
+            "answer": "The economy",
+            "explanation": "One island/national economic system"
+          },
+          {
+            "itemId": "articles-activity-4-6",
+            "answer": "The media",
+            "explanation": "One collective news system"
+          },
+          {
+            "itemId": "articles-activity-4-7",
+            "answer": "the internet",
+            "explanation": "One shared internet"
+          },
+          {
+            "itemId": "articles-activity-4-8",
+            "answer": "The government",
+            "explanation": "One governing body"
+          }
+        ],
+        "teacherNotes": "Item 4 distinguishes zero article economics as a discipline from the economy as a system."
+      },
+      {
+        "taskId": "articles-activity-5",
+        "entries": [
+          {
+            "itemId": "articles-activity-5-1",
+            "answer": {
+              "error": "A work was slow",
+              "correction": "The work was slow / Work was slow"
+            },
+            "errorType": "a used with uncountable noun"
+          },
+          {
+            "itemId": "articles-activity-5-2",
+            "answer": {
+              "error": "Netherlands",
+              "correction": "the Netherlands"
+            },
+            "errorType": "country name that requires the"
+          },
+          {
+            "itemId": "articles-activity-5-3",
+            "answer": {
+              "error": "Student had",
+              "correction": "The student had"
+            },
+            "errorType": "second mention"
+          },
+          {
+            "itemId": "articles-activity-5-4",
+            "answer": {
+              "error": "a actual emails",
+              "correction": "actual emails / the actual emails"
+            },
+            "errorType": "a/an before vowel sound and article choice with plural"
+          },
+          {
+            "itemId": "articles-activity-5-5",
+            "answer": {
+              "error": "the clear sign",
+              "correction": "a clear sign"
+            },
+            "errorType": "first mention"
+          },
+          {
+            "itemId": "articles-activity-5-6",
+            "answer": {
+              "error": "an internet",
+              "correction": "the internet"
+            },
+            "errorType": "generic the"
+          }
+        ],
+        "teacherNotes": "Item 2 is an exception to the zero-article proper noun rule. Item 4 may generate discussion; focus on the an/a error as the primary correction."
+      },
+      {
+        "taskId": "articles-activity-6",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Use the peer review checklist as the primary assessment tool. Listen for accurate a -> the tracking, correct articles with abstract nouns, and correct use of the internet / the weather / the government."
+      },
+      {
+        "taskId": "articles-activity-7",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Listen for tracking errors in real time, especially reusing a/an for a noun already introduced."
+      }
+    ],
+    "selfAssessment": [
+      "Explain how a/an introduces a noun and the tracks it through a paragraph.",
+      "Write articles correctly across a full paragraph.",
+      "Choose the correct article with abstract nouns.",
+      "Use the correctly before the internet, the weather, the government, and similar nouns.",
+      "Tell the difference between zero article technology and the internet.",
+      "Find and correct article errors at paragraph level.",
+      "Write an extended paragraph with accurate article tracking.",
+      "Manage a -> the tracking when speaking naturally."
+    ]
+  },
+  {
+    "id": "unless-as-long-as",
+    "title": "Unless and As Long As",
+    "level": {
+      "code": "B1",
+      "label": "B1",
+      "descriptor": "Intermediate"
+    },
+    "subtitle": "Use conditional linkers to talk about restrictions, requirements, and consequences in everyday adult life.",
+    "estimatedMinutes": {
+      "min": 75,
+      "max": 90
+    },
+    "tags": [
+      "grammar",
+      "conditionals",
+      "linkers",
+      "unless",
+      "as-long-as",
+      "speaking",
+      "writing"
+    ],
+    "source": {
+      "fileName": "unless as long as b1 2.pdf",
+      "pageCount": 11,
+      "extractionMethod": "PDFKit selectable text extraction"
+    },
+    "screenSummary": {
+      "themeTitle": "Unless and As Long As",
+      "levelLabel": "B1 Intermediate",
+      "lessonBadge": "Lesson: Conditional Linkers",
+      "shortDescription": "Choose between unless and as long as, rewrite if-not conditions, and avoid common errors in condition clauses.",
+      "estimatedReadTimeLabel": "75-90 min",
+      "primaryPracticeLabel": "Start Conditional Linker Practice",
+      "progressLabel": "3 theory sections, 7 activities"
+    },
+    "learningPath": [
+      {
+        "id": "read-notice",
+        "title": "Read & Notice",
+        "instructions": "Read each grammar section. Try the embedded Try It tasks before reading on."
+      },
+      {
+        "id": "practise-build",
+        "title": "Practise & Build",
+        "instructions": "Work through Activities 1-5. Check your answers in the Answer Key at the end."
+      },
+      {
+        "id": "use-it",
+        "title": "Use It",
+        "instructions": "Complete Activities 6-7. Use your own language and ideas."
+      }
+    ],
+    "objectives": [
+      "Explain the meaning of unless and as long as.",
+      "Choose the correct linker when two options are given.",
+      "Rewrite sentences using unless and if...not.",
+      "Write the correct verb form in the condition clause.",
+      "Identify and correct common errors with both linkers.",
+      "Use both linkers naturally in your own speech and writing."
+    ],
+    "difficultyGuide": [
+      {
+        "rating": "*",
+        "label": "Activity 1 - Noticing and sorting",
+        "taskIds": [
+          "unless-activity-1"
+        ]
+      },
+      {
+        "rating": "**",
+        "label": "Activities 2, 3 & 4 - Controlled practice",
+        "taskIds": [
+          "unless-activity-2",
+          "unless-activity-3",
+          "unless-activity-4"
+        ]
+      },
+      {
+        "rating": "***",
+        "label": "Activities 5, 6 & 7 - Production",
+        "taskIds": [
+          "unless-activity-5",
+          "unless-activity-6",
+          "unless-activity-7"
+        ]
+      }
+    ],
+    "review": {
+      "title": "Quick Review - Articles",
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Article",
+            "When to use it",
+            "Example"
+          ],
+          "rows": [
+            {
+              "article": "a/an",
+              "when": "First mention of a singular countable noun; job or role",
+              "example": "I found a co-working space near the market."
+            },
+            {
+              "article": "the",
+              "when": "Second mention; shared knowledge; unique referent; superlative",
+              "example": "The space opens at 8 a.m. The ferry is the fastest option."
+            },
+            {
+              "article": "zero article",
+              "when": "General meaning; proper nouns; languages; meals; by + transport",
+              "example": "Internet access is fast here. She travels by motorbike."
+            }
+          ]
+        }
+      ],
+      "warmUpTask": {
+        "id": "unless-review-warmup",
+        "title": "Warm-up - Articles review",
+        "kind": "warmUp",
+        "mode": "review",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write a, an, the, or zero article in each gap.",
+        "items": [
+          {
+            "id": "unless-review-warmup-1a",
+            "type": "gapFill",
+            "prompt": "She is ___ event manager at ___ resort near Chaweng.",
+            "number": "1a",
+            "answerType": "article"
+          },
+          {
+            "id": "unless-review-warmup-2a",
+            "type": "gapFill",
+            "prompt": "I bought ___ motorbike last week. ___ motorbike is almost new.",
+            "number": "2a",
+            "answerType": "article"
+          },
+          {
+            "id": "unless-review-warmup-3",
+            "type": "gapFill",
+            "prompt": "He travels by ___ ferry to Surat Thani twice a month.",
+            "number": 3,
+            "answerType": "article"
+          },
+          {
+            "id": "unless-review-warmup-4",
+            "type": "gapFill",
+            "prompt": "___ weather during the rainy season makes construction work harder.",
+            "number": 4,
+            "answerType": "article"
+          }
+        ]
+      }
+    },
+    "theorySections": [
+      {
+        "id": "unless",
+        "title": "Section 1 - Unless",
+        "order": 1,
+        "tryItTaskIds": [
+          "unless-try-it-a"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Unless means if...not. It introduces the one condition that would block or prevent the result. If that condition does not apply, the result happens."
+          },
+          {
+            "type": "formula",
+            "formula": "Unless = except if."
+          },
+          {
+            "type": "table",
+            "title": "Formation",
+            "columns": [
+              "Pattern",
+              "Example"
+            ],
+            "rows": [
+              {
+                "pattern": "Unless + present simple, main clause",
+                "example": "Unless you book in advance, you will not get a table on Saturday."
+              },
+              {
+                "pattern": "Main clause + unless + present simple",
+                "example": "You will not get a table on Saturday unless you book in advance."
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Unless and if...not",
+            "columns": [
+              "Unless",
+              "If...not"
+            ],
+            "rows": [
+              {
+                "unless": "Unless you pay the deposit today, they will give the flat to someone else.",
+                "ifNot": "If you do not pay the deposit today, they will give the flat to someone else."
+              },
+              {
+                "unless": "She will not renew the contract unless the landlord fixes the air conditioning.",
+                "ifNot": "She will not renew the contract if the landlord does not fix the air conditioning."
+              }
+            ]
+          },
+          {
+            "type": "ruleList",
+            "title": "Two important rules",
+            "items": [
+              "The condition clause always uses present simple, even when the meaning is future.",
+              "Unless already contains the negative idea. Never write unless...not."
+            ]
+          },
+          {
+            "type": "exampleList",
+            "title": "Example bank",
+            "examples": [
+              "Unless I leave before 8 a.m., the traffic near Chaweng is terrible.",
+              "The doctor will not see you today unless you have an appointment.",
+              "My landlord will not fix the leak unless I put it in writing.",
+              "We cannot confirm the booking unless the deposit is received by Friday.",
+              "Unless the weather improves, the boat trip will be cancelled.",
+              "Staff will not get overtime unless they work more than forty hours."
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "Unless you do not bring your passport, you cannot collect the parcel.",
+            "explanation": "Unless already means if...not. Adding do not creates a double negative. The condition clause should be positive."
+          }
+        ]
+      },
+      {
+        "id": "as-long-as",
+        "title": "Section 2 - As long as",
+        "order": 2,
+        "tryItTaskIds": [
+          "unless-try-it-b"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "As long as introduces the positive condition that enables or permits the result. It means on the condition that or provided that."
+          },
+          {
+            "type": "formula",
+            "formula": "As long as = only if / on the condition that."
+          },
+          {
+            "type": "table",
+            "title": "Formation",
+            "columns": [
+              "Pattern",
+              "Example"
+            ],
+            "rows": [
+              {
+                "pattern": "As long as + present simple, main clause",
+                "example": "As long as you keep the noise down, the neighbours will not complain."
+              },
+              {
+                "pattern": "Main clause + as long as + present simple",
+                "example": "You can park there as long as you move the bike before 8 a.m."
+              }
+            ]
+          },
+          {
+            "type": "comparison",
+            "title": "As long as enables; unless blocks",
+            "items": [
+              "As long as you pay on time, the landlord is happy to renew.",
+              "Unless you pay on time, the landlord will not renew.",
+              "You can borrow the van as long as you fill it up afterwards.",
+              "You cannot borrow the van unless you fill it up afterwards."
+            ]
+          },
+          {
+            "type": "ruleList",
+            "title": "Key difference",
+            "items": [
+              "As long as = the condition makes something possible or acceptable.",
+              "Unless = the condition, if absent, causes a problem or blocks the result.",
+              "The condition clause always uses present simple, even when the meaning is future."
+            ]
+          },
+          {
+            "type": "exampleList",
+            "title": "Example bank",
+            "examples": [
+              "You can use the scooter as long as you bring it back before dark.",
+              "The arrangement works as long as everyone does their part.",
+              "As long as the price is fair, I am happy to sign the lease.",
+              "We can accommodate the extra guests as long as they book before noon.",
+              "As long as the team meets the deadline, the client will not escalate.",
+              "The schedule is flexible as long as the total hours are covered."
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "You can extend the visa as long as you will apply before the expiry date.",
+            "explanation": "The condition clause uses present simple, not will + verb, even when the meaning is future."
+          }
+        ]
+      },
+      {
+        "id": "choosing-the-right-linker",
+        "title": "Section 3 - Choosing the right linker",
+        "order": 3,
+        "tryItTaskIds": [
+          "unless-try-it-c"
+        ],
+        "contentBlocks": [
+          {
+            "type": "table",
+            "title": "Decision guide",
+            "columns": [
+              "Question",
+              "Linker",
+              "Example"
+            ],
+            "rows": [
+              {
+                "question": "Is the condition something that blocks or prevents the result?",
+                "linker": "unless",
+                "example": "Unless you have a visa, you cannot work legally here."
+              },
+              {
+                "question": "Is the condition something that enables or permits the result?",
+                "linker": "as long as",
+                "example": "You can work here as long as you have the right visa."
+              },
+              {
+                "question": "Either works but the tone is different?",
+                "linker": "both possible",
+                "example": "As long as focuses on what makes it work. Unless focuses on what would stop it."
+              }
+            ]
+          },
+          {
+            "type": "modelText",
+            "title": "Model text - notice both linkers",
+            "text": "Hi all, just a reminder about the bike-sharing arrangement. You can use either scooter as long as you sign it out in the log and return it with a full tank. Unless you do this, I will have to put the bikes off limits. The arrangement works well as long as everyone follows the same rules. If someone takes a bike and leaves it near the market without signing back in, I will know. Unless the situation improves by next week, we will hold a team meeting to decide what to do."
+          }
+        ]
+      }
+    ],
+    "practiceTasks": [
+      {
+        "id": "unless-try-it-a",
+        "title": "Try It A - Rewrite using unless",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Rewrite each sentence using unless. Keep the same meaning.",
+        "items": [
+          {
+            "id": "unless-try-it-a-1",
+            "type": "rewrite",
+            "prompt": "If you do not contact the landlord today, the repair will not happen this week.",
+            "number": 1,
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-try-it-a-2",
+            "type": "rewrite",
+            "prompt": "If the client does not confirm by Thursday, we will have to cancel the reservation.",
+            "number": 2,
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-try-it-a-3",
+            "type": "rewrite",
+            "prompt": "If I do not leave now, I will miss the last songthaew.",
+            "number": 3,
+            "targetForm": "unless"
+          }
+        ],
+        "sourceLabel": "Try it A"
+      },
+      {
+        "id": "unless-try-it-b",
+        "title": "Try It B - Complete with as long as",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Complete each sentence with as long as and a suitable ending.",
+        "items": [
+          {
+            "id": "unless-try-it-b-1",
+            "type": "freeResponse",
+            "prompt": "You can borrow my laptop as long as ...",
+            "number": 1,
+            "targetForm": "as long as + present simple"
+          },
+          {
+            "id": "unless-try-it-b-2",
+            "type": "freeResponse",
+            "prompt": "The flexible working arrangement is fine as long as ...",
+            "number": 2,
+            "targetForm": "as long as + present simple"
+          },
+          {
+            "id": "unless-try-it-b-3",
+            "type": "freeResponse",
+            "prompt": "As long as ..., I do not mind working the weekend shift.",
+            "number": 3,
+            "targetForm": "as long as + present simple"
+          }
+        ],
+        "sourceLabel": "Try it B"
+      },
+      {
+        "id": "unless-try-it-c",
+        "title": "Try It C - Unless or as long as",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write unless or as long as in the gap.",
+        "items": [
+          {
+            "id": "unless-try-it-c-1",
+            "type": "gapFill",
+            "prompt": "___ the manager approves the change, we cannot update the rota.",
+            "number": 1
+          },
+          {
+            "id": "unless-try-it-c-2",
+            "type": "gapFill",
+            "prompt": "You can reschedule the appointment ___ you give 24 hours notice.",
+            "number": 2
+          },
+          {
+            "id": "unless-try-it-c-3",
+            "type": "gapFill",
+            "prompt": "The installation will not be finished on time ___ the parts arrive tomorrow.",
+            "number": 3
+          },
+          {
+            "id": "unless-try-it-c-4",
+            "type": "gapFill",
+            "prompt": "___ the team communicates clearly, working remotely is no problem.",
+            "number": 4
+          }
+        ],
+        "sourceLabel": "Try it C"
+      },
+      {
+        "id": "unless-activity-1",
+        "title": "Activity 1 - Sort the sentences",
+        "kind": "activity",
+        "mode": "noticing",
+        "difficulty": "*",
+        "estimatedMinutes": {
+          "min": 8,
+          "max": 8
+        },
+        "instructions": "Read each sentence. Write the sentence number in the correct column.",
+        "items": [
+          {
+            "id": "unless-activity-1-1",
+            "type": "sorting",
+            "prompt": "Unless the contractor calls back today, we will need to find someone else.",
+            "number": 1,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-2",
+            "type": "sorting",
+            "prompt": "As long as the rain holds off, the outdoor event should run fine.",
+            "number": 2,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-3",
+            "type": "sorting",
+            "prompt": "You can stay in the villa as long as you check out before midday.",
+            "number": 3,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-4",
+            "type": "sorting",
+            "prompt": "Unless I hear from the clinic by 5 p.m., I will assume the appointment is confirmed.",
+            "number": 4,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-5",
+            "type": "sorting",
+            "prompt": "The team can work from home as long as client calls are taken in a quiet space.",
+            "number": 5,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-6",
+            "type": "sorting",
+            "prompt": "Unless the landlord agrees in writing, do not sign anything.",
+            "number": 6,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-7",
+            "type": "sorting",
+            "prompt": "I am happy to cover the shift as long as I get the same day off next week.",
+            "number": 7,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          },
+          {
+            "id": "unless-activity-1-8",
+            "type": "sorting",
+            "prompt": "Unless the ferry leaves before 9 a.m., we will not make the connecting bus to Surat Thani.",
+            "number": 8,
+            "categories": [
+              "Unless (blocks / prevents)",
+              "As long as (enables / permits)"
+            ]
+          }
+        ],
+        "sourceLabel": "Activity 1"
+      },
+      {
+        "id": "unless-activity-2",
+        "title": "Activity 2 - Circle the correct linker",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Circle the correct word or phrase in brackets. One answer is correct each time.",
+        "items": [
+          {
+            "id": "unless-activity-2-1",
+            "type": "multipleChoice",
+            "prompt": "___ the weather is good, we usually walk to the market.",
+            "number": 1,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-2",
+            "type": "multipleChoice",
+            "prompt": "The deposit is non-refundable ___ you cancel within 48 hours.",
+            "number": 2,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-3",
+            "type": "multipleChoice",
+            "prompt": "___ you have travel insurance, a trip to the hospital can be very expensive.",
+            "number": 3,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-4",
+            "type": "multipleChoice",
+            "prompt": "You can leave early on Friday ___ your tasks for the week are done.",
+            "number": 4,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-5",
+            "type": "multipleChoice",
+            "prompt": "___ she contacts the recruiter today, the opportunity will probably go to someone else.",
+            "number": 5,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-6",
+            "type": "multipleChoice",
+            "prompt": "I am fine to share the workspace ___ we agree on the schedule first.",
+            "number": 6,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-7",
+            "type": "multipleChoice",
+            "prompt": "___ the power stays on, I can finish the report before midnight.",
+            "number": 7,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-8",
+            "type": "multipleChoice",
+            "prompt": "The outdoor cafe will close early ___ the weather changes.",
+            "number": 8,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-9",
+            "type": "multipleChoice",
+            "prompt": "You can extend the rental by a week ___ the next guest has not already paid a deposit.",
+            "number": 9,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          },
+          {
+            "id": "unless-activity-2-10",
+            "type": "multipleChoice",
+            "prompt": "___ you follow the check-out instructions, there is no extra charge.",
+            "number": 10,
+            "options": [
+              "Unless",
+              "As long as"
+            ]
+          }
+        ],
+        "sourceLabel": "Activity 2"
+      },
+      {
+        "id": "unless-activity-3",
+        "title": "Activity 3 - Write unless or as long as",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Write unless or as long as in each gap.",
+        "items": [
+          {
+            "id": "unless-activity-3-1",
+            "type": "gapFill",
+            "prompt": "___ you confirm the order before 3 p.m., we can deliver it tomorrow.",
+            "number": 1,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-2",
+            "type": "gapFill",
+            "prompt": "The manager will not approve the change ___ it goes through the standard request form.",
+            "number": 2,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-3",
+            "type": "gapFill",
+            "prompt": "You can borrow the work phone ___ you return it before the end of the shift.",
+            "number": 3,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-4",
+            "type": "gapFill",
+            "prompt": "___ someone volunteers to cover the Saturday market, we will have to close the stall.",
+            "number": 4,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-5",
+            "type": "gapFill",
+            "prompt": "The arrangement is fine with me ___ both sides stick to what was agreed.",
+            "number": 5,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-6",
+            "type": "gapFill",
+            "prompt": "He will not sign the new contract ___ the probation period is removed.",
+            "number": 6,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-7",
+            "type": "gapFill",
+            "prompt": "___ the client pays the invoice by Friday, we will start work on Monday.",
+            "number": 7,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-8",
+            "type": "gapFill",
+            "prompt": "I am happy to do the airport run ___ someone else covers my afternoon shift.",
+            "number": 8,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-9",
+            "type": "gapFill",
+            "prompt": "___ I can find a reliable house-sitter, I will not be able to take the trip.",
+            "number": 9,
+            "answerType": "linker"
+          },
+          {
+            "id": "unless-activity-3-10",
+            "type": "gapFill",
+            "prompt": "The festival stall will be profitable ___ the weather holds and the crowd is big.",
+            "number": 10,
+            "answerType": "linker"
+          }
+        ],
+        "sourceLabel": "Activity 3"
+      },
+      {
+        "id": "unless-activity-4",
+        "title": "Activity 4 - Rewrite with unless or if...not",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Rewrite each sentence using the linker given. Keep the meaning the same.",
+        "items": [
+          {
+            "id": "unless-activity-4-1",
+            "type": "rewrite",
+            "prompt": "If the plumber does not arrive by 10 a.m., we will have to call another one.",
+            "number": 1,
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-activity-4-2",
+            "type": "rewrite",
+            "prompt": "Unless the landlord replies this week, I will look at other flats.",
+            "number": 2,
+            "targetForm": "if...not"
+          },
+          {
+            "id": "unless-activity-4-3",
+            "type": "rewrite",
+            "prompt": "If I do not get the contract by Friday, I will follow up on Monday.",
+            "number": 3,
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-activity-4-4",
+            "type": "rewrite",
+            "prompt": "Unless the resort upgrades the Wi-Fi, remote workers will not stay long.",
+            "number": 4,
+            "targetForm": "if...not"
+          },
+          {
+            "id": "unless-activity-4-5",
+            "type": "rewrite",
+            "prompt": "If the team does not submit the report by noon, the client will complain.",
+            "number": 5,
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-activity-4-6",
+            "type": "rewrite",
+            "prompt": "Unless she renews the work permit on time, she will have to leave the country.",
+            "number": 6,
+            "targetForm": "if...not"
+          }
+        ],
+        "sourceLabel": "Activity 4"
+      },
+      {
+        "id": "unless-activity-5",
+        "title": "Activity 5 - Error correction",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Each sentence has one error. Write the corrected sentence and the error type.",
+        "items": [
+          {
+            "id": "unless-activity-5-1",
+            "type": "errorCorrection",
+            "prompt": "Unless the kitchen does not close at 10 p.m., you can still order food.",
+            "number": 1
+          },
+          {
+            "id": "unless-activity-5-2",
+            "type": "errorCorrection",
+            "prompt": "You can use the company account as long as you will send receipts for everything.",
+            "number": 2
+          },
+          {
+            "id": "unless-activity-5-3",
+            "type": "errorCorrection",
+            "prompt": "Unless I do not have a visa, I cannot extend my stay legally.",
+            "number": 3
+          },
+          {
+            "id": "unless-activity-5-4",
+            "type": "errorCorrection",
+            "prompt": "As long as the weather will be good, the boat trip runs every morning.",
+            "number": 4
+          },
+          {
+            "id": "unless-activity-5-5",
+            "type": "errorCorrection",
+            "prompt": "As long as you do not follow the terms, the contract is valid for one year.",
+            "number": 5
+          },
+          {
+            "id": "unless-activity-5-6",
+            "type": "errorCorrection",
+            "prompt": "Unless the meeting finishes on time otherwise I will miss the ferry.",
+            "number": 6
+          }
+        ],
+        "sourceLabel": "Activity 5"
+      },
+      {
+        "id": "unless-activity-6",
+        "title": "Activity 6 - Build from prompts",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 10
+        },
+        "instructions": "Use the key words to write one natural sentence. Choose the linker that fits the meaning.",
+        "items": [
+          {
+            "id": "unless-activity-6-1",
+            "type": "freeResponse",
+            "prompt": "you / give 24 hours notice / cancel the appointment / no charge",
+            "number": 1,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-2",
+            "type": "freeResponse",
+            "prompt": "the rain / stop / the outdoor market / not open today",
+            "number": 2,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-3",
+            "type": "freeResponse",
+            "prompt": "both sides / agree on the hours / the shared workspace arrangement / work well",
+            "number": 3,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-4",
+            "type": "freeResponse",
+            "prompt": "she / submit the invoice / this week / the payment / delay until next month",
+            "number": 4,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-5",
+            "type": "freeResponse",
+            "prompt": "everyone / follow the same process / the handover / go smoothly",
+            "number": 5,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-6",
+            "type": "freeResponse",
+            "prompt": "I / get someone to cover my shift / I / not make it to the immigration office in time",
+            "number": 6,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          },
+          {
+            "id": "unless-activity-6-7",
+            "type": "freeResponse",
+            "prompt": "the team / meet the deadline / the client / extend the contract",
+            "number": 7,
+            "targetForms": [
+              "unless",
+              "as long as"
+            ]
+          }
+        ],
+        "sourceLabel": "Activity 6"
+      },
+      {
+        "id": "unless-activity-7",
+        "title": "Activity 7 - Speaking task",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 12,
+          "max": 12
+        },
+        "instructions": "Ask your partner the questions. Try to use unless or as long as naturally in your answer each time.",
+        "items": [
+          {
+            "id": "unless-activity-7-1",
+            "type": "speakingPrompt",
+            "prompt": "What conditions do you have for borrowing something valuable to you?",
+            "targetForm": "as long as"
+          },
+          {
+            "id": "unless-activity-7-2",
+            "type": "speakingPrompt",
+            "prompt": "Is there anything you would not do at work unless a certain condition was met?",
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-activity-7-3",
+            "type": "speakingPrompt",
+            "prompt": "What does a good rental agreement need to include for you to sign it?",
+            "targetForm": "as long as / unless"
+          },
+          {
+            "id": "unless-activity-7-4",
+            "type": "speakingPrompt",
+            "prompt": "What would stop you from recommending a cafe, hotel, or restaurant?",
+            "targetForm": "unless"
+          },
+          {
+            "id": "unless-activity-7-5",
+            "type": "speakingPrompt",
+            "prompt": "Describe an arrangement that works well in your life right now. What makes it work?",
+            "targetForm": "as long as"
+          },
+          {
+            "id": "unless-activity-7-6",
+            "type": "speakingPrompt",
+            "prompt": "Is there something you want to do soon, but only under certain conditions?",
+            "targetForm": "unless / as long as"
+          }
+        ],
+        "sourceLabel": "Activity 7",
+        "supportingPrompts": [
+          "After each answer, your partner asks one follow-up question using What if...? And as long as...? What unless...?",
+          "Target: 3-4 minutes per pair. Swap roles and do the task again."
+        ]
+      }
+    ],
+    "answerKey": [
+      {
+        "taskId": "unless-review-warmup",
+        "entries": [
+          {
+            "itemId": "unless-review-warmup-1a",
+            "answer": [
+              "an",
+              "a"
+            ]
+          },
+          {
+            "itemId": "unless-review-warmup-2a",
+            "answer": [
+              "a",
+              "The"
+            ]
+          },
+          {
+            "itemId": "unless-review-warmup-3",
+            "answer": "zero article"
+          },
+          {
+            "itemId": "unless-review-warmup-4",
+            "answer": "The"
+          }
+        ]
+      },
+      {
+        "taskId": "unless-try-it-a",
+        "entries": [
+          {
+            "itemId": "unless-try-it-a-1",
+            "answer": "Unless you contact the landlord today, the repair will not happen this week."
+          },
+          {
+            "itemId": "unless-try-it-a-2",
+            "answer": "Unless the client confirms by Thursday, we will have to cancel the reservation."
+          },
+          {
+            "itemId": "unless-try-it-a-3",
+            "answer": "Unless I leave now, I will miss the last songthaew."
+          }
+        ]
+      },
+      {
+        "taskId": "unless-try-it-b",
+        "entries": [],
+        "teacherNotes": "Open answers. Check for as long as + present simple in the condition clause and a permission or positive outcome in the result clause. Samples: as long as you charge it before returning it; as long as the core hours are covered; As long as I get the time off in lieu."
+      },
+      {
+        "taskId": "unless-try-it-c",
+        "entries": [
+          {
+            "itemId": "unless-try-it-c-1",
+            "answer": "Unless"
+          },
+          {
+            "itemId": "unless-try-it-c-2",
+            "answer": "as long as"
+          },
+          {
+            "itemId": "unless-try-it-c-3",
+            "answer": "unless"
+          },
+          {
+            "itemId": "unless-try-it-c-4",
+            "answer": "As long as"
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-1",
+        "entries": [
+          {
+            "itemId": "unless-activity-1-category-unless",
+            "answer": [
+              1,
+              4,
+              6,
+              8
+            ]
+          },
+          {
+            "itemId": "unless-activity-1-category-as-long-as",
+            "answer": [
+              2,
+              3,
+              5,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-2",
+        "entries": [
+          {
+            "itemId": "unless-activity-2-1",
+            "answer": "As long as",
+            "explanation": "Positive condition enables the walk"
+          },
+          {
+            "itemId": "unless-activity-2-2",
+            "answer": "unless",
+            "explanation": "Absent condition causes loss of deposit"
+          },
+          {
+            "itemId": "unless-activity-2-3",
+            "answer": "Unless",
+            "explanation": "Absent insurance causes a problem"
+          },
+          {
+            "itemId": "unless-activity-2-4",
+            "answer": "as long as",
+            "explanation": "Positive condition enables early finish"
+          },
+          {
+            "itemId": "unless-activity-2-5",
+            "answer": "Unless",
+            "explanation": "Absent contact causes the problem"
+          },
+          {
+            "itemId": "unless-activity-2-6",
+            "answer": "as long as",
+            "explanation": "Positive condition makes sharing work"
+          },
+          {
+            "itemId": "unless-activity-2-7",
+            "answer": "As long as",
+            "explanation": "Positive condition enables completion"
+          },
+          {
+            "itemId": "unless-activity-2-8",
+            "answer": "unless",
+            "explanation": "Absent weather change causes early closure"
+          },
+          {
+            "itemId": "unless-activity-2-9",
+            "answer": "as long as",
+            "explanation": "Positive condition enables rental extension"
+          },
+          {
+            "itemId": "unless-activity-2-10",
+            "answer": "As long as",
+            "explanation": "Positive condition enables no extra charge"
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-3",
+        "entries": [
+          {
+            "itemId": "unless-activity-3-1",
+            "answer": "As long as",
+            "explanation": "Confirming in time enables delivery"
+          },
+          {
+            "itemId": "unless-activity-3-2",
+            "answer": "unless",
+            "explanation": "No standard form blocks approval"
+          },
+          {
+            "itemId": "unless-activity-3-3",
+            "answer": "as long as",
+            "explanation": "Returning it enables borrowing"
+          },
+          {
+            "itemId": "unless-activity-3-4",
+            "answer": "Unless",
+            "explanation": "No volunteer causes closure"
+          },
+          {
+            "itemId": "unless-activity-3-5",
+            "answer": "as long as",
+            "explanation": "Sticking to agreement makes it fine"
+          },
+          {
+            "itemId": "unless-activity-3-6",
+            "answer": "unless",
+            "explanation": "Probation clause blocks signing"
+          },
+          {
+            "itemId": "unless-activity-3-7",
+            "answer": "As long as",
+            "explanation": "Paying on time enables work to start"
+          },
+          {
+            "itemId": "unless-activity-3-8",
+            "answer": "as long as",
+            "explanation": "Shift coverage makes the run possible"
+          },
+          {
+            "itemId": "unless-activity-3-9",
+            "answer": "Unless",
+            "explanation": "No house-sitter blocks the trip"
+          },
+          {
+            "itemId": "unless-activity-3-10",
+            "answer": "as long as",
+            "explanation": "Weather and crowd enable profit"
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-4",
+        "entries": [
+          {
+            "itemId": "unless-activity-4-1",
+            "answer": "Unless the plumber arrives by 10 a.m., we will have to call another one."
+          },
+          {
+            "itemId": "unless-activity-4-2",
+            "answer": "If the landlord does not reply this week, I will look at other flats."
+          },
+          {
+            "itemId": "unless-activity-4-3",
+            "answer": "Unless I get the contract by Friday, I will follow up on Monday."
+          },
+          {
+            "itemId": "unless-activity-4-4",
+            "answer": "If the resort does not upgrade the Wi-Fi, remote workers will not stay long."
+          },
+          {
+            "itemId": "unless-activity-4-5",
+            "answer": "Unless the team submits the report by noon, the client will complain."
+          },
+          {
+            "itemId": "unless-activity-4-6",
+            "answer": "If she does not renew the work permit on time, she will have to leave the country."
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-5",
+        "entries": [
+          {
+            "itemId": "unless-activity-5-1",
+            "answer": "Unless the kitchen closes at 10 p.m., you can still order food.",
+            "errorType": "Double negative with unless; remove do not."
+          },
+          {
+            "itemId": "unless-activity-5-2",
+            "answer": "You can use the company account as long as you send receipts for everything.",
+            "errorType": "will in the condition clause; use present simple after as long as."
+          },
+          {
+            "itemId": "unless-activity-5-3",
+            "answer": "Unless I have a visa, I cannot extend my stay legally.",
+            "errorType": "Double negative with unless; remove do not."
+          },
+          {
+            "itemId": "unless-activity-5-4",
+            "answer": "As long as the weather is good, the boat trip runs every morning.",
+            "errorType": "will in the condition clause; use present simple after as long as."
+          },
+          {
+            "itemId": "unless-activity-5-5",
+            "answer": "As long as you follow the terms, the contract is valid for one year.",
+            "errorType": "as long as + do not creates confused meaning; use a positive condition."
+          },
+          {
+            "itemId": "unless-activity-5-6",
+            "answer": "Unless the meeting finishes on time, I will miss the ferry.",
+            "errorType": "otherwise is redundant after unless."
+          }
+        ]
+      },
+      {
+        "taskId": "unless-activity-6",
+        "entries": [
+          {
+            "itemId": "unless-activity-6-1",
+            "answer": "You can cancel the appointment without a charge as long as you give 24 hours notice."
+          },
+          {
+            "itemId": "unless-activity-6-2",
+            "answer": "Unless the rain stops, the outdoor market will not open today."
+          },
+          {
+            "itemId": "unless-activity-6-3",
+            "answer": "The shared workspace arrangement works well as long as both sides agree on the hours."
+          },
+          {
+            "itemId": "unless-activity-6-4",
+            "answer": "Unless she submits the invoice this week, the payment will be delayed until next month."
+          },
+          {
+            "itemId": "unless-activity-6-5",
+            "answer": "As long as everyone follows the same process, the handover should go smoothly."
+          },
+          {
+            "itemId": "unless-activity-6-6",
+            "answer": "Unless I get someone to cover my shift, I will not make it to the immigration office in time."
+          },
+          {
+            "itemId": "unless-activity-6-7",
+            "answer": "As long as the team meets the deadline, the client will extend the contract."
+          }
+        ],
+        "teacherNotes": "Other natural versions acceptable. Assess for correct linker choice and present simple in the condition clause."
+      },
+      {
+        "taskId": "unless-activity-7",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Listen for correct choice of unless vs as long as, present simple in the condition clause, and absence of double negatives with unless."
+      }
+    ],
+    "selfAssessment": [
+      "Explain what unless means and when to use it.",
+      "Explain what as long as means and when to use it.",
+      "Choose the correct linker when two options are given.",
+      "Write present simple, not will, in the condition clause after both linkers.",
+      "Rewrite sentences using unless and if...not.",
+      "Use unless without adding not in the condition clause.",
+      "Identify and correct common errors with unless and as long as.",
+      "Use both linkers naturally when speaking about conditions and requirements."
+    ]
+  },
+  {
+    "id": "reflexive-pronouns",
+    "title": "Reflexive Pronouns",
+    "level": {
+      "code": "B1",
+      "label": "B1 Intermediate",
+      "descriptor": "Intermediate"
+    },
+    "subtitle": "Use reflexive pronouns accurately in conversation, writing, and your daily life.",
+    "estimatedMinutes": {
+      "min": 75,
+      "max": 90
+    },
+    "tags": [
+      "grammar",
+      "pronouns",
+      "reflexive-pronouns",
+      "each-other",
+      "speaking",
+      "writing"
+    ],
+    "source": {
+      "fileName": "reflexive pronouns b1.pdf",
+      "pageCount": 10,
+      "extractionMethod": "PDFKit selectable text extraction"
+    },
+    "screenSummary": {
+      "themeTitle": "Reflexive Pronouns",
+      "levelLabel": "B1 Intermediate",
+      "lessonBadge": "Lesson: Reflexive Pronouns",
+      "shortDescription": "Use the eight reflexive pronoun forms, distinguish object and emphatic uses, and use by + reflexive for alone or without help.",
+      "estimatedReadTimeLabel": "75-90 min",
+      "primaryPracticeLabel": "Start Pronoun Practice",
+      "progressLabel": "3 grammar references, 9 activities"
+    },
+    "learningPath": [
+      {
+        "id": "read",
+        "title": "Read",
+        "instructions": "Work through each Grammar Reference section and complete the Try It tasks before moving on."
+      },
+      {
+        "id": "practise",
+        "title": "Practise",
+        "instructions": "Complete Activities 1-7. Work carefully; accuracy is the goal."
+      },
+      {
+        "id": "use-it",
+        "title": "Use It",
+        "instructions": "Activities 8 and 9: write about your own life, then speak with a partner."
+      }
+    ],
+    "objectives": [
+      "Name and use all 8 reflexive pronoun forms.",
+      "Use the reflexive function: the subject does the action to themselves.",
+      "Use the emphatic function: stress that the subject did it, not someone else.",
+      "Use by + reflexive pronoun to mean alone or without help.",
+      "Tell the difference between reflexive pronouns and each other."
+    ],
+    "difficultyGuide": [
+      {
+        "rating": "*",
+        "label": "Activities 1-2: Recognise the forms and uses",
+        "taskIds": [
+          "reflexive-activity-1",
+          "reflexive-activity-2"
+        ]
+      },
+      {
+        "rating": "**",
+        "label": "Activities 3-6: Controlled practice",
+        "taskIds": [
+          "reflexive-activity-3",
+          "reflexive-activity-4",
+          "reflexive-activity-5",
+          "reflexive-activity-6"
+        ]
+      },
+      {
+        "rating": "***",
+        "label": "Activities 7-9: Speak and write freely",
+        "taskIds": [
+          "reflexive-activity-7",
+          "reflexive-activity-8",
+          "reflexive-activity-9"
+        ]
+      }
+    ],
+    "theorySections": [
+      {
+        "id": "eight-reflexive-forms",
+        "title": "Grammar Reference 1 - The 8 Reflexive Pronoun Forms",
+        "order": 1,
+        "tryItTaskIds": [
+          "reflexive-try-it-a"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "A reflexive pronoun is used when the subject and object of a verb are the same person or thing, or to add emphasis. The exact form depends on the subject of the sentence."
+          },
+          {
+            "type": "ruleList",
+            "items": [
+              "Singular forms end in -self: myself, yourself, himself, herself, itself.",
+              "Plural forms end in -selves: ourselves, yourselves, themselves."
+            ]
+          },
+          {
+            "type": "table",
+            "columns": [
+              "Subject",
+              "Reflexive pronoun",
+              "Example sentence"
+            ],
+            "rows": [
+              {
+                "subject": "I",
+                "pronoun": "myself",
+                "example": "I taught myself to dive during the first lockdown."
+              },
+              {
+                "subject": "You (one person)",
+                "pronoun": "yourself",
+                "example": "Did you hurt yourself on the motorbike?"
+              },
+              {
+                "subject": "He",
+                "pronoun": "himself",
+                "example": "Jake booked the whole villa himself."
+              },
+              {
+                "subject": "She",
+                "pronoun": "herself",
+                "example": "Maria runs the accounts herself."
+              },
+              {
+                "subject": "It",
+                "pronoun": "itself",
+                "example": "The resort app updated itself overnight."
+              },
+              {
+                "subject": "We",
+                "pronoun": "ourselves",
+                "example": "We organised the beach clean-up ourselves."
+              },
+              {
+                "subject": "You (a group)",
+                "pronoun": "yourselves",
+                "example": "Help yourselves to the welcome drinks."
+              },
+              {
+                "subject": "They",
+                "pronoun": "themselves",
+                "example": "The guests looked after themselves all week."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "formErrors",
+            "title": "Common form errors",
+            "items": [
+              "hisself -> himself",
+              "theirselves -> themselves",
+              "ourself -> ourselves"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "two-main-uses",
+        "title": "Grammar Reference 2 - Two Main Uses",
+        "order": 2,
+        "tryItTaskIds": [
+          "reflexive-try-it-b"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Reflexive pronouns have two different jobs. The signal test helps decide which use you are looking at."
+          },
+          {
+            "type": "table",
+            "columns": [
+              "Use",
+              "What it means",
+              "Signal",
+              "Example"
+            ],
+            "rows": [
+              {
+                "use": "Reflexive (object use)",
+                "meaning": "The subject does the action to themselves. The subject and object are the same person.",
+                "signal": "Remove the reflexive pronoun and the sentence breaks or changes meaning.",
+                "example": "She burned herself on the wok. She burned breaks because it needs an object."
+              },
+              {
+                "use": "Emphatic",
+                "meaning": "Stresses who did the action: the subject, not someone else.",
+                "signal": "You can move it or remove it and the sentence still works.",
+                "example": "I fixed the air-con myself. I fixed the air-con still makes sense."
+              }
+            ]
+          },
+          {
+            "type": "ruleList",
+            "title": "Position tip",
+            "items": [
+              "In emphatic use, the reflexive pronoun often comes right after the subject: He himself said it.",
+              "It can also come after the object at the end of the sentence: He said it himself."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "by-reflexive-and-each-other",
+        "title": "Grammar Reference 3 - By + Reflexive and Each Other",
+        "order": 3,
+        "tryItTaskIds": [
+          "reflexive-try-it-c"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "by + reflexive pronoun means alone or without help from others. It is different from the emphatic use because the focus is always on the absence of other people or assistance."
+          },
+          {
+            "type": "table",
+            "columns": [
+              "Form",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              {
+                "form": "by + reflexive",
+                "meaning": "Alone, or without help from others",
+                "example": "She runs the dive school by herself."
+              },
+              {
+                "form": "emphatic reflexive",
+                "meaning": "Stresses who did it; may or may not have been alone",
+                "example": "She designed the logo herself."
+              },
+              {
+                "form": "each other",
+                "meaning": "Two or more people do something to one another; reciprocal in both directions",
+                "example": "They taught each other basic Thai cooking techniques."
+              }
+            ]
+          },
+          {
+            "type": "comparison",
+            "title": "Watch the difference",
+            "items": [
+              "They introduced themselves = each person introduced him/herself individually.",
+              "They introduced each other = A introduced B, and B introduced A."
+            ]
+          }
+        ]
+      }
+    ],
+    "practiceTasks": [
+      {
+        "id": "reflexive-try-it-a",
+        "title": "Try It A - Correct reflexive pronoun",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Complete each sentence with the correct reflexive pronoun.",
+        "items": [
+          {
+            "id": "reflexive-try-it-a-1",
+            "type": "gapFill",
+            "prompt": "Marco fell off his scooter and cut ___.",
+            "number": 1
+          },
+          {
+            "id": "reflexive-try-it-a-2",
+            "type": "gapFill",
+            "prompt": "We organised the staff party all by ___.",
+            "number": 2
+          },
+          {
+            "id": "reflexive-try-it-a-3",
+            "type": "gapFill",
+            "prompt": "The resort markets ___ as eco-friendly.",
+            "number": 3
+          },
+          {
+            "id": "reflexive-try-it-a-4",
+            "type": "gapFill",
+            "prompt": "Did you feel proud of ___ after passing the open-water test?",
+            "number": 4
+          }
+        ],
+        "sourceLabel": "Try it A"
+      },
+      {
+        "id": "reflexive-try-it-b",
+        "title": "Try It B - Reflexive or emphatic",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Label each sentence R for reflexive/object use or E for emphatic use.",
+        "items": [
+          {
+            "id": "reflexive-try-it-b-1",
+            "type": "labeling",
+            "prompt": "I burned myself on the wok last night.",
+            "number": 5,
+            "options": [
+              "R",
+              "E"
+            ]
+          },
+          {
+            "id": "reflexive-try-it-b-2",
+            "type": "labeling",
+            "prompt": "The chef himself came out to apologise to the table.",
+            "number": 6,
+            "options": [
+              "R",
+              "E"
+            ]
+          },
+          {
+            "id": "reflexive-try-it-b-3",
+            "type": "labeling",
+            "prompt": "She made herself a coffee before the briefing.",
+            "number": 7,
+            "options": [
+              "R",
+              "E"
+            ]
+          },
+          {
+            "id": "reflexive-try-it-b-4",
+            "type": "labeling",
+            "prompt": "Did you design the whole website yourself?",
+            "number": 8,
+            "options": [
+              "R",
+              "E"
+            ]
+          }
+        ],
+        "sourceLabel": "Try it B"
+      },
+      {
+        "id": "reflexive-try-it-c",
+        "title": "Try It C - By + reflexive",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Complete each sentence with by + the correct reflexive pronoun.",
+        "items": [
+          {
+            "id": "reflexive-try-it-c-1",
+            "type": "gapFill",
+            "prompt": "He lives on the east coast of the island. He is alone. -> He lives there ___.",
+            "number": 9
+          },
+          {
+            "id": "reflexive-try-it-c-2",
+            "type": "gapFill",
+            "prompt": "I configured the whole POS system. I had no help. -> I set up the system ___.",
+            "number": 10
+          },
+          {
+            "id": "reflexive-try-it-c-3",
+            "type": "gapFill",
+            "prompt": "They rebuilt the beach jetty. No one assisted them. -> They rebuilt it ___.",
+            "number": 11
+          },
+          {
+            "id": "reflexive-try-it-c-4",
+            "type": "gapFill",
+            "prompt": "Can you run tomorrow's island tour without assistance? -> Can you run it ___?",
+            "number": 12
+          }
+        ],
+        "sourceLabel": "Try it C"
+      },
+      {
+        "id": "reflexive-activity-1",
+        "title": "Activity 1 - Production from Situations",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "Read each situation. Write one or two sentences describing what happened or what is true. Use a reflexive pronoun.",
+        "items": [
+          {
+            "id": "reflexive-activity-1-1",
+            "type": "freeResponse",
+            "prompt": "Paulo replaced a broken door handle in his rented villa without calling a handyman.",
+            "number": 1
+          },
+          {
+            "id": "reflexive-activity-1-2",
+            "type": "freeResponse",
+            "prompt": "Leila slipped on wet tiles after a long shift and came down hard on her wrist.",
+            "number": 2
+          },
+          {
+            "id": "reflexive-activity-1-3",
+            "type": "freeResponse",
+            "prompt": "Nadia rents a one-bedroom condo near Chaweng, has no flatmates, and prefers it that way.",
+            "number": 3
+          },
+          {
+            "id": "reflexive-activity-1-4",
+            "type": "freeResponse",
+            "prompt": "The regional director flew in and gave the whole presentation personally.",
+            "number": 4
+          },
+          {
+            "id": "reflexive-activity-1-5",
+            "type": "freeResponse",
+            "prompt": "The resort booking platform automatically restored all reservations after a data error.",
+            "number": 5
+          },
+          {
+            "id": "reflexive-activity-1-6",
+            "type": "freeResponse",
+            "prompt": "Tom rewired the distribution board with no electrician and no assistance.",
+            "number": 6
+          }
+        ],
+        "sourceLabel": "Activity 1"
+      },
+      {
+        "id": "reflexive-activity-2",
+        "title": "Activity 2 - Both Functions",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "For each prompt, write two sentences: Sentence A uses reflexive object function; Sentence B uses emphatic function.",
+        "items": [
+          {
+            "id": "reflexive-activity-2-1",
+            "type": "freeResponse",
+            "prompt": "She + photography / creating something",
+            "number": 1,
+            "targetForms": [
+              "reflexive object",
+              "emphatic"
+            ]
+          },
+          {
+            "id": "reflexive-activity-2-2",
+            "type": "freeResponse",
+            "prompt": "We + managing a professional challenge",
+            "number": 2,
+            "targetForms": [
+              "reflexive object",
+              "emphatic"
+            ]
+          },
+          {
+            "id": "reflexive-activity-2-3",
+            "type": "freeResponse",
+            "prompt": "The business or company + its online presence or reputation",
+            "number": 3,
+            "targetForms": [
+              "reflexive object",
+              "emphatic"
+            ]
+          },
+          {
+            "id": "reflexive-activity-2-4",
+            "type": "freeResponse",
+            "prompt": "He + his living situation on the island",
+            "number": 4,
+            "targetForms": [
+              "reflexive object",
+              "emphatic"
+            ]
+          },
+          {
+            "id": "reflexive-activity-2-5",
+            "type": "freeResponse",
+            "prompt": "You + a decision you made or a skill you developed",
+            "number": 5,
+            "targetForms": [
+              "reflexive object",
+              "emphatic"
+            ]
+          }
+        ],
+        "sourceLabel": "Activity 2"
+      },
+      {
+        "id": "reflexive-activity-3",
+        "title": "Activity 3 - Fill the Gap",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "Complete each sentence with the correct reflexive pronoun. No word list is provided.",
+        "items": [
+          {
+            "id": "reflexive-activity-3-13",
+            "type": "gapFill",
+            "prompt": "We found ___ stuck in traffic on the ring road at five in the afternoon.",
+            "number": 13
+          },
+          {
+            "id": "reflexive-activity-3-14",
+            "type": "gapFill",
+            "prompt": "Did you all enjoy ___ at the Songkran party on the beach?",
+            "number": 14
+          },
+          {
+            "id": "reflexive-activity-3-15",
+            "type": "gapFill",
+            "prompt": "Jake burnt ___ on the barbecue at the staff end-of-season event.",
+            "number": 15
+          },
+          {
+            "id": "reflexive-activity-3-16",
+            "type": "gapFill",
+            "prompt": "I told ___ it was just a temporary job - that was four years ago.",
+            "number": 16
+          },
+          {
+            "id": "reflexive-activity-3-17",
+            "type": "gapFill",
+            "prompt": "Maria sees ___ as much more than just a tour guide.",
+            "number": 17
+          },
+          {
+            "id": "reflexive-activity-3-18",
+            "type": "gapFill",
+            "prompt": "The children helped ___ to fruit at the resort welcome buffet.",
+            "number": 18
+          },
+          {
+            "id": "reflexive-activity-3-19",
+            "type": "gapFill",
+            "prompt": "You should believe in ___ more - your Thai is really coming along.",
+            "number": 19
+          },
+          {
+            "id": "reflexive-activity-3-20",
+            "type": "gapFill",
+            "prompt": "The resort positioned ___ as the island's leading eco-lodge.",
+            "number": 20
+          }
+        ],
+        "sourceLabel": "Activity 3"
+      },
+      {
+        "id": "reflexive-activity-4",
+        "title": "Activity 4 - Sort It Out",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "Read the sentences. Write the number of each sentence in the correct column.",
+        "items": [
+          {
+            "id": "reflexive-activity-4-21",
+            "type": "sorting",
+            "prompt": "I found myself a quiet beach on the north side of the island.",
+            "number": 21,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-22",
+            "type": "sorting",
+            "prompt": "The owner himself called to apologise for the booking error.",
+            "number": 22,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-23",
+            "type": "sorting",
+            "prompt": "They live by themselves in a house near Maenam - no flatmates.",
+            "number": 23,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-24",
+            "type": "sorting",
+            "prompt": "Did she organise the whole fundraiser herself?",
+            "number": 24,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-25",
+            "type": "sorting",
+            "prompt": "He locked himself out of his room again - third time this week.",
+            "number": 25,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-26",
+            "type": "sorting",
+            "prompt": "We completed the snorkelling course by ourselves - no instructor.",
+            "number": 26,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-27",
+            "type": "sorting",
+            "prompt": "The rescue cat cleaned itself on the villa steps every morning.",
+            "number": 27,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-28",
+            "type": "sorting",
+            "prompt": "You yourself said it was a good idea at last week's meeting.",
+            "number": 28,
+            "categories": [
+              "R - Reflexive object",
+              "E - Emphatic",
+              "B - By + reflexive"
+            ]
+          },
+          {
+            "id": "reflexive-activity-4-original-r",
+            "type": "freeResponse",
+            "prompt": "Write one original sentence for R using a different verb.",
+            "targetForm": "R - Reflexive object"
+          },
+          {
+            "id": "reflexive-activity-4-original-e",
+            "type": "freeResponse",
+            "prompt": "Write one original sentence for E using a different verb.",
+            "targetForm": "E - Emphatic"
+          },
+          {
+            "id": "reflexive-activity-4-original-b",
+            "type": "freeResponse",
+            "prompt": "Write one original sentence for B using a different verb.",
+            "targetForm": "B - By + reflexive"
+          }
+        ],
+        "sourceLabel": "Activity 4"
+      },
+      {
+        "id": "reflexive-activity-5",
+        "title": "Activity 5 - Transform It",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "Rewrite each sentence using the new subject given. Change the reflexive pronoun to match the new subject.",
+        "items": [
+          {
+            "id": "reflexive-activity-5-1",
+            "type": "rewrite",
+            "prompt": "I gave myself a week to think the offer over.",
+            "number": 1,
+            "newSubject": "She"
+          },
+          {
+            "id": "reflexive-activity-5-2",
+            "type": "rewrite",
+            "prompt": "We found ourselves running a small guesthouse on Samui.",
+            "number": 2,
+            "newSubject": "He"
+          },
+          {
+            "id": "reflexive-activity-5-3",
+            "type": "rewrite",
+            "prompt": "He lives by himself on the east coast.",
+            "number": 3,
+            "newSubject": "They"
+          },
+          {
+            "id": "reflexive-activity-5-4",
+            "type": "rewrite",
+            "prompt": "Did you do all that restoration work yourself?",
+            "number": 4,
+            "newSubject": "She"
+          },
+          {
+            "id": "reflexive-activity-5-5",
+            "type": "rewrite",
+            "prompt": "The machine switched itself off after thirty minutes.",
+            "number": 5,
+            "newSubject": "The machines"
+          },
+          {
+            "id": "reflexive-activity-5-6",
+            "type": "rewrite",
+            "prompt": "I will sort it out myself - do not call anyone.",
+            "number": 6,
+            "newSubject": "We"
+          }
+        ],
+        "sourceLabel": "Activity 5"
+      },
+      {
+        "id": "reflexive-activity-6",
+        "title": "Activity 6 - Error Correction",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": null,
+        "instructions": "Each sentence has one error with a reflexive pronoun. Write the correction and name the error type.",
+        "items": [
+          {
+            "id": "reflexive-activity-6-1",
+            "type": "errorCorrection",
+            "prompt": "We have not seen ourselves since the boat trip last October.",
+            "number": 1
+          },
+          {
+            "id": "reflexive-activity-6-2",
+            "type": "errorCorrection",
+            "prompt": "The whole team had to introduce yourself to the new GM at the start of the review.",
+            "number": 2
+          },
+          {
+            "id": "reflexive-activity-6-3",
+            "type": "errorCorrection",
+            "prompt": "I found me completely unprepared for the rainy season in my first year here.",
+            "number": 3
+          },
+          {
+            "id": "reflexive-activity-6-4",
+            "type": "errorCorrection",
+            "prompt": "Did you manage to sort out the work permit by you in the end?",
+            "number": 4
+          },
+          {
+            "id": "reflexive-activity-6-5",
+            "type": "errorCorrection",
+            "prompt": "They texted themselves every day while she was doing the training in Bangkok.",
+            "number": 5
+          },
+          {
+            "id": "reflexive-activity-6-6",
+            "type": "errorCorrection",
+            "prompt": "The new chef cooked an entire tasting menu for the owners - she prepared it all by her.",
+            "number": 6
+          }
+        ],
+        "sourceLabel": "Activity 6"
+      },
+      {
+        "id": "reflexive-activity-7",
+        "title": "Activity 7 - Expand from Prompts",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": null,
+        "instructions": "Use the key words as a prompt. Write a complete, natural sentence using a reflexive pronoun.",
+        "items": [
+          {
+            "id": "reflexive-activity-7-1",
+            "type": "freeResponse",
+            "prompt": "I / push / start my own business on the island",
+            "number": 1
+          },
+          {
+            "id": "reflexive-activity-7-2",
+            "type": "freeResponse",
+            "prompt": "he / find / managing three Airbnb properties at the same time",
+            "number": 2
+          },
+          {
+            "id": "reflexive-activity-7-3",
+            "type": "freeResponse",
+            "prompt": "they / teach / free-dive / no instructor",
+            "number": 3
+          },
+          {
+            "id": "reflexive-activity-7-4",
+            "type": "freeResponse",
+            "prompt": "she / translate the contract / without any agency",
+            "number": 4
+          },
+          {
+            "id": "reflexive-activity-7-5",
+            "type": "freeResponse",
+            "prompt": "we / cut off from the mainland / during the storm",
+            "number": 5
+          }
+        ],
+        "sourceLabel": "Activity 7"
+      },
+      {
+        "id": "reflexive-activity-8",
+        "title": "Activity 8 - Write About Your Life",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": null,
+        "instructions": "Write one or two sentences for each prompt. Use a reflexive pronoun in each answer.",
+        "items": [
+          {
+            "id": "reflexive-activity-8-1",
+            "type": "paragraphWriting",
+            "prompt": "Something you taught yourself to do since arriving in Samui or your current home.",
+            "number": 1
+          },
+          {
+            "id": "reflexive-activity-8-2",
+            "type": "paragraphWriting",
+            "prompt": "Something you did completely alone - by yourself - in the past year.",
+            "number": 2
+          },
+          {
+            "id": "reflexive-activity-8-3",
+            "type": "paragraphWriting",
+            "prompt": "Something you are proud of doing without outside help, using the emphatic form.",
+            "number": 3
+          },
+          {
+            "id": "reflexive-activity-8-4",
+            "type": "paragraphWriting",
+            "prompt": "A time you found yourself in a situation you never expected.",
+            "number": 4
+          },
+          {
+            "id": "reflexive-activity-8-5",
+            "type": "paragraphWriting",
+            "prompt": "A skill or habit you and a friend or colleague do for each other.",
+            "number": 5
+          }
+        ],
+        "sourceLabel": "Activity 8"
+      },
+      {
+        "id": "reflexive-activity-9",
+        "title": "Activity 9 - Speaking Task",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": null,
+        "instructions": "Ask and answer these questions with a partner. Use a reflexive pronoun in each answer.",
+        "items": [
+          {
+            "id": "reflexive-activity-9-1",
+            "type": "speakingPrompt",
+            "prompt": "When did you last have to do something completely by yourself?",
+            "targetForm": "by + reflexive"
+          },
+          {
+            "id": "reflexive-activity-9-2",
+            "type": "speakingPrompt",
+            "prompt": "What is something you have taught yourself since moving to your current home?",
+            "targetForm": "taught myself / yourself"
+          },
+          {
+            "id": "reflexive-activity-9-3",
+            "type": "speakingPrompt",
+            "prompt": "Have you ever found yourself living or working somewhere you never expected?",
+            "targetForm": "found myself / himself / etc."
+          },
+          {
+            "id": "reflexive-activity-9-4",
+            "type": "speakingPrompt",
+            "prompt": "Tell your partner one thing you are proud of doing yourself - no help from anyone.",
+            "targetForm": "emphatic reflexive"
+          },
+          {
+            "id": "reflexive-activity-9-5",
+            "type": "speakingPrompt",
+            "prompt": "Do you prefer to live by yourself or with other people? Why?",
+            "targetForm": "by + reflexive"
+          },
+          {
+            "id": "reflexive-activity-9-6",
+            "type": "speakingPrompt",
+            "prompt": "Describe a moment when you and a friend or colleague genuinely helped each other out.",
+            "targetForm": "each other"
+          }
+        ],
+        "sourceLabel": "Activity 9",
+        "supportingPrompts": [
+          "Take turns: both partners ask and answer every question.",
+          "When your partner uses a reflexive pronoun correctly, give positive feedback.",
+          "When they use the wrong form or forget, correct them gently.",
+          "Aim to speak for at least 30 seconds on each question.",
+          "Keep a tally of correct reflexive pronouns."
+        ]
+      }
+    ],
+    "answerKey": [
+      {
+        "taskId": "reflexive-try-it-a",
+        "entries": [
+          {
+            "itemId": "reflexive-try-it-a-1",
+            "answer": "himself"
+          },
+          {
+            "itemId": "reflexive-try-it-a-2",
+            "answer": "ourselves"
+          },
+          {
+            "itemId": "reflexive-try-it-a-3",
+            "answer": "itself"
+          },
+          {
+            "itemId": "reflexive-try-it-a-4",
+            "answer": "yourself"
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-try-it-b",
+        "entries": [
+          {
+            "itemId": "reflexive-try-it-b-1",
+            "answer": "R"
+          },
+          {
+            "itemId": "reflexive-try-it-b-2",
+            "answer": "E"
+          },
+          {
+            "itemId": "reflexive-try-it-b-3",
+            "answer": "R"
+          },
+          {
+            "itemId": "reflexive-try-it-b-4",
+            "answer": "E"
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-try-it-c",
+        "entries": [
+          {
+            "itemId": "reflexive-try-it-c-1",
+            "answer": "by himself"
+          },
+          {
+            "itemId": "reflexive-try-it-c-2",
+            "answer": "by myself"
+          },
+          {
+            "itemId": "reflexive-try-it-c-3",
+            "answer": "by themselves"
+          },
+          {
+            "itemId": "reflexive-try-it-c-4",
+            "answer": "by yourself"
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-activity-1",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-1-1",
+            "sampleAnswers": [
+              "He fixed the door handle himself.",
+              "He worked it out by himself."
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-1-2",
+            "sampleAnswers": [
+              "She hurt herself on the wet tiles."
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-1-3",
+            "sampleAnswers": [
+              "She lives by herself near Chaweng.",
+              "She lives on the island by herself."
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-1-4",
+            "sampleAnswers": [
+              "The director presented himself.",
+              "He gave the whole presentation himself."
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-1-5",
+            "sampleAnswers": [
+              "The system restored itself.",
+              "The platform fixed itself without any IT input."
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-1-6",
+            "sampleAnswers": [
+              "He rewired the whole board himself.",
+              "Tom did the whole job by himself."
+            ]
+          }
+        ],
+        "teacherNotes": "Other correct versions are acceptable."
+      },
+      {
+        "taskId": "reflexive-activity-2",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Sentence A must use the reflexive object function; Sentence B must use the emphatic function. Accept plausible, natural sentences."
+      },
+      {
+        "taskId": "reflexive-activity-3",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-3-13",
+            "answer": "ourselves",
+            "explanation": "Subject = object"
+          },
+          {
+            "itemId": "reflexive-activity-3-14",
+            "answer": "yourselves",
+            "explanation": "Plural you"
+          },
+          {
+            "itemId": "reflexive-activity-3-15",
+            "answer": "himself",
+            "explanation": "Jake burned his own hand"
+          },
+          {
+            "itemId": "reflexive-activity-3-16",
+            "answer": "myself",
+            "explanation": "Internal voice"
+          },
+          {
+            "itemId": "reflexive-activity-3-17",
+            "answer": "herself"
+          },
+          {
+            "itemId": "reflexive-activity-3-18",
+            "answer": "themselves"
+          },
+          {
+            "itemId": "reflexive-activity-3-19",
+            "answer": "yourself"
+          },
+          {
+            "itemId": "reflexive-activity-3-20",
+            "answer": "itself"
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-activity-4",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-4-category-r",
+            "answer": [
+              21,
+              25,
+              27
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-4-category-e",
+            "answer": [
+              22,
+              24,
+              28
+            ]
+          },
+          {
+            "itemId": "reflexive-activity-4-category-b",
+            "answer": [
+              23,
+              26
+            ]
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-activity-5",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-5-1",
+            "answer": "She gave herself a week to think the offer over."
+          },
+          {
+            "itemId": "reflexive-activity-5-2",
+            "answer": "He found himself running a small guesthouse on Samui."
+          },
+          {
+            "itemId": "reflexive-activity-5-3",
+            "answer": "They live by themselves on the east coast."
+          },
+          {
+            "itemId": "reflexive-activity-5-4",
+            "answer": "Did she do all that restoration work herself?"
+          },
+          {
+            "itemId": "reflexive-activity-5-5",
+            "answer": "The machines switched themselves off after thirty minutes."
+          },
+          {
+            "itemId": "reflexive-activity-5-6",
+            "answer": "We will sort it out ourselves - do not call anyone."
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-activity-6",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-6-1",
+            "answer": "We have not seen each other since the boat trip last October.",
+            "errorType": "ourselves -> each other: seeing is reciprocal"
+          },
+          {
+            "itemId": "reflexive-activity-6-2",
+            "answer": "The whole team had to introduce themselves to the new GM at the start of the review.",
+            "errorType": "yourself -> themselves: whole team has third-person plural reference"
+          },
+          {
+            "itemId": "reflexive-activity-6-3",
+            "answer": "I found myself completely unprepared for the rainy season.",
+            "errorType": "me -> myself: subject = object"
+          },
+          {
+            "itemId": "reflexive-activity-6-4",
+            "answer": "Did you manage to sort out the work permit by yourself in the end?",
+            "errorType": "by you -> by yourself"
+          },
+          {
+            "itemId": "reflexive-activity-6-5",
+            "answer": "They texted each other every day while she was in Bangkok.",
+            "errorType": "themselves -> each other: reciprocal action"
+          },
+          {
+            "itemId": "reflexive-activity-6-6",
+            "answer": "She prepared it all by herself.",
+            "errorType": "by her -> by herself"
+          }
+        ]
+      },
+      {
+        "taskId": "reflexive-activity-7",
+        "entries": [
+          {
+            "itemId": "reflexive-activity-7-1",
+            "answer": "I pushed myself to start my own business on the island."
+          },
+          {
+            "itemId": "reflexive-activity-7-2",
+            "answer": "He found himself managing three Airbnb properties at the same time."
+          },
+          {
+            "itemId": "reflexive-activity-7-3",
+            "answer": "They taught themselves to free-dive with no instructor."
+          },
+          {
+            "itemId": "reflexive-activity-7-4",
+            "answer": "She translated the contract herself, without using any agency."
+          },
+          {
+            "itemId": "reflexive-activity-7-5",
+            "answer": "We found ourselves cut off from the mainland during the storm."
+          }
+        ],
+        "teacherNotes": "Other correct versions are acceptable."
+      },
+      {
+        "taskId": "reflexive-activity-8",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Accept plausible sentences that demonstrate each reflexive function clearly."
+      },
+      {
+        "taskId": "reflexive-activity-9",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Monitor pronoun-subject agreement, correct function choice, and natural use of each other vs reflexive."
+      }
+    ],
+    "selfAssessment": [
+      "Name all 8 reflexive pronoun forms and match them to the correct subject.",
+      "Write a sentence using the reflexive object function when given a situation.",
+      "Write a sentence using the emphatic function when given a situation.",
+      "Write both the reflexive and emphatic functions from the same prompt.",
+      "Use by + reflexive pronoun to mean alone or without help.",
+      "Tell the difference between reflexive pronouns and each other.",
+      "Change the reflexive pronoun correctly when the subject changes.",
+      "Identify and correct use-based errors with reflexive pronouns.",
+      "Use reflexive pronouns naturally in a conversation with a partner."
+    ]
+  }
+]
