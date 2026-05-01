@@ -8,14 +8,15 @@
 import SwiftUI
 
 enum SLSColors {
-    static let brand = Color(hex: 0x2F80FF)
-    static let brandStrong = Color(hex: 0x1764F5)
-    static let brandSoft = Color(hex: 0xDBEAFE)
-    static let brandMuted = Color(hex: 0x9BB9F4)
+    static let brand = Color(hex: 0xFF5F00)
+    static let brandStrong = Color(hex: 0xF24A00)
+    static let brandSoft = Color(hex: 0xFFECD2)
+    static let brandMuted = Color(hex: 0xFFB47D)
 
-    static let purple = Color(hex: 0x9A20FF)
-    static let purpleSoft = Color(hex: 0xF0D9FF)
-    static let purpleSurface = Color(hex: 0xFBF5FF)
+    static let orange = Color(hex: 0xFF7A1A)
+    static let orangeSoft = Color(hex: 0xFFF4E6)
+    static let warmSurface = Color(hex: 0xFFF8EF)
+    static let lavenderSoft = Color(hex: 0xF2E2FF)
 
     static let background = Color(hex: 0xF7F8FA)
     static let surface = Color.white
@@ -25,7 +26,7 @@ enum SLSColors {
     static let border = Color(hex: 0xE3E5EA)
     static let separator = Color(hex: 0xE5E7EB)
     static let disabledFill = Color(hex: 0xE4E6EB)
-    static let blueSurface = Color(hex: 0xEEF6FF)
+    static let lessonSurface = Color(hex: 0xFFF7EC)
 }
 
 extension Color {

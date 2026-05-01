@@ -48,7 +48,7 @@ struct TheoryView: View {
                     formula: "Verb + -ed",
                     highlightedPart: "-ed",
                     example: "Example: work -> worked, play -> played",
-                    background: SLSColors.blueSurface
+                    background: SLSColors.lessonSurface
                 )
 
                 LessonInfoPanel(
@@ -56,7 +56,7 @@ struct TheoryView: View {
                     formula: "Special forms",
                     highlightedPart: nil,
                     example: "Example: go -> went, see -> saw",
-                    background: SLSColors.purpleSurface
+                    background: SLSColors.lessonSurface
                 )
             }
         }
@@ -100,7 +100,7 @@ private struct LessonHeroCard: View {
         .frame(maxWidth: .infinity, minHeight: 190, alignment: .leading)
         .background(
             LinearGradient(
-                colors: [SLSColors.brand.opacity(0.94), SLSColors.purple],
+                colors: [SLSColors.orange, SLSColors.brandStrong],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )

@@ -124,7 +124,7 @@ struct StartView: View {
                         .font(.system(size: 24))
                         .foregroundStyle(SLSColors.textPrimary)
                         .frame(width: 48, height: 48)
-                        .background(SLSColors.purpleSoft)
+                        .background(SLSColors.lavenderSoft)
                         .clipShape(Circle())
 
                     VStack(alignment: .leading, spacing: 4) {
