@@ -13,10 +13,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $path) {
             StartView {
-                path.append(.theory)
+                path.append(.lesson)
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
+                case .lesson:
+                    LessonView(
+                        onBack: pop,
+                        onStartPractice: { path.append(.practice) }
+                    )
                 case .theory:
                     TheoryView(
                         onBack: pop,
@@ -36,6 +41,7 @@ struct ContentView: View {
 }
 
 private enum Route: Hashable {
+    case lesson
     case theory
     case practice
 }
