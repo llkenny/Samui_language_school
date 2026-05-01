@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct PracticeView: View {
+    @EnvironmentObject private var progress: ProgressEnvironment
+    let lessonID: String?
+    let taskID: String?
     var onBack: () -> Void
     @State private var selectedAnswer: String?
 
     private let answers = ["go", "went", "goes", "going"]
+
+    init(lessonID: String? = nil, taskID: String? = nil, onBack: @escaping () -> Void) {
+        self.lessonID = lessonID
+        self.taskID = taskID
+        self.onBack = onBack
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -58,6 +67,10 @@ struct PracticeView: View {
             .padding(.bottom, 34)
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            guard let lessonID else { return }
+            progress.updatePracticeProgress(lessonID: lessonID, taskID: taskID)
+        }
     }
 
     private var practiceHeader: some View {
@@ -120,4 +133,5 @@ private struct AnswerOptionButton: View {
 
 #Preview {
     PracticeView(onBack: {})
+        .environmentObject(ProgressEnvironment())
 }
