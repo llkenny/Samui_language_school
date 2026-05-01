@@ -61,8 +61,8 @@ struct SLSCard<Content: View>: View {
 
 struct SLSPill: View {
     let title: String
-    var foreground: Color = SLSColors.purple
-    var background: Color = SLSColors.purpleSoft
+    var foreground: Color = SLSColors.brand
+    var background: Color = SLSColors.brandSoft
 
     var body: some View {
         Text(title)
