@@ -182,6 +182,38 @@ struct SamuiLanguageSchoolTests {
     }
 
     @MainActor
+    @Test func practiceEvaluatorFindsCorrectOptionForChoiceList() async throws {
+        let option = PracticeAnswerEvaluator.correctOption(
+            from: ["a", "an", "the"],
+            for: Self.taskItem(id: "item-1"),
+            answerKey: Self.answerKey(entries: [
+                Self.answerEntry(itemId: "item-1", answer: .string("The"))
+            ])
+        )
+
+        #expect(option == "the")
+    }
+
+    @MainActor
+    @Test func practiceEvaluatorFindsCorrectOptionForSortingCategories() async throws {
+        let option = PracticeAnswerEvaluator.correctOption(
+            from: ["Unless", "As long as"],
+            for: Self.taskItem(
+                id: "item-2",
+                type: .sorting,
+                number: .integer(2),
+                categories: ["Unless", "As long as"]
+            ),
+            answerKey: Self.answerKey(entries: [
+                Self.answerEntry(itemId: "category-unless", answer: .array([.number(1), .number(3)])),
+                Self.answerEntry(itemId: "category-as-long-as", answer: .array([.number(2), .number(4)]))
+            ])
+        )
+
+        #expect(option == "As long as")
+    }
+
+    @MainActor
     @Test func practiceEvaluatorMarksTeacherAssessedItemReviewed() async throws {
         let evaluation = PracticeAnswerEvaluator.evaluate(
             response: "My open response",

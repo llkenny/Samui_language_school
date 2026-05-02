@@ -92,7 +92,11 @@ struct PracticeView: View {
         lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask
     ) -> some View {
-        ScrollView(showsIndicators: false) {
+        let bottomPadding: CGFloat = currentItem(in: task).map {
+            bottomActionState(lesson: lesson, task: task, item: $0) == nil ? 24 : 130
+        } ?? 24
+
+        return ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 22) {
                 taskIntroCard(task: task)
 
@@ -102,7 +106,7 @@ struct PracticeView: View {
             }
             .padding(.horizontal, SLSSpacing.lg)
             .padding(.top, 24)
-            .padding(.bottom, 130)
+            .padding(.bottom, bottomPadding)
         }
     }
 
@@ -192,7 +196,7 @@ struct PracticeView: View {
                 }
 
                 itemHints(item)
-                responseInput(for: item, lesson: lesson)
+                responseInput(for: item, lesson: lesson, answerKey: answerKey)
 
                 if let evaluation = evaluations[item.id] {
                     feedbackCard(evaluation: evaluation)
@@ -236,13 +240,14 @@ struct PracticeView: View {
     @ViewBuilder
     private func responseInput(
         for item: LessonContentModel.TaskItem,
-        lesson: LessonContentModel
+        lesson: LessonContentModel,
+        answerKey: LessonContentModel.AnswerKeyTask?
     ) -> some View {
         switch item.type {
         case .multipleChoice, .labeling:
-            optionList(options: item.options ?? [], item: item)
+            optionList(options: item.options ?? [], item: item, answerKey: answerKey)
         case .sorting:
-            optionList(options: item.categories ?? [], item: item)
+            optionList(options: item.categories ?? [], item: item, answerKey: answerKey)
         case .speakingPrompt:
             SpeakingCompletionCard(isComplete: evaluations[item.id] != nil)
         case .paragraphWriting, .freeResponse:
@@ -255,25 +260,126 @@ struct PracticeView: View {
             if options.isEmpty {
                 textEditor(for: item, minHeight: 92)
             } else {
-                optionList(options: options, item: item)
+                optionList(options: options, item: item, answerKey: answerKey)
             }
         case .rewrite, .errorCorrection:
             textEditor(for: item, minHeight: 92)
         }
     }
 
-    private func optionList(options: [String], item: LessonContentModel.TaskItem) -> some View {
-        VStack(spacing: SLSSpacing.md) {
-            ForEach(options, id: \.self) { option in
+    private func optionList(
+        options: [String],
+        item: LessonContentModel.TaskItem,
+        answerKey: LessonContentModel.AnswerKeyTask?
+    ) -> some View {
+        let evaluation = evaluations[item.id]
+        let visibleOptions = visibleOptions(
+            from: options,
+            item: item,
+            answerKey: answerKey,
+            evaluation: evaluation
+        )
+
+        return VStack(spacing: SLSSpacing.md) {
+            ForEach(visibleOptions, id: \.self) { option in
                 AnswerOptionButton(
                     title: option,
-                    isSelected: responses[item.id] == option,
+                    state: answerOptionState(
+                        for: option,
+                        in: options,
+                        item: item,
+                        answerKey: answerKey,
+                        evaluation: evaluation
+                    ),
                     isDisabled: evaluations[item.id] != nil
                 ) {
-                    responses[item.id] = option
+                    evaluateOption(option, for: item, answerKey: answerKey)
                 }
             }
         }
+    }
+
+    private func evaluateOption(
+        _ option: String,
+        for item: LessonContentModel.TaskItem,
+        answerKey: LessonContentModel.AnswerKeyTask?
+    ) {
+        guard evaluations[item.id] == nil else {
+            return
+        }
+
+        responses[item.id] = option
+        evaluations[item.id] = PracticeAnswerEvaluator.evaluate(
+            response: option,
+            for: item,
+            answerKey: answerKey
+        )
+    }
+
+    private func visibleOptions(
+        from options: [String],
+        item: LessonContentModel.TaskItem,
+        answerKey: LessonContentModel.AnswerKeyTask?,
+        evaluation: PracticeEvaluation?
+    ) -> [String] {
+        guard let evaluation, evaluation.isGradable else {
+            return options
+        }
+
+        let selectedResponse = responses[item.id]
+        let correctOption = PracticeAnswerEvaluator.correctOption(
+            from: options,
+            for: item,
+            answerKey: answerKey
+        )
+
+        return options.filter { option in
+            optionMatches(option, selectedResponse) ||
+            (evaluation.state == .incorrect && optionMatches(option, correctOption))
+        }
+    }
+
+    private func answerOptionState(
+        for option: String,
+        in options: [String],
+        item: LessonContentModel.TaskItem,
+        answerKey: LessonContentModel.AnswerKeyTask?,
+        evaluation: PracticeEvaluation?
+    ) -> AnswerOptionState {
+        let selectedResponse = responses[item.id]
+        let isSelected = optionMatches(option, selectedResponse)
+
+        guard let evaluation, evaluation.isGradable else {
+            return isSelected ? .selected : .normal
+        }
+
+        let correctOption = PracticeAnswerEvaluator.correctOption(
+            from: options,
+            for: item,
+            answerKey: answerKey
+        )
+        let isCorrectOption = optionMatches(option, correctOption)
+
+        switch evaluation.state {
+        case .correct:
+            return isSelected ? .correct : .normal
+        case .incorrect:
+            if isSelected {
+                return .incorrect
+            }
+
+            return isCorrectOption ? .correct : .normal
+        case .reviewed:
+            return isSelected ? .selected : .normal
+        }
+    }
+
+    private func optionMatches(_ option: String, _ candidate: String?) -> Bool {
+        guard let candidate else {
+            return false
+        }
+
+        return PracticeAnswerEvaluator.normalized(option) == PracticeAnswerEvaluator.normalized(candidate)
     }
 
     private func textEditor(for item: LessonContentModel.TaskItem, minHeight: CGFloat) -> some View {
@@ -382,31 +488,36 @@ struct PracticeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    @ViewBuilder
     private func bottomActionBar(
         lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask,
         item: LessonContentModel.TaskItem
     ) -> some View {
-        let actionState = bottomActionState(lesson: lesson, task: task, item: item)
-
-        return SLSBottomActionBar(
-            title: actionState.title,
-            isEnabled: actionState.isEnabled,
-            action: { performBottomAction(actionState.action, lesson: lesson, task: task, item: item) }
-        )
+        if let actionState = bottomActionState(lesson: lesson, task: task, item: item) {
+            SLSBottomActionBar(
+                title: actionState.title,
+                isEnabled: actionState.isEnabled,
+                action: { performBottomAction(actionState.action, lesson: lesson, task: task, item: item) }
+            )
+        }
     }
 
     private func bottomActionState(
         lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask,
         item: LessonContentModel.TaskItem
-    ) -> PracticeBottomActionState {
+    ) -> PracticeBottomActionState? {
         if evaluations[item.id] != nil {
             return PracticeBottomActionState(
                 title: isLastItem(in: task) ? "Finish" : "Next",
                 isEnabled: true,
                 action: .advance
             )
+        }
+
+        if usesOptionInput(item: item, lesson: lesson) {
+            return nil
         }
 
         let answerKey = answerKey(in: lesson, for: task)
@@ -418,6 +529,25 @@ struct PracticeView: View {
             isEnabled: hasResponse,
             action: .evaluate
         )
+    }
+
+    private func usesOptionInput(
+        item: LessonContentModel.TaskItem,
+        lesson: LessonContentModel
+    ) -> Bool {
+        switch item.type {
+        case .multipleChoice, .labeling:
+            return !(item.options ?? []).isEmpty
+        case .sorting:
+            return !(item.categories ?? []).isEmpty
+        case .gapFill, .tableCompletion:
+            return !PracticeAnswerOptionBank.options(
+                from: lesson,
+                itemTypes: [.gapFill, .tableCompletion]
+            ).isEmpty
+        case .speakingPrompt, .paragraphWriting, .freeResponse, .rewrite, .errorCorrection:
+            return false
+        }
     }
 
     private func performBottomAction(
@@ -608,9 +738,71 @@ private enum PracticeBottomAction {
     case advance
 }
 
+private enum AnswerOptionState {
+    case normal
+    case selected
+    case correct
+    case incorrect
+
+    var isSelected: Bool {
+        switch self {
+        case .selected, .correct, .incorrect:
+            return true
+        case .normal:
+            return false
+        }
+    }
+
+    var strokeColor: Color {
+        switch self {
+        case .normal:
+            return SLSColors.border
+        case .selected:
+            return SLSColors.brand
+        case .correct:
+            return Color(hex: 0x18864B)
+        case .incorrect:
+            return Color(hex: 0xC2410C)
+        }
+    }
+
+    var backgroundColor: Color {
+        switch self {
+        case .normal, .selected:
+            return SLSColors.surface
+        case .correct:
+            return Color(hex: 0xEAF7EF)
+        case .incorrect:
+            return Color(hex: 0xFFF1F0)
+        }
+    }
+
+    var iconName: String? {
+        switch self {
+        case .normal:
+            return nil
+        case .selected, .correct:
+            return "checkmark.circle.fill"
+        case .incorrect:
+            return "xmark.circle.fill"
+        }
+    }
+
+    var iconColor: Color {
+        switch self {
+        case .normal, .selected:
+            return SLSColors.brand
+        case .correct:
+            return Color(hex: 0x18864B)
+        case .incorrect:
+            return Color(hex: 0xC2410C)
+        }
+    }
+}
+
 private struct AnswerOptionButton: View {
     let title: String
-    let isSelected: Bool
+    let state: AnswerOptionState
     var isDisabled = false
     let action: () -> Void
 
@@ -622,19 +814,19 @@ private struct AnswerOptionButton: View {
                     .foregroundStyle(SLSColors.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
+                if let iconName = state.iconName {
+                    Image(systemName: iconName)
                         .font(.system(size: 22, weight: .semibold))
-                        .foregroundStyle(SLSColors.brand)
+                        .foregroundStyle(state.iconColor)
                 }
             }
             .padding(.horizontal, 22)
             .padding(.vertical, 18)
             .frame(maxWidth: .infinity, minHeight: 66, alignment: .leading)
-            .background(SLSColors.surface)
+            .background(state.backgroundColor)
             .overlay {
                 RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous)
-                    .stroke(isSelected ? SLSColors.brand : SLSColors.border, lineWidth: isSelected ? 3 : 2)
+                    .stroke(state.strokeColor, lineWidth: state.isSelected ? 3 : 2)
             }
             .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
         }
