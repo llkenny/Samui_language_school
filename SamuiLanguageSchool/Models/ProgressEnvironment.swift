@@ -10,17 +10,12 @@ import Foundation
 
 @MainActor
 final class ProgressEnvironment: ObservableObject {
-    enum Destination: Equatable {
-        case theory(sectionID: String)
-        case practice(taskID: String)
-    }
-
     @Published var currentLessonID: String?
     @Published var currentTheorySectionID: String?
     @Published var currentPracticeTaskID: String?
 
     init(
-        currentLessonID: String? = "articles-discourse-part-2",
+        currentLessonID: String? = nil,
         currentTheorySectionID: String? = nil,
         currentPracticeTaskID: String? = nil
     ) {
@@ -33,7 +28,7 @@ final class ProgressEnvironment: ObservableObject {
         hasProgress(in: lesson) ? "Continue" : "Start"
     }
 
-    func startOrContinueDestination(for lesson: LessonContentModel) -> Destination? {
+    func startOrContinueStep(for lesson: LessonContentModel) -> LearningStep? {
         if currentLessonID != lesson.id {
             currentLessonID = lesson.id
             currentTheorySectionID = nil
@@ -41,25 +36,39 @@ final class ProgressEnvironment: ObservableObject {
         }
 
         if let taskID = currentPracticeTaskID {
-            return .practice(taskID: taskID)
+            return .practice(lessonID: lesson.id, taskID: taskID)
         }
 
-        guard let sectionID = currentTheorySectionID ?? lesson.firstTheorySection?.id else {
+        if let sectionID = currentTheorySectionID {
+            return .theory(lessonID: lesson.id, sectionID: sectionID)
+        }
+
+        guard let firstStep = LearningStepResolver.firstStep(in: lesson) else {
             return nil
         }
 
-        currentTheorySectionID = sectionID
-        return .theory(sectionID: sectionID)
+        updateProgress(to: firstStep)
+        return firstStep
     }
 
     func updateTheoryProgress(lessonID: String, sectionID: String) {
         currentLessonID = lessonID
         currentTheorySectionID = sectionID
+        currentPracticeTaskID = nil
     }
 
     func updatePracticeProgress(lessonID: String, taskID: String?) {
         currentLessonID = lessonID
         currentPracticeTaskID = taskID
+    }
+
+    func updateProgress(to step: LearningStep) {
+        switch step {
+        case .theory(let lessonID, let sectionID):
+            updateTheoryProgress(lessonID: lessonID, sectionID: sectionID)
+        case .practice(let lessonID, let taskID):
+            updatePracticeProgress(lessonID: lessonID, taskID: taskID)
+        }
     }
 
     private func hasProgress(in lesson: LessonContentModel) -> Bool {

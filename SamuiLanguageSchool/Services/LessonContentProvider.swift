@@ -8,6 +8,7 @@
 import Foundation
 
 protocol LessonContentProviding {
+    func lessonContents() throws -> [LessonContentModel]
     func lessonContent(id: String?) throws -> LessonContentModel
 }
 
@@ -47,7 +48,7 @@ struct LessonContentProvider: LessonContentProviding {
     }
 
     func lessonContent(id: String? = nil) throws -> LessonContentModel {
-        let lessons = try loadLessons()
+        let lessons = try lessonContents()
 
         if let id {
             guard let lesson = lessons.first(where: { $0.id == id }) else {
@@ -62,12 +63,17 @@ struct LessonContentProvider: LessonContentProviding {
         return lesson
     }
 
-    private func loadLessons() throws -> [LessonContentModel] {
+    func lessonContents() throws -> [LessonContentModel] {
         guard let url = bundle.url(forResource: resourceName, withExtension: resourceExtension) else {
             throw ProviderError.missingResource("\(resourceName).\(resourceExtension)")
         }
 
         let data = try Data(contentsOf: url)
-        return try decoder.decode([LessonContentModel].self, from: data)
+        let lessons = try decoder.decode([LessonContentModel].self, from: data)
+        guard !lessons.isEmpty else {
+            throw ProviderError.emptyLessonList
+        }
+
+        return lessons
     }
 }
