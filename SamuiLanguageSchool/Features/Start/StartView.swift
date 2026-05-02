@@ -5,10 +5,25 @@
 //  Created by Codex on 30.04.2026.
 //
 
+import Combine
 import SwiftUI
 
 struct StartView: View {
+    @EnvironmentObject private var progress: ProgressEnvironment
+    @StateObject private var viewModel: StartViewModel
+
     var onStartLearning: () -> Void
+    var onSelectLesson: (LessonContentModel) -> Void
+
+    init(
+        viewModel: @autoclosure @escaping () -> StartViewModel = StartViewModel(),
+        onStartLearning: @escaping () -> Void,
+        onSelectLesson: @escaping (LessonContentModel) -> Void
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel())
+        self.onStartLearning = onStartLearning
+        self.onSelectLesson = onSelectLesson
+    }
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -18,17 +33,23 @@ struct StartView: View {
             ScrollView(showsIndicators: false) {
                 header
 
-                VStack(spacing: SLSSpacing.lg) {
-                    currentThemeCard
-                    levelCard
-                    roleCard
+                VStack(alignment: .leading, spacing: SLSSpacing.lg) {
+                    if viewModel.lessons.isEmpty {
+                        errorContent
+                    } else {
+                        lessonCatalog
+                    }
                 }
                 .padding(.horizontal, SLSSpacing.lg)
                 .padding(.top, SLSSpacing.xl)
                 .padding(.bottom, 124)
             }
 
-            SLSBottomActionBar(title: "Start Learning", action: onStartLearning)
+            SLSBottomActionBar(
+                title: progress.currentLessonID == nil ? "Start Learning" : "Continue Learning",
+                isEnabled: !viewModel.lessons.isEmpty,
+                action: onStartLearning
+            )
         }
     }
 
@@ -54,9 +75,10 @@ struct StartView: View {
                 .foregroundStyle(.white)
                 .padding(.bottom, 14)
 
-            Text("Continue your learning journey")
+            Text("Choose a lesson or continue your learning journey")
                 .font(SLSTypography.heroSubtitle)
                 .foregroundStyle(.white.opacity(0.92))
+                .lineSpacing(5)
                 .padding(.bottom, 45)
         }
         .padding(.horizontal, SLSSpacing.lg)
@@ -65,80 +87,147 @@ struct StartView: View {
         .ignoresSafeArea(edges: .top)
     }
 
-    private var currentThemeCard: some View {
-        SLSCard {
-            VStack(alignment: .leading, spacing: 26) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Current Theme")
-                        .font(SLSTypography.cardTitle)
-                        .foregroundStyle(SLSColors.textPrimary)
-                    Spacer()
-                    SLSPill(title: "Active", foreground: SLSColors.brand, background: SLSColors.brandSoft)
-                }
+    private var lessonCatalog: some View {
+        VStack(alignment: .leading, spacing: SLSSpacing.md) {
+            Text("Lessons")
+                .font(SLSTypography.sectionTitle)
+                .foregroundStyle(SLSColors.textPrimary)
 
-                Text("Past Simple Tense")
+            ForEach(viewModel.lessons) { lesson in
+                LessonCatalogCard(
+                    lesson: lesson,
+                    isCurrent: progress.currentLessonID == lesson.id,
+                    action: { onSelectLesson(lesson) }
+                )
+            }
+        }
+    }
+
+    private var errorContent: some View {
+        SLSCard {
+            VStack(alignment: .leading, spacing: SLSSpacing.md) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.system(size: 30, weight: .semibold))
+                    .foregroundStyle(SLSColors.brand)
+
+                Text("Lessons unavailable")
+                    .font(SLSTypography.cardTitle)
+                    .foregroundStyle(SLSColors.textPrimary)
+
+                Text(viewModel.errorMessage ?? "Could not load lessons.")
                     .font(SLSTypography.body)
-                    .foregroundStyle(Color(hex: 0x344054))
-
-                HStack(spacing: SLSSpacing.sm) {
-                    SLSProgressBar(value: 0.65)
-                    Text("65%")
-                        .font(SLSTypography.body)
-                        .foregroundStyle(SLSColors.textSecondary)
-                }
-            }
-        }
-    }
-
-    private var levelCard: some View {
-        SLSCard {
-            VStack(alignment: .leading, spacing: 20) {
-                Text("Your Level")
-                    .font(SLSTypography.caption)
                     .foregroundStyle(SLSColors.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
 
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Intermediate")
-                        .font(.system(size: 28, weight: .regular))
-                        .foregroundStyle(SLSColors.textPrimary)
-                    Spacer()
-                    Text("B1")
-                        .font(.system(size: 22, weight: .regular))
-                        .foregroundStyle(SLSColors.textTertiary)
+                Button("Retry") {
+                    viewModel.load()
                 }
-            }
-        }
-    }
-
-    private var roleCard: some View {
-        SLSCard {
-            VStack(alignment: .leading, spacing: SLSSpacing.lg) {
-                Text("Your Role")
-                    .font(SLSTypography.caption)
-                    .foregroundStyle(SLSColors.textSecondary)
-
-                HStack(spacing: SLSSpacing.md) {
-                    Image(systemName: "graduationcap.fill")
-                        .font(.system(size: 24))
-                        .foregroundStyle(SLSColors.textPrimary)
-                        .frame(width: 48, height: 48)
-                        .background(SLSColors.lavenderSoft)
-                        .clipShape(Circle())
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Student")
-                            .font(SLSTypography.bodyStrong)
-                            .foregroundStyle(SLSColors.textPrimary)
-                        Text("General English Course")
-                            .font(.system(size: 17, weight: .regular))
-                            .foregroundStyle(SLSColors.textSecondary)
-                    }
-                }
+                .font(SLSTypography.bodyStrong)
+                .foregroundStyle(SLSColors.brand)
             }
         }
     }
 }
 
+@MainActor
+final class StartViewModel: ObservableObject {
+    @Published private(set) var lessons: [LessonContentModel] = []
+    @Published private(set) var errorMessage: String?
+
+    private let provider: any LessonContentProviding
+
+    init(provider: any LessonContentProviding = LessonContentProvider()) {
+        self.provider = provider
+        load()
+    }
+
+    func load() {
+        do {
+            lessons = try provider.lessonContents()
+            errorMessage = nil
+        } catch {
+            lessons = []
+            errorMessage = error.localizedDescription
+        }
+    }
+}
+
+private struct LessonCatalogCard: View {
+    let lesson: LessonContentModel
+    let isCurrent: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            SLSCard {
+                VStack(alignment: .leading, spacing: 18) {
+                    HStack(alignment: .top, spacing: SLSSpacing.sm) {
+                        SLSPill(
+                            title: lesson.level.label,
+                            foreground: isCurrent ? .white : SLSColors.brand,
+                            background: isCurrent ? SLSColors.brand : SLSColors.brandSoft
+                        )
+
+                        Spacer(minLength: SLSSpacing.sm)
+
+                        if isCurrent {
+                            SLSPill(title: "Current")
+                        }
+                    }
+
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(lesson.title)
+                            .font(SLSTypography.cardTitle)
+                            .foregroundStyle(SLSColors.textPrimary)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text(lesson.screenSummary.shortDescription)
+                            .font(SLSTypography.body)
+                            .foregroundStyle(SLSColors.textSecondary)
+                            .lineSpacing(4)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    HStack(spacing: SLSSpacing.sm) {
+                        CatalogMetric(iconName: "clock", text: lesson.screenSummary.estimatedReadTimeLabel)
+
+                        if let progressLabel = lesson.screenSummary.progressLabel {
+                            CatalogMetric(iconName: "checklist", text: progressLabel)
+                        }
+                    }
+                }
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(lesson.title)
+        .accessibilityIdentifier("lesson-\(lesson.id)")
+    }
+}
+
+private struct CatalogMetric: View {
+    let iconName: String
+    let text: String
+
+    var body: some View {
+        HStack(spacing: 6) {
+            Image(systemName: iconName)
+                .font(.system(size: 14, weight: .semibold))
+
+            Text(text)
+                .font(.system(size: 14, weight: .semibold))
+                .lineLimit(2)
+                .minimumScaleFactor(0.86)
+        }
+        .foregroundStyle(SLSColors.textSecondary)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(SLSColors.lessonSurface)
+        .clipShape(RoundedRectangle(cornerRadius: SLSRadius.sm, style: .continuous))
+    }
+}
+
 #Preview {
-    StartView {}
+    StartView(onStartLearning: {}, onSelectLesson: { _ in })
+        .environmentObject(ProgressEnvironment())
 }

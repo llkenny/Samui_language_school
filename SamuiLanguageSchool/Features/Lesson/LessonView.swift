@@ -12,16 +12,19 @@ struct LessonView: View {
     @StateObject private var viewModel: LessonViewModel
 
     var onBack: () -> Void
-    var onStartOrContinue: (LessonContentModel, ProgressEnvironment.Destination) -> Void
+    var onStartOrContinue: (LearningStep) -> Void
+    var onSelectStep: (LearningStep) -> Void
 
     init(
         viewModel: @autoclosure @escaping () -> LessonViewModel = LessonViewModel(),
         onBack: @escaping () -> Void,
-        onStartOrContinue: @escaping (LessonContentModel, ProgressEnvironment.Destination) -> Void
+        onStartOrContinue: @escaping (LearningStep) -> Void,
+        onSelectStep: @escaping (LearningStep) -> Void
     ) {
         _viewModel = StateObject(wrappedValue: viewModel())
         self.onBack = onBack
         self.onStartOrContinue = onStartOrContinue
+        self.onSelectStep = onSelectStep
     }
 
     var body: some View {
@@ -54,11 +57,11 @@ struct LessonView: View {
 
     private func startOrContinue() {
         guard let lesson = viewModel.lesson,
-              let destination = progress.startOrContinueDestination(for: lesson) else {
+              let step = progress.startOrContinueStep(for: lesson) else {
             return
         }
 
-        onStartOrContinue(lesson, destination)
+        onStartOrContinue(step)
     }
 
     @ViewBuilder
@@ -75,6 +78,11 @@ struct LessonView: View {
             VStack(spacing: 22) {
                 LessonSummaryHero(summary: lesson.screenSummary)
                 LearningPathSection(steps: lesson.learningPath)
+                LessonStepsSection(
+                    lesson: lesson,
+                    steps: LearningStepResolver.steps(for: lesson),
+                    onSelectStep: onSelectStep
+                )
                 ObjectivesSection(objectives: lesson.objectives)
                 DifficultyGuideSection(
                     entries: lesson.difficultyGuide,
@@ -236,6 +244,142 @@ private struct LearningPathRow: View {
     }
 }
 
+private struct LessonStepsSection: View {
+    let lesson: LessonContentModel
+    let steps: [LearningStep]
+    let onSelectStep: (LearningStep) -> Void
+
+    var body: some View {
+        SLSCard(padding: 24) {
+            VStack(alignment: .leading, spacing: 18) {
+                SectionHeader(title: "Lesson Steps", iconName: "list.bullet.rectangle.fill")
+
+                VStack(spacing: 12) {
+                    ForEach(Array(steps.enumerated()), id: \.element) { index, step in
+                        Button {
+                            onSelectStep(step)
+                        } label: {
+                            LessonStepRow(
+                                number: index + 1,
+                                title: title(for: step),
+                                subtitle: subtitle(for: step),
+                                iconName: iconName(for: step)
+                            )
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityIdentifier(accessibilityIdentifier(for: step))
+                    }
+                }
+            }
+        }
+    }
+
+    private func title(for step: LearningStep) -> String {
+        switch step {
+        case .theory(_, let sectionID):
+            return lesson.theorySections.first { $0.id == sectionID }?.title ?? "Theory"
+        case .practice(_, let taskID):
+            return lesson.practiceTasks.first { $0.id == taskID }?.title ?? "Practice"
+        }
+    }
+
+    private func subtitle(for step: LearningStep) -> String {
+        switch step {
+        case .theory(_, let sectionID):
+            guard let section = lesson.theorySections.first(where: { $0.id == sectionID }) else {
+                return "Theory"
+            }
+
+            return "Theory section \(section.order)"
+        case .practice(_, let taskID):
+            guard let task = lesson.practiceTasks.first(where: { $0.id == taskID }) else {
+                return "Practice task"
+            }
+
+            var parts = [practiceKindTitle(task.kind)]
+            if let difficulty = task.difficulty, !difficulty.isEmpty {
+                parts.append(difficulty)
+            }
+            parts.append("\(task.items.count) items")
+            return parts.joined(separator: " | ")
+        }
+    }
+
+    private func iconName(for step: LearningStep) -> String {
+        switch step {
+        case .theory:
+            return "doc.text.fill"
+        case .practice:
+            return "square.and.pencil"
+        }
+    }
+
+    private func practiceKindTitle(_ kind: LessonContentModel.PracticeTaskKind) -> String {
+        switch kind {
+        case .tryIt:
+            return "Try It"
+        case .activity:
+            return "Activity"
+        case .warmUp:
+            return "Warm Up"
+        }
+    }
+
+    private func accessibilityIdentifier(for step: LearningStep) -> String {
+        switch step {
+        case .theory(let lessonID, let sectionID):
+            return "step-\(lessonID)-theory-\(sectionID)"
+        case .practice(let lessonID, let taskID):
+            return "step-\(lessonID)-practice-\(taskID)"
+        }
+    }
+}
+
+private struct LessonStepRow: View {
+    let number: Int
+    let title: String
+    let subtitle: String
+    let iconName: String
+
+    var body: some View {
+        HStack(alignment: .center, spacing: SLSSpacing.md) {
+            Text("\(number)")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 34, height: 34)
+                .background(SLSColors.brand)
+                .clipShape(Circle())
+
+            Image(systemName: iconName)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(SLSColors.brand)
+                .frame(width: 32)
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .font(SLSTypography.bodyStrong)
+                    .foregroundStyle(SLSColors.textPrimary)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Text(subtitle)
+                    .font(.system(size: 15, weight: .regular))
+                    .foregroundStyle(SLSColors.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer(minLength: SLSSpacing.sm)
+
+            Image(systemName: "chevron.right")
+                .font(.system(size: 15, weight: .bold))
+                .foregroundStyle(SLSColors.textTertiary)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(SLSColors.lessonSurface)
+        .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
+    }
+}
+
 private struct ObjectivesSection: View {
     let objectives: [String]
 
@@ -386,6 +530,6 @@ private struct SectionHeader: View {
 }
 
 #Preview {
-    LessonView(onBack: {}, onStartOrContinue: { _, _ in })
+    LessonView(onBack: {}, onStartOrContinue: { _ in }, onSelectStep: { _ in })
         .environmentObject(ProgressEnvironment())
 }

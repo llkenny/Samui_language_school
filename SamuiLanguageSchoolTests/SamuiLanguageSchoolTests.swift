@@ -10,6 +10,70 @@ import Testing
 
 struct SamuiLanguageSchoolTests {
 
+    @MainActor
+    @Test func lessonContentProviderLoadsAllBundledLessons() async throws {
+        let lessons = try LessonContentProvider().lessonContents()
+
+        #expect(lessons.map(\.id) == [
+            "articles-discourse-part-2",
+            "unless-as-long-as",
+            "reflexive-pronouns"
+        ])
+    }
+
+    @MainActor
+    @Test func learningStepResolverIncludesEveryTheoryAndPracticeOnce() async throws {
+        let lessons = try LessonContentProvider().lessonContents()
+
+        for lesson in lessons {
+            let steps = LearningStepResolver.steps(for: lesson)
+            let theorySectionIDs = steps.compactMap { step -> String? in
+                guard case .theory(_, let sectionID) = step else {
+                    return nil
+                }
+                return sectionID
+            }
+            let practiceTaskIDs = steps.compactMap { step -> String? in
+                guard case .practice(_, let taskID) = step else {
+                    return nil
+                }
+                return taskID
+            }
+
+            #expect(theorySectionIDs == lesson.orderedTheorySections.map(\.id))
+            #expect(Set(practiceTaskIDs) == Set(lesson.practiceTasks.map(\.id)))
+            #expect(practiceTaskIDs.count == lesson.practiceTasks.count)
+            #expect(steps.count == lesson.theorySections.count + lesson.practiceTasks.count)
+        }
+    }
+
+    @MainActor
+    @Test func learningStepResolverAdvancesThroughTryItTheoryAndNextLesson() async throws {
+        let lessons = try LessonContentProvider().lessonContents()
+        let articles = try #require(lessons.first { $0.id == "articles-discourse-part-2" })
+
+        #expect(
+            LearningStepResolver.nextStep(
+                after: .theory(lessonID: articles.id, sectionID: "article-tracking-system"),
+                in: lessons
+            ) == .practice(lessonID: articles.id, taskID: "articles-try-it-a")
+        )
+
+        #expect(
+            LearningStepResolver.nextStep(
+                after: .practice(lessonID: articles.id, taskID: "articles-try-it-a"),
+                in: lessons
+            ) == .theory(lessonID: articles.id, sectionID: "abstract-nouns-and-articles")
+        )
+
+        #expect(
+            LearningStepResolver.nextStep(
+                after: .practice(lessonID: articles.id, taskID: "articles-activity-7"),
+                in: lessons
+            ) == .theory(lessonID: "unless-as-long-as", sectionID: "unless")
+        )
+    }
+
     @Test func difficultyGuideTitleListUsesActivityNumbers() async throws {
         let titles = [
             "Activity 2 - Articles across a paragraph",

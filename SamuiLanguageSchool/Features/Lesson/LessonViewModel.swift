@@ -18,7 +18,7 @@ final class LessonViewModel: ObservableObject {
 
     init(
         provider: any LessonContentProviding = LessonContentProvider(),
-        lessonID: String? = "articles-discourse-part-2"
+        lessonID: String? = nil
     ) {
         self.provider = provider
         self.lessonID = lessonID

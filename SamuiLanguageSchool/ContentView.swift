@@ -10,19 +10,26 @@ import SwiftUI
 struct ContentView: View {
     @State private var path: [Route] = []
     @StateObject private var progress = ProgressEnvironment()
+    private let contentProvider = LessonContentProvider()
 
     var body: some View {
         NavigationStack(path: $path) {
-            StartView {
-                path.append(.lesson(progress.currentLessonID))
-            }
+            StartView(
+                onStartLearning: {
+                    path.append(.lesson(progress.currentLessonID))
+                },
+                onSelectLesson: { lesson in
+                    path.append(.lesson(lesson.id))
+                }
+            )
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .lesson(let lessonID):
                     LessonView(
                         viewModel: LessonViewModel(lessonID: lessonID),
                         onBack: pop,
-                        onStartOrContinue: navigateToProgressDestination
+                        onStartOrContinue: navigateToStep,
+                        onSelectStep: navigateToSelectedStep
                     )
                 case .theory(let lessonID, let sectionID):
                     TheoryView(
@@ -34,7 +41,12 @@ struct ContentView: View {
                         }
                     )
                 case .practice(let lessonID, let taskID):
-                    PracticeView(lessonID: lessonID, taskID: taskID, onBack: pop)
+                    PracticeView(
+                        lessonID: lessonID,
+                        taskID: taskID,
+                        onBack: pop,
+                        onComplete: navigateAfterPracticeCompletion
+                    )
                 }
             }
         }
@@ -46,12 +58,37 @@ struct ContentView: View {
         path.removeLast()
     }
 
-    private func navigateToProgressDestination(lesson: LessonContentModel, destination: ProgressEnvironment.Destination) {
-        switch destination {
-        case .theory(let sectionID):
-            path.append(.theory(lessonID: lesson.id, sectionID: sectionID))
-        case .practice(let taskID):
-            path.append(.practice(lessonID: lesson.id, taskID: taskID))
+    private func navigateToSelectedStep(_ step: LearningStep) {
+        progress.updateProgress(to: step)
+        navigateToStep(step)
+    }
+
+    private func navigateToStep(_ step: LearningStep) {
+        switch step {
+        case .theory(let lessonID, let sectionID):
+            path.append(.theory(lessonID: lessonID, sectionID: sectionID))
+        case .practice(let lessonID, let taskID):
+            path.append(.practice(lessonID: lessonID, taskID: taskID))
+        }
+    }
+
+    private func navigateAfterPracticeCompletion(lesson: LessonContentModel, task: LessonContentModel.PracticeTask) {
+        do {
+            let lessons = try contentProvider.lessonContents()
+            let completedStep = LearningStep.practice(lessonID: lesson.id, taskID: task.id)
+
+            guard let nextStep = LearningStepResolver.nextStep(after: completedStep, in: lessons) else {
+                path.removeAll()
+                return
+            }
+
+            progress.updateProgress(to: nextStep)
+            if !path.isEmpty {
+                path.removeLast()
+            }
+            navigateToStep(nextStep)
+        } catch {
+            path.removeAll()
         }
     }
 }

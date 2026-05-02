@@ -14,6 +14,7 @@ struct PracticeView: View {
     private let requestedTaskID: String?
     private let providedLessonID: String?
     var onBack: () -> Void
+    var onComplete: (LessonContentModel, LessonContentModel.PracticeTask) -> Void
 
     @State private var activeTaskID: String?
     @State private var currentItemIndex = 0
@@ -21,11 +22,17 @@ struct PracticeView: View {
     @State private var evaluations: [String: PracticeEvaluation] = [:]
     @State private var isComplete = false
 
-    init(lessonID: String? = nil, taskID: String? = nil, onBack: @escaping () -> Void) {
+    init(
+        lessonID: String? = nil,
+        taskID: String? = nil,
+        onBack: @escaping () -> Void,
+        onComplete: @escaping (LessonContentModel, LessonContentModel.PracticeTask) -> Void = { _, _ in }
+    ) {
         _viewModel = StateObject(wrappedValue: LessonViewModel(lessonID: lessonID))
         self.providedLessonID = lessonID
         self.requestedTaskID = taskID
         self.onBack = onBack
+        self.onComplete = onComplete
     }
 
     var body: some View {
@@ -38,7 +45,7 @@ struct PracticeView: View {
                     practiceHeader(task: task)
 
                     if isComplete {
-                        completionContent(task: task)
+                        completionContent(lesson: lesson, task: task)
                     } else {
                         practiceContent(lesson: lesson, task: task)
                     }
@@ -322,7 +329,10 @@ struct PracticeView: View {
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
     }
 
-    private func completionContent(task: LessonContentModel.PracticeTask) -> some View {
+    private func completionContent(
+        lesson: LessonContentModel,
+        task: LessonContentModel.PracticeTask
+    ) -> some View {
         VStack(spacing: 22) {
             Spacer(minLength: 40)
 
@@ -341,7 +351,9 @@ struct PracticeView: View {
                         .lineSpacing(5)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    SLSPrimaryButton(title: "Done", action: onBack)
+                    SLSPrimaryButton(title: "Continue") {
+                        onComplete(lesson, task)
+                    }
                 }
             }
             .padding(.horizontal, SLSSpacing.lg)
