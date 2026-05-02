@@ -80,8 +80,7 @@
         "themeTitle",
         "levelLabel",
         "lessonBadge",
-        "shortDescription",
-        "estimatedReadTimeLabel"
+        "shortDescription"
       ],
       "properties": {
         "themeTitle": {
@@ -527,7 +526,6 @@
         "title",
         "level",
         "subtitle",
-        "estimatedMinutes",
         "tags",
         "source",
         "screenSummary",

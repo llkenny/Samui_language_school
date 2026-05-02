@@ -691,10 +691,6 @@ struct PracticeView: View {
             parts.append(difficulty)
         }
 
-        if let estimatedMinutes = task.estimatedMinutes {
-            parts.append("\(estimatedMinutes.min)-\(estimatedMinutes.max) min")
-        }
-
         return parts.isEmpty ? nil : parts.joined(separator: " | ")
     }
 

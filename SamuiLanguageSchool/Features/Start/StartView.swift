@@ -228,10 +228,8 @@ private struct LessonCatalogCard: View {
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
-                    HStack(spacing: SLSSpacing.sm) {
-                        CatalogMetric(iconName: "clock", text: lesson.screenSummary.estimatedReadTimeLabel)
-
-                        if let progressLabel = lesson.screenSummary.progressLabel {
+                    if let progressLabel = lesson.screenSummary.progressLabel {
+                        HStack(spacing: SLSSpacing.sm) {
                             CatalogMetric(iconName: "checklist", text: progressLabel)
                         }
                     }
