@@ -15,22 +15,20 @@ struct StartView: View {
             SLSColors.background
                 .ignoresSafeArea()
 
-            VStack(spacing: 0) {
+            ScrollView(showsIndicators: false) {
                 header
 
                 VStack(spacing: SLSSpacing.lg) {
                     currentThemeCard
                     levelCard
                     roleCard
-                    Spacer(minLength: 90)
                 }
                 .padding(.horizontal, SLSSpacing.lg)
                 .padding(.top, SLSSpacing.xl)
+                .padding(.bottom, 124)
             }
 
-            SLSPrimaryButton(title: "Start Learning", action: onStartLearning)
-                .padding(.horizontal, SLSSpacing.lg)
-                .padding(.bottom, 34)
+            SLSBottomActionBar(title: "Start Learning", action: onStartLearning)
         }
     }
 
