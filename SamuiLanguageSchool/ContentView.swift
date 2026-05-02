@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var path: [Route] = []
     @StateObject private var progress = ProgressEnvironment()
     private let contentProvider = LessonContentProvider()
@@ -62,6 +64,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(progress)
+        .onAppear(perform: configureProgress)
     }
 
     private func pop() {
@@ -96,6 +99,14 @@ struct ContentView: View {
         }
     }
 
+    private func configureProgress() {
+        do {
+            progress.configure(modelContext: modelContext, lessons: try contentProvider.lessonContents())
+        } catch {
+            progress.configure(modelContext: modelContext)
+        }
+    }
+
     private func navigateAfterPracticeCompletion(
         lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask,
@@ -106,10 +117,12 @@ struct ContentView: View {
             let completedStep = LearningStep.practice(lessonID: lesson.id, taskID: task.id)
 
             guard let nextStep = LearningStepResolver.nextStep(after: completedStep, in: lessons) else {
+                progress.savePracticeResult(lessonID: lesson.id, taskID: task.id, result: result)
                 path.removeAll()
                 return
             }
 
+            progress.savePracticeResult(lessonID: lesson.id, taskID: task.id, result: result)
             progress.updateProgress(to: nextStep)
             if !path.isEmpty {
                 path.removeLast()

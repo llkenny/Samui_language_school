@@ -12,7 +12,10 @@ import SwiftData
 struct SamuiLanguageSchoolApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            LearningProgressState.self,
+            CompletedTheorySectionRecord.self,
+            PracticeTaskProgressRecord.self,
+            PracticeItemProgressRecord.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

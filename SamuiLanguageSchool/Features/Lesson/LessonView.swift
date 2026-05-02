@@ -244,6 +244,8 @@ private struct LearningPathRow: View {
 }
 
 private struct LessonStepsSection: View {
+    @EnvironmentObject private var progress: ProgressEnvironment
+
     let lesson: LessonContentModel
     let steps: [LearningStep]
     let onSelectStep: (LearningStep) -> Void
@@ -262,7 +264,8 @@ private struct LessonStepsSection: View {
                                 number: index + 1,
                                 title: title(for: step),
                                 subtitle: subtitle(for: step),
-                                iconName: iconName(for: step)
+                                iconName: iconName(for: step),
+                                status: status(for: step)
                             )
                         }
                         .buttonStyle(.plain)
@@ -332,6 +335,18 @@ private struct LessonStepsSection: View {
             return "step-\(lessonID)-practice-\(taskID)"
         }
     }
+
+    private func status(for step: LearningStep) -> LessonStepStatus {
+        if progress.isCurrentStep(step) {
+            return .current
+        }
+
+        if progress.isStepCompleted(step) {
+            return .complete
+        }
+
+        return .notStarted
+    }
 }
 
 private struct LessonStepRow: View {
@@ -339,19 +354,29 @@ private struct LessonStepRow: View {
     let title: String
     let subtitle: String
     let iconName: String
+    let status: LessonStepStatus
 
     var body: some View {
         HStack(alignment: .center, spacing: SLSSpacing.sm) {
-            Text("\(number)")
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(.white)
-                .frame(width: 30, height: 30)
-                .background(SLSColors.brand)
-                .clipShape(Circle())
+            ZStack {
+                Circle()
+                    .fill(status.numberBackgroundColor)
+                    .frame(width: 30, height: 30)
+
+                if let statusIconName = status.iconName {
+                    Image(systemName: statusIconName)
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(status.numberForegroundColor)
+                } else {
+                    Text("\(number)")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(status.numberForegroundColor)
+                }
+            }
 
             Image(systemName: iconName)
                 .font(.system(size: 16, weight: .semibold))
-                .foregroundStyle(SLSColors.brand)
+                .foregroundStyle(status.accentColor)
                 .frame(width: 26)
 
             VStack(alignment: .leading, spacing: 5) {
@@ -370,12 +395,88 @@ private struct LessonStepRow: View {
 
             Image(systemName: "chevron.right")
                 .font(.system(size: 15, weight: .bold))
-                .foregroundStyle(SLSColors.textTertiary)
+                .foregroundStyle(status.accentColor.opacity(status == .notStarted ? 0.45 : 1))
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(SLSColors.lessonSurface)
+        .background(status.backgroundColor)
+        .overlay {
+            RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous)
+                .stroke(status.borderColor, lineWidth: status == .current ? 2 : 1)
+        }
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
+    }
+}
+
+private enum LessonStepStatus: Equatable {
+    case notStarted
+    case current
+    case complete
+
+    var iconName: String? {
+        switch self {
+        case .notStarted:
+            return nil
+        case .current:
+            return "play.fill"
+        case .complete:
+            return "checkmark"
+        }
+    }
+
+    var accentColor: Color {
+        switch self {
+        case .notStarted:
+            return SLSColors.brand
+        case .current:
+            return SLSColors.brandStrong
+        case .complete:
+            return Color(hex: 0x18864B)
+        }
+    }
+
+    var numberBackgroundColor: Color {
+        switch self {
+        case .notStarted:
+            return SLSColors.brand
+        case .current:
+            return SLSColors.brandSoft
+        case .complete:
+            return Color(hex: 0xEAF7EF)
+        }
+    }
+
+    var numberForegroundColor: Color {
+        switch self {
+        case .notStarted:
+            return .white
+        case .current:
+            return SLSColors.brandStrong
+        case .complete:
+            return Color(hex: 0x18864B)
+        }
+    }
+
+    var backgroundColor: Color {
+        switch self {
+        case .notStarted:
+            return SLSColors.lessonSurface
+        case .current:
+            return SLSColors.brandSoft.opacity(0.7)
+        case .complete:
+            return Color(hex: 0xEAF7EF).opacity(0.72)
+        }
+    }
+
+    var borderColor: Color {
+        switch self {
+        case .notStarted:
+            return .clear
+        case .current:
+            return SLSColors.brand
+        case .complete:
+            return Color(hex: 0x18864B).opacity(0.28)
+        }
     }
 }
 
