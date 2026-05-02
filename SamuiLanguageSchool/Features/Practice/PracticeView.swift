@@ -64,6 +64,9 @@ struct PracticeView: View {
         }
         .navigationBarBackButtonHidden()
         .onAppear(perform: syncProgress)
+        .onChange(of: selectedTaskID) { _, _ in
+            syncProgress()
+        }
     }
 
     private func practiceHeader(task: LessonContentModel.PracticeTask) -> some View {
@@ -575,6 +578,14 @@ struct PracticeView: View {
 
     private func selectedTask(in lesson: LessonContentModel) -> LessonContentModel.PracticeTask? {
         PracticeTaskResolver.selectedTask(in: lesson, requestedTaskID: requestedTaskID)
+    }
+
+    private var selectedTaskID: String? {
+        guard let lesson = viewModel.lesson else {
+            return nil
+        }
+
+        return selectedTask(in: lesson)?.id
     }
 
     private func answerKey(
