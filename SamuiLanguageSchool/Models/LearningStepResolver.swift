@@ -66,4 +66,30 @@ enum LearningStepResolver {
 
         return allSteps[nextIndex]
     }
+
+    static func relevantTheorySection(
+        forPracticeTaskID taskID: String,
+        in lesson: LessonContentModel
+    ) -> LessonContentModel.TheorySection? {
+        if let linkedSection = lesson.orderedTheorySections.first(where: { $0.tryItTaskIds.contains(taskID) }) {
+            return linkedSection
+        }
+
+        var latestTheorySectionID: String?
+        for step in steps(for: lesson) {
+            switch step {
+            case .theory(_, let sectionID):
+                latestTheorySectionID = sectionID
+            case .practice(_, let practiceTaskID) where practiceTaskID == taskID:
+                if let latestTheorySectionID {
+                    return lesson.theorySections.first { $0.id == latestTheorySectionID }
+                }
+                return lesson.firstTheorySection
+            case .practice:
+                continue
+            }
+        }
+
+        return lesson.firstTheorySection
+    }
 }

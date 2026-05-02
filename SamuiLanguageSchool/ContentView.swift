@@ -18,6 +18,7 @@ struct ContentView: View {
                 onStartLearning: {
                     path.append(.lesson(progress.currentLessonID))
                 },
+                onStartShortRepeat: startShortRepeat,
                 onSelectLesson: { lesson in
                     path.append(.lesson(lesson.id))
                 }
@@ -48,6 +49,15 @@ struct ContentView: View {
                         onComplete: navigateAfterPracticeCompletion
                     )
                     .id(Route.practice(lessonID: lessonID, taskID: taskID))
+                case .shortRepeat(let selection):
+                    PracticeView(
+                        lessonID: selection.lessonID,
+                        taskID: selection.taskID,
+                        mode: .shortRepeat(itemID: selection.itemID),
+                        onBack: pop,
+                        onComplete: navigateAfterShortRepeatCompletion
+                    )
+                    .id(Route.shortRepeat(selection))
                 }
             }
         }
@@ -73,7 +83,24 @@ struct ContentView: View {
         }
     }
 
-    private func navigateAfterPracticeCompletion(lesson: LessonContentModel, task: LessonContentModel.PracticeTask) {
+    private func startShortRepeat() {
+        do {
+            let lessons = try contentProvider.lessonContents()
+            guard let selection = ShortRepeatPracticeSelector.randomSelection(in: lessons) else {
+                return
+            }
+
+            path.append(.shortRepeat(selection))
+        } catch {
+            path.removeAll()
+        }
+    }
+
+    private func navigateAfterPracticeCompletion(
+        lesson: LessonContentModel,
+        task: LessonContentModel.PracticeTask,
+        result: PracticeSessionResult
+    ) {
         do {
             let lessons = try contentProvider.lessonContents()
             let completedStep = LearningStep.practice(lessonID: lesson.id, taskID: task.id)
@@ -92,12 +119,31 @@ struct ContentView: View {
             path.removeAll()
         }
     }
+
+    private func navigateAfterShortRepeatCompletion(
+        lesson: LessonContentModel,
+        task: LessonContentModel.PracticeTask,
+        result: PracticeSessionResult
+    ) {
+        if !path.isEmpty {
+            path.removeLast()
+        }
+
+        guard result.hasErrors,
+              let section = LearningStepResolver.relevantTheorySection(forPracticeTaskID: task.id, in: lesson) else {
+            path.removeAll()
+            return
+        }
+
+        path.append(.theory(lessonID: lesson.id, sectionID: section.id))
+    }
 }
 
 private enum Route: Hashable {
     case lesson(String?)
     case theory(lessonID: String, sectionID: String)
     case practice(lessonID: String, taskID: String?)
+    case shortRepeat(ShortRepeatPracticeSelection)
 }
 
 #Preview {

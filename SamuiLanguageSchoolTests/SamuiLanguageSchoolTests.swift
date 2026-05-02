@@ -74,6 +74,34 @@ struct SamuiLanguageSchoolTests {
         )
     }
 
+    @MainActor
+    @Test func learningStepResolverFindsRelevantTheoryForPracticeTask() async throws {
+        let lesson = Self.lesson(
+            tasks: [
+                Self.practiceTask(id: "try-it-task"),
+                Self.practiceTask(id: "activity-task")
+            ],
+            theorySections: [
+                Self.theorySection(id: "first-section", order: 1),
+                Self.theorySection(id: "linked-section", order: 2, tryItTaskIds: ["try-it-task"])
+            ]
+        )
+
+        #expect(
+            LearningStepResolver.relevantTheorySection(
+                forPracticeTaskID: "try-it-task",
+                in: lesson
+            )?.id == "linked-section"
+        )
+
+        #expect(
+            LearningStepResolver.relevantTheorySection(
+                forPracticeTaskID: "activity-task",
+                in: lesson
+            )?.id == "linked-section"
+        )
+    }
+
     @Test func difficultyGuideTitleListUsesActivityNumbers() async throws {
         let titles = [
             "Activity 2 - Articles across a paragraph",
@@ -315,6 +343,45 @@ struct SamuiLanguageSchoolTests {
     }
 
     @MainActor
+    @Test func shortRepeatPracticeSelectorUsesOnlyAutoGradableItems() async throws {
+        let lesson = Self.lesson(
+            tasks: [
+                Self.practiceTask(
+                    id: "gradable-task",
+                    items: [
+                        Self.taskItem(id: "item-1", type: .gapFill),
+                        Self.taskItem(id: "item-2", type: .freeResponse)
+                    ]
+                ),
+                Self.practiceTask(
+                    id: "unkeyed-task",
+                    items: [
+                        Self.taskItem(id: "item-3", type: .gapFill)
+                    ]
+                )
+            ],
+            answerKey: [
+                Self.answerKey(
+                    taskId: "gradable-task",
+                    entries: [
+                        Self.answerEntry(itemId: "item-1", answer: .string("the"))
+                    ]
+                )
+            ]
+        )
+
+        #expect(
+            ShortRepeatPracticeSelector.selections(in: [lesson]) == [
+                ShortRepeatPracticeSelection(
+                    lessonID: "lesson",
+                    taskID: "gradable-task",
+                    itemID: "item-1"
+                )
+            ]
+        )
+    }
+
+    @MainActor
     @Test func practiceTaskResolverUsesRequestedTaskWhenValid() async throws {
         let lesson = Self.lesson(tasks: [
             Self.practiceTask(id: "first-task"),
@@ -394,9 +461,14 @@ struct SamuiLanguageSchoolTests {
 
     private static func lesson(
         tasks: [LessonContentModel.PracticeTask],
-        answerKey: [LessonContentModel.AnswerKeyTask] = []
+        answerKey: [LessonContentModel.AnswerKeyTask] = [],
+        theorySections: [LessonContentModel.TheorySection]? = nil
     ) -> LessonContentModel {
-        LessonContentModel(
+        let theorySections = theorySections ?? [
+            Self.theorySection(id: "section", order: 1)
+        ]
+
+        return LessonContentModel(
             id: "lesson",
             title: "Lesson",
             level: LessonContentModel.Level(code: "A1", label: "A1", descriptor: nil),
@@ -417,18 +489,24 @@ struct SamuiLanguageSchoolTests {
             objectives: [],
             difficultyGuide: [],
             review: nil,
-            theorySections: [
-                LessonContentModel.TheorySection(
-                    id: "section",
-                    title: "Section",
-                    order: 1,
-                    contentBlocks: [],
-                    tryItTaskIds: []
-                )
-            ],
+            theorySections: theorySections,
             practiceTasks: tasks,
             answerKey: answerKey,
             selfAssessment: nil
+        )
+    }
+
+    private static func theorySection(
+        id: String,
+        order: Int,
+        tryItTaskIds: [String] = []
+    ) -> LessonContentModel.TheorySection {
+        LessonContentModel.TheorySection(
+            id: id,
+            title: "Section",
+            order: order,
+            contentBlocks: [],
+            tryItTaskIds: tryItTaskIds
         )
     }
 

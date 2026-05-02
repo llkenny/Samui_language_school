@@ -13,8 +13,9 @@ struct PracticeView: View {
 
     private let requestedTaskID: String?
     private let providedLessonID: String?
+    private let mode: PracticeSessionMode
     var onBack: () -> Void
-    var onComplete: (LessonContentModel, LessonContentModel.PracticeTask) -> Void
+    var onComplete: (LessonContentModel, LessonContentModel.PracticeTask, PracticeSessionResult) -> Void
 
     @State private var activeTaskID: String?
     @State private var currentItemIndex = 0
@@ -25,12 +26,14 @@ struct PracticeView: View {
     init(
         lessonID: String? = nil,
         taskID: String? = nil,
+        mode: PracticeSessionMode = .standard,
         onBack: @escaping () -> Void,
-        onComplete: @escaping (LessonContentModel, LessonContentModel.PracticeTask) -> Void = { _, _ in }
+        onComplete: @escaping (LessonContentModel, LessonContentModel.PracticeTask, PracticeSessionResult) -> Void = { _, _, _ in }
     ) {
         _viewModel = StateObject(wrappedValue: LessonViewModel(lessonID: lessonID))
         self.providedLessonID = lessonID
         self.requestedTaskID = taskID
+        self.mode = mode
         self.onBack = onBack
         self.onComplete = onComplete
     }
@@ -50,7 +53,7 @@ struct PracticeView: View {
                         practiceContent(lesson: lesson, task: task)
                     }
                 } else {
-                    SLSTopBar(title: "Practice", backAction: onBack)
+                    SLSTopBar(title: mode.title, backAction: onBack)
                     errorContent
                 }
             }
@@ -71,7 +74,7 @@ struct PracticeView: View {
 
     private func practiceHeader(task: LessonContentModel.PracticeTask) -> some View {
         VStack(spacing: 0) {
-            SLSTopBar(title: "Practice", backAction: onBack, showsSeparator: false)
+            SLSTopBar(title: mode.title, backAction: onBack, showsSeparator: false)
 
             HStack(spacing: SLSSpacing.md) {
                 SLSProgressBar(value: progressValue(for: task))
@@ -460,8 +463,8 @@ struct PracticeView: View {
                         .lineSpacing(5)
                         .fixedSize(horizontal: false, vertical: true)
 
-                    SLSPrimaryButton(title: "Continue") {
-                        onComplete(lesson, task)
+                    SLSPrimaryButton(title: completionActionTitle(for: task)) {
+                        onComplete(lesson, task, sessionResult(for: task))
                     }
                 }
             }
@@ -569,9 +572,13 @@ struct PracticeView: View {
             )
         case .advance:
             if isLastItem(in: task) {
-                isComplete = true
+                if case .shortRepeat = mode {
+                    onComplete(lesson, task, sessionResult(for: task))
+                } else {
+                    isComplete = true
+                }
             } else {
-                currentItemIndex = min(currentItemIndex + 1, task.items.count - 1)
+                currentItemIndex = min(currentItemIndex + 1, sessionItems(in: task).count - 1)
             }
         }
     }
@@ -595,12 +602,22 @@ struct PracticeView: View {
         lesson.answerKey.first { $0.taskId == task.id }
     }
 
+    private func sessionItems(in task: LessonContentModel.PracticeTask) -> [LessonContentModel.TaskItem] {
+        switch mode {
+        case .standard:
+            return task.items
+        case .shortRepeat(let itemID):
+            return task.items.filter { $0.id == itemID }
+        }
+    }
+
     private func currentItem(in task: LessonContentModel.PracticeTask) -> LessonContentModel.TaskItem? {
-        guard !task.items.isEmpty else {
+        let items = sessionItems(in: task)
+        guard !items.isEmpty else {
             return nil
         }
 
-        return task.items[min(currentItemIndex, task.items.count - 1)]
+        return items[min(currentItemIndex, items.count - 1)]
     }
 
     private func syncProgress() {
@@ -612,7 +629,9 @@ struct PracticeView: View {
             resetSession(for: task)
         }
 
-        progress.updatePracticeProgress(lessonID: providedLessonID ?? lesson.id, taskID: task.id)
+        if mode.updatesProgress {
+            progress.updatePracticeProgress(lessonID: providedLessonID ?? lesson.id, taskID: task.id)
+        }
     }
 
     private func resetSession(for task: LessonContentModel.PracticeTask) {
@@ -620,7 +639,7 @@ struct PracticeView: View {
         currentItemIndex = 0
         responses = [:]
         evaluations = [:]
-        isComplete = task.items.isEmpty
+        isComplete = sessionItems(in: task).isEmpty
     }
 
     private func responseBinding(for item: LessonContentModel.TaskItem) -> Binding<String> {
@@ -632,7 +651,8 @@ struct PracticeView: View {
     }
 
     private func progressValue(for task: LessonContentModel.PracticeTask) -> Double {
-        guard !task.items.isEmpty else {
+        let items = sessionItems(in: task)
+        guard !items.isEmpty else {
             return 1
         }
 
@@ -640,19 +660,20 @@ struct PracticeView: View {
             return 1
         }
 
-        return Double(currentItemIndex + 1) / Double(task.items.count)
+        return Double(currentItemIndex + 1) / Double(items.count)
     }
 
     private func progressText(for task: LessonContentModel.PracticeTask) -> String {
-        guard !task.items.isEmpty else {
+        let items = sessionItems(in: task)
+        guard !items.isEmpty else {
             return "0/0"
         }
 
         if isComplete {
-            return "\(task.items.count)/\(task.items.count)"
+            return "\(items.count)/\(items.count)"
         }
 
-        return "\(currentItemIndex + 1)/\(task.items.count)"
+        return "\(currentItemIndex + 1)/\(items.count)"
     }
 
     private func itemLabel(for item: LessonContentModel.TaskItem, index: Int) -> String {
@@ -678,7 +699,7 @@ struct PracticeView: View {
     }
 
     private func isLastItem(in task: LessonContentModel.PracticeTask) -> Bool {
-        currentItemIndex >= task.items.count - 1
+        currentItemIndex >= sessionItems(in: task).count - 1
     }
 
     private func openEndedActionTitle(for item: LessonContentModel.TaskItem) -> String {
@@ -726,15 +747,33 @@ struct PracticeView: View {
     }
 
     private func summaryText(for task: LessonContentModel.PracticeTask) -> String {
-        let completedCount = evaluations.count
-        let gradableEvaluations = evaluations.values.filter(\.isGradable)
-        let correctCount = gradableEvaluations.filter(\.isCorrect).count
+        let result = sessionResult(for: task)
 
-        if gradableEvaluations.isEmpty {
-            return "Completed \(completedCount) of \(task.items.count) items. This task is teacher-assessed, so it is not included in the score."
+        if result.gradableCount == 0 {
+            return "Completed \(result.completedCount) of \(sessionItems(in: task).count) items. This task is teacher-assessed, so it is not included in the score."
         }
 
-        return "Completed \(completedCount) of \(task.items.count) items.\nScore: \(correctCount) of \(gradableEvaluations.count) auto-graded items."
+        return "Completed \(result.completedCount) of \(sessionItems(in: task).count) items.\nScore: \(result.correctCount) of \(result.gradableCount) auto-graded items."
+    }
+
+    private func completionActionTitle(for task: LessonContentModel.PracticeTask) -> String {
+        guard case .shortRepeat = mode else {
+            return "Continue"
+        }
+
+        return sessionResult(for: task).hasErrors ? "Review Theory" : "Done"
+    }
+
+    private func sessionResult(for task: LessonContentModel.PracticeTask) -> PracticeSessionResult {
+        let itemIDs = Set(sessionItems(in: task).map(\.id))
+        let sessionEvaluations = evaluations.filter { itemIDs.contains($0.key) }.map(\.value)
+        let gradableEvaluations = sessionEvaluations.filter(\.isGradable)
+
+        return PracticeSessionResult(
+            completedCount: sessionEvaluations.count,
+            gradableCount: gradableEvaluations.count,
+            correctCount: gradableEvaluations.filter(\.isCorrect).count
+        )
     }
 }
 

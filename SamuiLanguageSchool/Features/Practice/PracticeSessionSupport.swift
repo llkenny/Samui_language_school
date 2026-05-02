@@ -7,6 +7,73 @@
 
 import Foundation
 
+struct ShortRepeatPracticeSelection: Hashable {
+    let lessonID: String
+    let taskID: String
+    let itemID: String
+}
+
+enum ShortRepeatPracticeSelector {
+    static func randomSelection(in lessons: [LessonContentModel]) -> ShortRepeatPracticeSelection? {
+        selections(in: lessons).randomElement()
+    }
+
+    static func selections(in lessons: [LessonContentModel]) -> [ShortRepeatPracticeSelection] {
+        var selections: [ShortRepeatPracticeSelection] = []
+
+        for lesson in lessons {
+            for task in lesson.practiceTasks {
+                let answerKey = lesson.answerKey.first { $0.taskId == task.id }
+
+                for item in task.items where PracticeAnswerEvaluator.isAutoGradable(item: item, answerKey: answerKey) {
+                    selections.append(
+                        ShortRepeatPracticeSelection(
+                            lessonID: lesson.id,
+                            taskID: task.id,
+                            itemID: item.id
+                        )
+                    )
+                }
+            }
+        }
+
+        return selections
+    }
+}
+
+struct PracticeSessionResult: Equatable {
+    let completedCount: Int
+    let gradableCount: Int
+    let correctCount: Int
+
+    var hasErrors: Bool {
+        gradableCount > correctCount
+    }
+}
+
+enum PracticeSessionMode: Hashable {
+    case standard
+    case shortRepeat(itemID: String)
+
+    var title: String {
+        switch self {
+        case .standard:
+            return "Practice"
+        case .shortRepeat:
+            return "Fast Repeat"
+        }
+    }
+
+    var updatesProgress: Bool {
+        switch self {
+        case .standard:
+            return true
+        case .shortRepeat:
+            return false
+        }
+    }
+}
+
 enum PracticeTaskResolver {
     static func selectedTask(
         in lesson: LessonContentModel,
