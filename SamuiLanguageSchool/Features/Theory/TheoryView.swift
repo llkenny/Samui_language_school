@@ -118,6 +118,7 @@ struct TheoryView: View {
 
     private func startPractice(lesson: LessonContentModel, section: LessonContentModel.TheorySection) {
         let taskID = section.tryItTaskIds.first
+        progress.markTheorySectionCompleted(lessonID: lesson.id, sectionID: section.id)
         progress.updateTheoryProgress(lessonID: lesson.id, sectionID: section.id)
         progress.updatePracticeProgress(lessonID: lesson.id, taskID: taskID)
         onStartPractice(taskID)

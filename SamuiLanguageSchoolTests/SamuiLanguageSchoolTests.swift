@@ -6,6 +6,7 @@
 //
 
 import Testing
+import SwiftData
 @testable import SamuiLanguageSchool
 
 struct SamuiLanguageSchoolTests {
@@ -407,6 +408,127 @@ struct SamuiLanguageSchoolTests {
         )
     }
 
+    @MainActor
+    @Test func progressEnvironmentPersistsCurrentStep() async throws {
+        let container = try Self.progressContainer()
+        let firstEnvironment = ProgressEnvironment()
+        firstEnvironment.configure(modelContext: ModelContext(container))
+        firstEnvironment.updateProgress(to: .theory(lessonID: "lesson", sectionID: "section"))
+
+        let restoredEnvironment = ProgressEnvironment()
+        restoredEnvironment.configure(modelContext: ModelContext(container))
+
+        #expect(restoredEnvironment.currentLessonID == "lesson")
+        #expect(restoredEnvironment.currentTheorySectionID == "section")
+        #expect(restoredEnvironment.currentPracticeTaskID == nil)
+    }
+
+    @MainActor
+    @Test func progressEnvironmentPersistsCompletedTheorySectionsOnce() async throws {
+        let container = try Self.progressContainer()
+        let environment = ProgressEnvironment()
+        let context = ModelContext(container)
+        environment.configure(modelContext: context)
+
+        environment.markTheorySectionCompleted(lessonID: "lesson", sectionID: "section")
+        environment.markTheorySectionCompleted(lessonID: "lesson", sectionID: "section")
+
+        let records = try context.fetch(FetchDescriptor<CompletedTheorySectionRecord>())
+        #expect(records.map(\.key) == [
+            CompletedTheorySectionRecord.key(lessonID: "lesson", sectionID: "section")
+        ])
+        #expect(environment.isStepCompleted(.theory(lessonID: "lesson", sectionID: "section")))
+    }
+
+    @MainActor
+    @Test func progressEnvironmentRestoresPracticeSnapshot() async throws {
+        let container = try Self.progressContainer()
+        let firstEnvironment = ProgressEnvironment()
+        firstEnvironment.configure(modelContext: ModelContext(container))
+        firstEnvironment.savePracticeSnapshot(
+            lessonID: "lesson",
+            taskID: "task",
+            snapshot: PracticeSessionSnapshot(
+                currentItemIndex: 1,
+                responses: ["item-1": "the"],
+                evaluations: [
+                    "item-1": PracticeEvaluation(
+                        state: .correct,
+                        expectedAnswer: "the",
+                        explanation: "Use the definite article.",
+                        errorType: "articles",
+                        notes: "Good.",
+                        sampleAnswers: ["the beach"]
+                    )
+                ],
+                isComplete: true,
+                result: PracticeSessionResult(completedCount: 1, gradableCount: 1, correctCount: 1)
+            )
+        )
+
+        let restoredEnvironment = ProgressEnvironment()
+        restoredEnvironment.configure(modelContext: ModelContext(container))
+        let snapshot = try #require(
+            restoredEnvironment.practiceSnapshot(
+                lessonID: "lesson",
+                taskID: "task",
+                validItemIDs: ["item-1"]
+            )
+        )
+
+        #expect(snapshot.currentItemIndex == 1)
+        #expect(snapshot.responses == ["item-1": "the"])
+        #expect(snapshot.evaluations["item-1"]?.state == .correct)
+        #expect(snapshot.evaluations["item-1"]?.sampleAnswers == ["the beach"])
+        #expect(snapshot.isComplete)
+        #expect(snapshot.result == PracticeSessionResult(completedCount: 1, gradableCount: 1, correctCount: 1))
+    }
+
+    @MainActor
+    @Test func progressEnvironmentOverwritesLatestPracticeResult() async throws {
+        let container = try Self.progressContainer()
+        let environment = ProgressEnvironment()
+        environment.configure(modelContext: ModelContext(container))
+
+        environment.savePracticeResult(
+            lessonID: "lesson",
+            taskID: "task",
+            result: PracticeSessionResult(completedCount: 2, gradableCount: 2, correctCount: 1)
+        )
+        environment.savePracticeResult(
+            lessonID: "lesson",
+            taskID: "task",
+            result: PracticeSessionResult(completedCount: 3, gradableCount: 3, correctCount: 3)
+        )
+
+        let snapshot = try #require(
+            environment.practiceSnapshot(
+                lessonID: "lesson",
+                taskID: "task",
+                validItemIDs: []
+            )
+        )
+        #expect(snapshot.result == PracticeSessionResult(completedCount: 3, gradableCount: 3, correctCount: 3))
+        #expect(environment.isStepCompleted(.practice(lessonID: "lesson", taskID: "task")))
+    }
+
+    @MainActor
+    @Test func progressEnvironmentFallsBackWhenPersistedStepIsStale() async throws {
+        let container = try Self.progressContainer()
+        let lesson = Self.lesson(
+            tasks: [Self.practiceTask(id: "valid-task")],
+            theorySections: [Self.theorySection(id: "valid-section", order: 1)]
+        )
+        let firstEnvironment = ProgressEnvironment()
+        firstEnvironment.configure(modelContext: ModelContext(container))
+        firstEnvironment.updateProgress(to: .practice(lessonID: lesson.id, taskID: "missing-task"))
+
+        let restoredEnvironment = ProgressEnvironment()
+        restoredEnvironment.configure(modelContext: ModelContext(container), lessons: [lesson])
+
+        #expect(restoredEnvironment.startOrContinueStep(for: lesson) == .theory(lessonID: lesson.id, sectionID: "valid-section"))
+    }
+
     private static func taskItem(
         id: String,
         type: LessonContentModel.TaskItemType = .gapFill,
@@ -527,5 +649,16 @@ struct SamuiLanguageSchoolTests {
             supportingPrompts: nil,
             items: items
         )
+    }
+
+    private static func progressContainer() throws -> ModelContainer {
+        let schema = Schema([
+            LearningProgressState.self,
+            CompletedTheorySectionRecord.self,
+            PracticeTaskProgressRecord.self,
+            PracticeItemProgressRecord.self
+        ])
+        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        return try ModelContainer(for: schema, configurations: [configuration])
     }
 }

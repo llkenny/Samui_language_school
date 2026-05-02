@@ -320,6 +320,7 @@ struct PracticeView: View {
             for: item,
             answerKey: answerKey
         )
+        saveCurrentPracticeSnapshot()
     }
 
     private func visibleOptions(
@@ -570,15 +571,18 @@ struct PracticeView: View {
                 for: item,
                 answerKey: answerKey(in: lesson, for: task)
             )
+            saveCurrentPracticeSnapshot()
         case .advance:
             if isLastItem(in: task) {
                 if case .shortRepeat = mode {
                     onComplete(lesson, task, sessionResult(for: task))
                 } else {
                     isComplete = true
+                    saveCurrentPracticeSnapshot()
                 }
             } else {
                 currentItemIndex = min(currentItemIndex + 1, sessionItems(in: task).count - 1)
+                saveCurrentPracticeSnapshot()
             }
         }
     }
@@ -626,7 +630,7 @@ struct PracticeView: View {
         }
 
         if activeTaskID != task.id {
-            resetSession(for: task)
+            restoreSession(for: task, lessonID: providedLessonID ?? lesson.id)
         }
 
         if mode.updatesProgress {
@@ -634,12 +638,27 @@ struct PracticeView: View {
         }
     }
 
-    private func resetSession(for task: LessonContentModel.PracticeTask) {
+    private func restoreSession(for task: LessonContentModel.PracticeTask, lessonID: String) {
         activeTaskID = task.id
-        currentItemIndex = 0
-        responses = [:]
-        evaluations = [:]
-        isComplete = sessionItems(in: task).isEmpty
+        let items = sessionItems(in: task)
+
+        guard mode.updatesProgress,
+              let snapshot = progress.practiceSnapshot(
+                lessonID: lessonID,
+                taskID: task.id,
+                validItemIDs: Set(items.map(\.id))
+              ) else {
+            currentItemIndex = 0
+            responses = [:]
+            evaluations = [:]
+            isComplete = items.isEmpty
+            return
+        }
+
+        currentItemIndex = items.isEmpty ? 0 : min(snapshot.currentItemIndex, items.count - 1)
+        responses = snapshot.responses
+        evaluations = snapshot.evaluations
+        isComplete = snapshot.isComplete || items.isEmpty
     }
 
     private func responseBinding(for item: LessonContentModel.TaskItem) -> Binding<String> {
@@ -647,6 +666,7 @@ struct PracticeView: View {
             responses[item.id] ?? ""
         } set: { newValue in
             responses[item.id] = newValue
+            saveCurrentPracticeSnapshot()
         }
     }
 
@@ -769,6 +789,26 @@ struct PracticeView: View {
             completedCount: sessionEvaluations.count,
             gradableCount: gradableEvaluations.count,
             correctCount: gradableEvaluations.filter(\.isCorrect).count
+        )
+    }
+
+    private func saveCurrentPracticeSnapshot() {
+        guard mode.updatesProgress,
+              let lesson = viewModel.lesson,
+              let task = selectedTask(in: lesson) else {
+            return
+        }
+
+        progress.savePracticeSnapshot(
+            lessonID: providedLessonID ?? lesson.id,
+            taskID: task.id,
+            snapshot: PracticeSessionSnapshot(
+                currentItemIndex: currentItemIndex,
+                responses: responses,
+                evaluations: evaluations,
+                isComplete: isComplete,
+                result: isComplete ? sessionResult(for: task) : nil
+            )
         )
     }
 }

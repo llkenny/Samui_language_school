@@ -110,10 +110,32 @@ struct PracticeEvaluation: Equatable {
     }
 }
 
-enum PracticeEvaluationState: Equatable {
+enum PracticeEvaluationState: String, Equatable {
     case correct
     case incorrect
     case reviewed
+}
+
+struct PracticeSessionSnapshot: Equatable {
+    let currentItemIndex: Int
+    let responses: [String: String]
+    let evaluations: [String: PracticeEvaluation]
+    let isComplete: Bool
+    let result: PracticeSessionResult?
+
+    init(
+        currentItemIndex: Int,
+        responses: [String: String],
+        evaluations: [String: PracticeEvaluation],
+        isComplete: Bool,
+        result: PracticeSessionResult? = nil
+    ) {
+        self.currentItemIndex = currentItemIndex
+        self.responses = responses
+        self.evaluations = evaluations
+        self.isComplete = isComplete
+        self.result = result
+    }
 }
 
 enum PracticeAnswerOptionBank {
