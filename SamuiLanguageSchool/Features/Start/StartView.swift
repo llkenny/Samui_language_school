@@ -66,23 +66,23 @@ struct StartView: View {
                             .stroke(.white.opacity(0.22), lineWidth: 6)
                     }
             }
-            .padding(.top, 70)
+            .padding(.top, 24)
 
             Spacer()
 
             Text("Welcome back!")
                 .font(SLSTypography.heroTitle)
                 .foregroundStyle(.white)
-                .padding(.bottom, 14)
+                .padding(.bottom, 12)
 
             Text("Choose a lesson or continue your learning journey")
                 .font(SLSTypography.heroSubtitle)
                 .foregroundStyle(.white.opacity(0.92))
                 .lineSpacing(5)
-                .padding(.bottom, 45)
+                .padding(.bottom, 20)
         }
         .padding(.horizontal, SLSSpacing.lg)
-        .frame(maxWidth: .infinity, minHeight: 292, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.brand)
         .ignoresSafeArea(edges: .top)
     }
