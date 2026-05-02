@@ -8,16 +8,16 @@
 import Foundation
 
 enum SLSSpacing {
-    static let xs: CGFloat = 8
-    static let sm: CGFloat = 12
-    static let md: CGFloat = 16
-    static let lg: CGFloat = 24
-    static let xl: CGFloat = 32
+    static let xs: CGFloat = 6
+    static let sm: CGFloat = 10
+    static let md: CGFloat = 14
+    static let lg: CGFloat = 16
+    static let xl: CGFloat = 24
 }
 
 enum SLSRadius {
-    static let sm: CGFloat = 12
-    static let md: CGFloat = 18
-    static let lg: CGFloat = 24
-    static let xl: CGFloat = 28
+    static let sm: CGFloat = 10
+    static let md: CGFloat = 14
+    static let lg: CGFloat = 18
+    static let xl: CGFloat = 20
 }

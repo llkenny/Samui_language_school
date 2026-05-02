@@ -75,7 +75,7 @@ struct LessonView: View {
 
     private func lessonContent(_ lesson: LessonContentModel) -> some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 22) {
+            VStack(spacing: 18) {
                 LessonSummaryHero(summary: lesson.screenSummary)
                 LearningPathSection(steps: lesson.learningPath)
                 LessonStepsSection(
@@ -90,15 +90,15 @@ struct LessonView: View {
                 )
             }
             .padding(.horizontal, SLSSpacing.lg)
-            .padding(.top, 24)
-            .padding(.bottom, 124)
+            .padding(.top, SLSSpacing.lg)
+            .padding(.bottom, 104)
         }
     }
 
     private var errorContent: some View {
         VStack(spacing: SLSSpacing.lg) {
             Image(systemName: "exclamationmark.triangle.fill")
-                .font(.system(size: 38, weight: .semibold))
+                .font(.system(size: 32, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
 
             Text("Lesson unavailable")
@@ -125,7 +125,7 @@ private struct LessonSummaryHero: View {
     let summary: LessonContentModel.ScreenSummary
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 28) {
+        VStack(alignment: .leading, spacing: 20) {
             HStack(alignment: .top) {
                 SLSPill(
                     title: summary.lessonBadge,
@@ -136,22 +136,22 @@ private struct LessonSummaryHero: View {
                 Text(summary.levelLabel)
                     .font(SLSTypography.caption)
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 13)
-                    .padding(.vertical, 7)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
                     .background(.white.opacity(0.18))
                     .clipShape(Capsule())
             }
 
-            VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(summary.themeTitle)
-                    .font(.system(size: 32, weight: .bold))
+                    .font(.system(size: 26, weight: .bold))
                     .foregroundStyle(.white)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(summary.shortDescription)
                     .font(SLSTypography.heroSubtitle)
                     .foregroundStyle(.white.opacity(0.92))
-                    .lineSpacing(5)
+                    .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
@@ -162,7 +162,7 @@ private struct LessonSummaryHero: View {
                 }
             }
         }
-        .padding(26)
+        .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             LinearGradient(
@@ -189,8 +189,8 @@ private struct SummaryMetric: View {
                 .minimumScaleFactor(0.86)
         }
         .foregroundStyle(.white)
-        .padding(.horizontal, 12)
-        .padding(.vertical, 9)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 7)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.white.opacity(0.18))
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.sm, style: .continuous))
@@ -201,11 +201,11 @@ private struct LearningPathSection: View {
     let steps: [LessonContentModel.LearningPathStep]
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 22) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 18) {
                 SectionHeader(title: "Learning Path", iconName: "map.fill")
 
-                VStack(spacing: 18) {
+                VStack(spacing: 14) {
                     ForEach(Array(steps.enumerated()), id: \.element.id) { index, step in
                         LearningPathRow(stepNumber: index + 1, step: step)
                     }
@@ -222,9 +222,9 @@ private struct LearningPathRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: SLSSpacing.md) {
             Text("\(stepNumber)")
-                .font(.system(size: 17, weight: .bold))
+                .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(.white)
-                .frame(width: 34, height: 34)
+                .frame(width: 30, height: 30)
                 .background(SLSColors.brand)
                 .clipShape(Circle())
 
@@ -234,9 +234,9 @@ private struct LearningPathRow: View {
                     .foregroundStyle(SLSColors.textPrimary)
 
                 Text(step.instructions)
-                    .font(.system(size: 17, weight: .regular))
+                    .font(SLSTypography.body)
                     .foregroundStyle(SLSColors.textSecondary)
-                    .lineSpacing(4)
+                    .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -250,8 +250,8 @@ private struct LessonStepsSection: View {
     let onSelectStep: (LearningStep) -> Void
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 18) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 16) {
                 SectionHeader(title: "Lesson Steps", iconName: "list.bullet.rectangle.fill")
 
                 VStack(spacing: 12) {
@@ -342,18 +342,18 @@ private struct LessonStepRow: View {
     let iconName: String
 
     var body: some View {
-        HStack(alignment: .center, spacing: SLSSpacing.md) {
+        HStack(alignment: .center, spacing: SLSSpacing.sm) {
             Text("\(number)")
                 .font(.system(size: 16, weight: .bold))
                 .foregroundStyle(.white)
-                .frame(width: 34, height: 34)
+                .frame(width: 30, height: 30)
                 .background(SLSColors.brand)
                 .clipShape(Circle())
 
             Image(systemName: iconName)
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: 16, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
-                .frame(width: 32)
+                .frame(width: 26)
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(title)
@@ -373,7 +373,7 @@ private struct LessonStepRow: View {
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(SLSColors.textTertiary)
         }
-        .padding(14)
+        .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.lessonSurface)
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -384,11 +384,11 @@ private struct ObjectivesSection: View {
     let objectives: [String]
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 18) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 16) {
                 SectionHeader(title: "Objectives", iconName: "target")
 
-                VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: 12) {
                     ForEach(Array(objectives.enumerated()), id: \.offset) { _, objective in
                         ObjectiveRow(text: objective)
                     }
@@ -404,12 +404,12 @@ private struct ObjectiveRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: SLSSpacing.sm) {
             Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 19, weight: .semibold))
+                .font(.system(size: 17, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
                 .padding(.top, 2)
 
             Text(text)
-                .font(.system(size: 17, weight: .regular))
+                .font(SLSTypography.body)
                 .foregroundStyle(SLSColors.textPrimary)
                 .lineSpacing(4)
                 .fixedSize(horizontal: false, vertical: true)
@@ -426,11 +426,11 @@ private struct DifficultyGuideSection: View {
     }
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 18) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 16) {
                 SectionHeader(title: "Difficulty Guide", iconName: "chart.bar.fill")
 
-                VStack(spacing: 14) {
+                VStack(spacing: 12) {
                     ForEach(Array(entries.enumerated()), id: \.offset) { _, entry in
                         DifficultyGuideRow(
                             entry: entry,
@@ -450,9 +450,9 @@ private struct DifficultyGuideRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: SLSSpacing.md) {
             Text(entry.rating)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: 16, weight: .bold))
                 .foregroundStyle(SLSColors.brand)
-                .frame(width: 42, height: 42)
+                .frame(width: 36, height: 36)
                 .background(SLSColors.brandSoft)
                 .clipShape(RoundedRectangle(cornerRadius: SLSRadius.sm, style: .continuous))
 
@@ -471,7 +471,7 @@ private struct DifficultyGuideRow: View {
 
             Spacer(minLength: 0)
         }
-        .padding(16)
+        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.lessonSurface)
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -516,9 +516,9 @@ private struct SectionHeader: View {
     var body: some View {
         HStack(spacing: SLSSpacing.sm) {
             Image(systemName: iconName)
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: 16, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
-                .frame(width: 34, height: 34)
+                .frame(width: 30, height: 30)
                 .background(SLSColors.brandSoft)
                 .clipShape(Circle())
 
