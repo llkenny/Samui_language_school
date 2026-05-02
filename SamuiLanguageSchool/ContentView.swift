@@ -47,6 +47,7 @@ struct ContentView: View {
                         onBack: pop,
                         onComplete: navigateAfterPracticeCompletion
                     )
+                    .id(Route.practice(lessonID: lessonID, taskID: taskID))
                 }
             }
         }
