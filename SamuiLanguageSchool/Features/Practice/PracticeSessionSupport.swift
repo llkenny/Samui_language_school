@@ -197,6 +197,29 @@ enum PracticeAnswerEvaluator {
         return entry.answer?.displayText
     }
 
+    static func correctOption(
+        from options: [String],
+        for item: LessonContentModel.TaskItem,
+        answerKey: LessonContentModel.AnswerKeyTask?
+    ) -> String? {
+        if item.type == .sorting {
+            guard let number = item.number?.sortingNumber,
+                  let entries = answerKey?.entries,
+                  let expectedAnswer = sortingExpectedAnswer(for: number, categories: options, entries: entries) else {
+                return nil
+            }
+
+            return options.first { normalized($0) == normalized(expectedAnswer) }
+        }
+
+        guard let entry = answerKey?.entries.first(where: { $0.itemId == item.id }) else {
+            return nil
+        }
+
+        let candidateSet = Set(answerCandidates(from: entry).map(normalized))
+        return options.first { candidateSet.contains(normalized($0)) }
+    }
+
     private static func evaluateSorting(
         response: String,
         item: LessonContentModel.TaskItem,
