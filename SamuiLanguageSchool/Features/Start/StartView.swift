@@ -41,8 +41,8 @@ struct StartView: View {
                     }
                 }
                 .padding(.horizontal, SLSSpacing.lg)
-                .padding(.top, SLSSpacing.xl)
-                .padding(.bottom, 124)
+                .padding(.top, SLSSpacing.lg)
+                .padding(.bottom, 104)
             }
 
             SLSBottomActionBar(
@@ -66,20 +66,20 @@ struct StartView: View {
                             .stroke(.white.opacity(0.22), lineWidth: 6)
                     }
             }
-            .padding(.top, 24)
+            .padding(.top, 16)
 
             Spacer()
 
             Text("Welcome back!")
                 .font(SLSTypography.heroTitle)
                 .foregroundStyle(.white)
-                .padding(.bottom, 12)
+                .padding(.bottom, 8)
 
             Text("Choose a lesson or continue your learning journey")
                 .font(SLSTypography.heroSubtitle)
                 .foregroundStyle(.white.opacity(0.92))
-                .lineSpacing(5)
-                .padding(.bottom, 20)
+                .lineSpacing(3)
+                .padding(.bottom, 16)
         }
         .padding(.horizontal, SLSSpacing.lg)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -160,7 +160,7 @@ private struct LessonCatalogCard: View {
     var body: some View {
         Button(action: action) {
             SLSCard {
-                VStack(alignment: .leading, spacing: 18) {
+                VStack(alignment: .leading, spacing: 14) {
                     HStack(alignment: .top, spacing: SLSSpacing.sm) {
                         SLSPill(
                             title: lesson.level.label,
@@ -175,7 +175,7 @@ private struct LessonCatalogCard: View {
                         }
                     }
 
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text(lesson.title)
                             .font(SLSTypography.cardTitle)
                             .foregroundStyle(SLSColors.textPrimary)
@@ -184,7 +184,7 @@ private struct LessonCatalogCard: View {
                         Text(lesson.screenSummary.shortDescription)
                             .font(SLSTypography.body)
                             .foregroundStyle(SLSColors.textSecondary)
-                            .lineSpacing(4)
+                            .lineSpacing(3)
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
@@ -219,8 +219,8 @@ private struct CatalogMetric: View {
                 .minimumScaleFactor(0.86)
         }
         .foregroundStyle(SLSColors.textSecondary)
-        .padding(.horizontal, 10)
-        .padding(.vertical, 8)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.lessonSurface)
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.sm, style: .continuous))

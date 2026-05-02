@@ -22,7 +22,7 @@ struct SLSTopBar: View {
                 if let backAction {
                     Button(action: backAction) {
                         Image(systemName: "chevron.left")
-                            .font(.system(size: 22, weight: .semibold))
+                            .font(.system(size: 20, weight: .semibold))
                             .foregroundStyle(SLSColors.brand)
                             .frame(width: 44, height: 44)
                     }
@@ -32,7 +32,7 @@ struct SLSTopBar: View {
                 Spacer()
             }
         }
-        .frame(height: 88)
+        .frame(height: 56)
         .padding(.horizontal, SLSSpacing.lg)
         .background(SLSColors.surface)
         .overlay(alignment: .bottom) {
@@ -68,8 +68,8 @@ struct SLSPill: View {
         Text(title)
             .font(SLSTypography.caption)
             .foregroundStyle(foreground)
-            .padding(.horizontal, SLSSpacing.md)
-            .padding(.vertical, 7)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
             .background(background)
             .clipShape(Capsule())
     }
@@ -111,11 +111,11 @@ struct SLSPrimaryButton: View {
                     .font(SLSTypography.button)
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
             .foregroundStyle(isEnabled ? .white : SLSColors.textTertiary)
-            .padding(.horizontal, 20)
-            .frame(height: 68)
+            .padding(.horizontal, 16)
+            .frame(height: 56)
             .background(isEnabled ? SLSColors.brand : SLSColors.disabledFill)
             .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
             .shadow(color: isEnabled ? SLSColors.brand.opacity(0.22) : .clear, radius: 12, x: 0, y: 6)
@@ -137,8 +137,8 @@ struct SLSBottomActionBar: View {
                 .frame(height: 1)
             SLSPrimaryButton(title: title, isEnabled: isEnabled, action: action)
                 .padding(.horizontal, SLSSpacing.lg)
-                .padding(.top, SLSSpacing.lg)
-                .padding(.bottom, 32)
+                .padding(.top, 12)
+                .padding(.bottom, 24)
                 .background(SLSColors.surface)
         }
     }
@@ -149,9 +149,9 @@ struct SLSIconCircle: View {
 
     var body: some View {
         Image(systemName: systemName)
-            .font(.system(size: 23, weight: .semibold))
+            .font(.system(size: 20, weight: .semibold))
             .foregroundStyle(.white)
-            .frame(width: 46, height: 46)
+            .frame(width: 44, height: 44)
             .background(.white.opacity(0.24))
             .clipShape(Circle())
     }

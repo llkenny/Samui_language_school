@@ -73,12 +73,12 @@ struct PracticeView: View {
             HStack(spacing: SLSSpacing.md) {
                 SLSProgressBar(value: progressValue(for: task))
                 Text(progressText(for: task))
-                    .font(.system(size: 19, weight: .regular))
+                    .font(.system(size: 15, weight: .regular))
                     .foregroundStyle(SLSColors.textSecondary)
             }
             .padding(.horizontal, SLSSpacing.lg)
             .padding(.top, 4)
-            .padding(.bottom, 26)
+            .padding(.bottom, 14)
         }
         .background(SLSColors.surface)
         .overlay(alignment: .bottom) {
@@ -93,11 +93,11 @@ struct PracticeView: View {
         task: LessonContentModel.PracticeTask
     ) -> some View {
         let bottomPadding: CGFloat = currentItem(in: task).map {
-            bottomActionState(lesson: lesson, task: task, item: $0) == nil ? 24 : 130
-        } ?? 24
+            bottomActionState(lesson: lesson, task: task, item: $0) == nil ? 20 : 108
+        } ?? 20
 
         return ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 22) {
+            VStack(alignment: .leading, spacing: 18) {
                 taskIntroCard(task: task)
 
                 if let item = currentItem(in: task) {
@@ -105,14 +105,14 @@ struct PracticeView: View {
                 }
             }
             .padding(.horizontal, SLSSpacing.lg)
-            .padding(.top, 24)
+            .padding(.top, SLSSpacing.lg)
             .padding(.bottom, bottomPadding)
         }
     }
 
     private func taskIntroCard(task: LessonContentModel.PracticeTask) -> some View {
         SLSCard {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 14) {
                 HStack(alignment: .top, spacing: SLSSpacing.sm) {
                     SLSPill(title: task.sourceLabel ?? task.kind.title)
 
@@ -140,8 +140,8 @@ struct PracticeView: View {
                     Text(stimulus)
                         .font(SLSTypography.body)
                         .foregroundStyle(SLSColors.textPrimary)
-                        .lineSpacing(5)
-                        .padding(16)
+                        .lineSpacing(4)
+                        .padding(14)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background(SLSColors.lessonSurface)
                         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -165,7 +165,7 @@ struct PracticeView: View {
         answerKey: LessonContentModel.AnswerKeyTask?
     ) -> some View {
         SLSCard {
-            VStack(alignment: .leading, spacing: 22) {
+            VStack(alignment: .leading, spacing: 18) {
                 HStack(alignment: .top) {
                     SLSPill(title: itemLabel(for: item, index: currentItemIndex))
                     Spacer(minLength: SLSSpacing.sm)
@@ -182,9 +182,9 @@ struct PracticeView: View {
                 }
 
                 Text(item.prompt)
-                    .font(.system(size: 25, weight: .bold))
+                    .font(SLSTypography.question)
                     .foregroundStyle(SLSColors.textPrimary)
-                    .lineSpacing(7)
+                    .lineSpacing(5)
                     .fixedSize(horizontal: false, vertical: true)
 
                 if let original = item.original {
@@ -387,7 +387,7 @@ struct PracticeView: View {
             .font(SLSTypography.body)
             .foregroundStyle(SLSColors.textPrimary)
             .frame(minHeight: minHeight)
-            .padding(12)
+            .padding(10)
             .scrollContentBackground(.hidden)
             .background(SLSColors.background)
             .overlay {
@@ -402,7 +402,7 @@ struct PracticeView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 10) {
                 Image(systemName: feedbackIcon(for: evaluation))
-                    .font(.system(size: 20, weight: .semibold))
+                    .font(.system(size: 18, weight: .semibold))
 
                 Text(feedbackTitle(for: evaluation))
                     .font(SLSTypography.bodyStrong)
@@ -429,7 +429,7 @@ struct PracticeView: View {
                 PracticeDetailBlock(title: "Notes", text: notes)
             }
         }
-        .padding(16)
+        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(feedbackColor(for: evaluation).opacity(0.08))
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -439,8 +439,8 @@ struct PracticeView: View {
         lesson: LessonContentModel,
         task: LessonContentModel.PracticeTask
     ) -> some View {
-        VStack(spacing: 22) {
-            Spacer(minLength: 40)
+        VStack(spacing: 18) {
+            Spacer(minLength: 28)
 
             SLSCard {
                 VStack(alignment: .leading, spacing: 20) {
@@ -472,7 +472,7 @@ struct PracticeView: View {
     private var errorContent: some View {
         VStack(spacing: SLSSpacing.lg) {
             Image(systemName: "questionmark.app.dashed")
-                .font(.system(size: 38, weight: .semibold))
+                .font(.system(size: 32, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
 
             Text("Practice unavailable")
@@ -816,13 +816,13 @@ private struct AnswerOptionButton: View {
                 Spacer()
                 if let iconName = state.iconName {
                     Image(systemName: iconName)
-                        .font(.system(size: 22, weight: .semibold))
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundStyle(state.iconColor)
                 }
             }
-            .padding(.horizontal, 22)
-            .padding(.vertical, 18)
-            .frame(maxWidth: .infinity, minHeight: 66, alignment: .leading)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
             .background(state.backgroundColor)
             .overlay {
                 RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous)
@@ -877,14 +877,14 @@ private struct SpeakingCompletionCard: View {
     var body: some View {
         HStack(spacing: SLSSpacing.md) {
             Image(systemName: isComplete ? "checkmark.circle.fill" : "mic.circle.fill")
-                .font(.system(size: 28, weight: .semibold))
+                .font(.system(size: 24, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
 
             Text(isComplete ? "Completed" : "Ready for speaking practice")
                 .font(SLSTypography.bodyStrong)
                 .foregroundStyle(SLSColors.textPrimary)
         }
-        .padding(18)
+        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(SLSColors.lessonSurface)
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))

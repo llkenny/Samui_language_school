@@ -61,7 +61,7 @@ struct TheoryView: View {
 
     private func theoryContent(lesson: LessonContentModel, section: LessonContentModel.TheorySection) -> some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 22) {
+            VStack(spacing: 18) {
                 TheoryHeroCard(summary: lesson.screenSummary, section: section, lessonTitle: lesson.title)
 
                 ForEach(Array(section.contentBlocks.enumerated()), id: \.offset) { _, block in
@@ -69,15 +69,15 @@ struct TheoryView: View {
                 }
             }
             .padding(.horizontal, SLSSpacing.lg)
-            .padding(.top, 24)
-            .padding(.bottom, 130)
+            .padding(.top, SLSSpacing.lg)
+            .padding(.bottom, 108)
         }
     }
 
     private var errorContent: some View {
         VStack(spacing: SLSSpacing.lg) {
             Image(systemName: "doc.text.magnifyingglass")
-                .font(.system(size: 38, weight: .semibold))
+                .font(.system(size: 32, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
 
             Text("Theory unavailable")
@@ -130,7 +130,7 @@ private struct TheoryHeroCard: View {
     let lessonTitle: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 28) {
+        VStack(alignment: .leading, spacing: 20) {
             HStack(alignment: .top) {
                 SLSPill(
                     title: "Section \(section.order)",
@@ -143,26 +143,26 @@ private struct TheoryHeroCard: View {
                 Text(summary.estimatedReadTimeLabel)
                     .font(SLSTypography.caption)
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 13)
-                    .padding(.vertical, 7)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
                     .background(.white.opacity(0.18))
                     .clipShape(Capsule())
             }
 
-            VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(section.title)
-                    .font(.system(size: 31, weight: .bold))
+                    .font(.system(size: 25, weight: .bold))
                     .foregroundStyle(.white)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(lessonTitle)
                     .font(SLSTypography.heroSubtitle)
                     .foregroundStyle(.white.opacity(0.92))
-                    .lineSpacing(5)
+                    .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .padding(26)
+        .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             LinearGradient(
@@ -202,7 +202,7 @@ private struct TextBlockView: View {
     let block: LessonContentModel.ContentBlock
 
     var body: some View {
-        SLSCard(padding: 24) {
+        SLSCard(padding: 18) {
             VStack(alignment: .leading, spacing: 12) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
@@ -211,7 +211,7 @@ private struct TextBlockView: View {
                 Text(block.text ?? "")
                     .font(SLSTypography.body)
                     .foregroundStyle(SLSColors.textPrimary)
-                    .lineSpacing(5)
+                    .lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -222,18 +222,18 @@ private struct FormulaBlockView: View {
     let block: LessonContentModel.ContentBlock
 
     var body: some View {
-        SLSCard(padding: 24) {
+        SLSCard(padding: 18) {
             VStack(alignment: .leading, spacing: 14) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
                 }
 
                 Text(block.formula ?? "")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(SLSColors.brandStrong)
-                    .lineSpacing(6)
+                    .lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(18)
+                    .padding(14)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(SLSColors.lessonSurface)
                     .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -250,13 +250,13 @@ private struct ListBlockView: View {
     }
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 16) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 14) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
                 }
 
-                VStack(alignment: .leading, spacing: 13) {
+                VStack(alignment: .leading, spacing: 11) {
                     ForEach(Array(items.enumerated()), id: \.offset) { _, item in
                         TheoryBulletRow(text: item)
                     }
@@ -274,8 +274,8 @@ private struct ExampleBlockView: View {
     }
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 16) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 14) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
                 }
@@ -284,12 +284,12 @@ private struct ExampleBlockView: View {
                     Text(text)
                         .font(SLSTypography.body)
                         .foregroundStyle(SLSColors.textPrimary)
-                        .lineSpacing(5)
+                        .lineSpacing(4)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
                 if !examples.isEmpty {
-                    VStack(alignment: .leading, spacing: 13) {
+                    VStack(alignment: .leading, spacing: 11) {
                         ForEach(Array(examples.enumerated()), id: \.offset) { _, example in
                             TheoryBulletRow(text: example)
                         }
@@ -312,8 +312,8 @@ private struct TableBlockView: View {
     }
 
     var body: some View {
-        SLSCard(padding: 24) {
-            VStack(alignment: .leading, spacing: 16) {
+        SLSCard(padding: 18) {
+            VStack(alignment: .leading, spacing: 14) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
                 }
@@ -353,7 +353,7 @@ private struct CalloutBlockView: View {
     let block: LessonContentModel.ContentBlock
 
     var body: some View {
-        SLSCard(padding: 24) {
+        SLSCard(padding: 18) {
             VStack(alignment: .leading, spacing: 15) {
                 HStack(spacing: SLSSpacing.sm) {
                     Image(systemName: "exclamationmark.triangle.fill")
@@ -375,12 +375,12 @@ private struct CalloutBlockView: View {
                     Text(explanation)
                         .font(SLSTypography.body)
                         .foregroundStyle(SLSColors.textPrimary)
-                        .lineSpacing(5)
+                        .lineSpacing(4)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
                 if let items = block.items {
-                    VStack(alignment: .leading, spacing: 13) {
+                    VStack(alignment: .leading, spacing: 11) {
                         ForEach(Array(items.enumerated()), id: \.offset) { _, item in
                             TheoryBulletRow(text: item)
                         }
@@ -395,7 +395,7 @@ private struct ModelTextBlockView: View {
     let block: LessonContentModel.ContentBlock
 
     var body: some View {
-        SLSCard(padding: 24) {
+        SLSCard(padding: 18) {
             VStack(alignment: .leading, spacing: 14) {
                 if let title = block.title {
                     TheoryBlockTitle(title)
@@ -404,9 +404,9 @@ private struct ModelTextBlockView: View {
                 Text(block.text ?? "")
                     .font(SLSTypography.body)
                     .foregroundStyle(SLSColors.textPrimary)
-                    .lineSpacing(6)
+                    .lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(18)
+                    .padding(14)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(SLSColors.lessonSurface)
                     .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
@@ -436,7 +436,7 @@ private struct TheoryBulletRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: SLSSpacing.sm) {
             Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 17, weight: .semibold))
+                .font(.system(size: 16, weight: .semibold))
                 .foregroundStyle(SLSColors.brand)
                 .padding(.top, 3)
 
@@ -455,13 +455,13 @@ private struct TableCell: View {
 
     var body: some View {
         Text(text)
-            .font(isHeader ? SLSTypography.bodyStrong : .system(size: 15, weight: .regular))
+            .font(isHeader ? SLSTypography.bodyStrong : .system(size: 14, weight: .regular))
             .foregroundStyle(isHeader ? .white : SLSColors.textPrimary)
             .lineSpacing(4)
             .fixedSize(horizontal: false, vertical: true)
-            .padding(12)
-            .frame(width: 190, alignment: .topLeading)
-            .frame(minHeight: 54, alignment: .topLeading)
+            .padding(10)
+            .frame(width: 170, alignment: .topLeading)
+            .frame(minHeight: 48, alignment: .topLeading)
             .background(isHeader ? SLSColors.brand : Color.clear)
             .overlay(alignment: .trailing) {
                 Rectangle()
@@ -490,10 +490,10 @@ private struct LabeledCalloutText: View {
             Text(text)
                 .font(SLSTypography.body)
                 .foregroundStyle(SLSColors.textPrimary)
-                .lineSpacing(5)
+                .lineSpacing(4)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(14)
+        .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(color.opacity(0.08))
         .clipShape(RoundedRectangle(cornerRadius: SLSRadius.sm, style: .continuous))
