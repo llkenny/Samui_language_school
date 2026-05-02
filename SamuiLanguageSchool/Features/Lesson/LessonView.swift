@@ -156,7 +156,6 @@ private struct LessonSummaryHero: View {
             }
 
             HStack(spacing: SLSSpacing.md) {
-                SummaryMetric(iconName: "clock", label: summary.estimatedReadTimeLabel)
                 if let progressLabel = summary.progressLabel {
                     SummaryMetric(iconName: "checklist", label: progressLabel)
                 }

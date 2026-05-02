@@ -12,7 +12,7 @@ struct LessonContentModel: Decodable, Identifiable {
     let title: String
     let level: Level
     let subtitle: String
-    let estimatedMinutes: EstimatedMinutes
+    let estimatedMinutes: EstimatedMinutes?
     let tags: [String]
     let source: Source
     let screenSummary: ScreenSummary
@@ -49,7 +49,7 @@ extension LessonContentModel {
         let levelLabel: String
         let lessonBadge: String
         let shortDescription: String
-        let estimatedReadTimeLabel: String
+        let estimatedReadTimeLabel: String?
         let primaryPracticeLabel: String?
         let progressLabel: String?
     }

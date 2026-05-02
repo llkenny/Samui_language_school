@@ -139,14 +139,6 @@ private struct TheoryHeroCard: View {
                 )
 
                 Spacer(minLength: SLSSpacing.sm)
-
-                Text(summary.estimatedReadTimeLabel)
-                    .font(SLSTypography.caption)
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(.white.opacity(0.18))
-                    .clipShape(Capsule())
             }
 
             VStack(alignment: .leading, spacing: 10) {
