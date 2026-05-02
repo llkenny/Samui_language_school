@@ -13,15 +13,18 @@ struct StartView: View {
     @StateObject private var viewModel: StartViewModel
 
     var onStartLearning: () -> Void
+    var onStartShortRepeat: () -> Void
     var onSelectLesson: (LessonContentModel) -> Void
 
     init(
         viewModel: @autoclosure @escaping () -> StartViewModel = StartViewModel(),
         onStartLearning: @escaping () -> Void,
+        onStartShortRepeat: @escaping () -> Void,
         onSelectLesson: @escaping (LessonContentModel) -> Void
     ) {
         _viewModel = StateObject(wrappedValue: viewModel())
         self.onStartLearning = onStartLearning
+        self.onStartShortRepeat = onStartShortRepeat
         self.onSelectLesson = onSelectLesson
     }
 
@@ -37,6 +40,7 @@ struct StartView: View {
                     if viewModel.lessons.isEmpty {
                         errorContent
                     } else {
+                        shortRepeatCard
                         lessonCatalog
                     }
                 }
@@ -101,6 +105,42 @@ struct StartView: View {
                 )
             }
         }
+    }
+
+    private var shortRepeatCard: some View {
+        Button(action: onStartShortRepeat) {
+            SLSCard {
+                HStack(alignment: .center, spacing: SLSSpacing.md) {
+                    Image(systemName: "bolt.fill")
+                        .font(.system(size: 22, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 46, height: 46)
+                        .background(SLSColors.brand)
+                        .clipShape(RoundedRectangle(cornerRadius: SLSRadius.md, style: .continuous))
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Fast / short repeat mode")
+                            .font(SLSTypography.cardTitle)
+                            .foregroundStyle(SLSColors.textPrimary)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Text("One random practice. Mistakes open the related theory.")
+                            .font(SLSTypography.body)
+                            .foregroundStyle(SLSColors.textSecondary)
+                            .lineSpacing(3)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    Spacer(minLength: SLSSpacing.sm)
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(SLSColors.brand)
+                }
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("fast-short-repeat-mode")
     }
 
     private var errorContent: some View {
@@ -228,6 +268,6 @@ private struct CatalogMetric: View {
 }
 
 #Preview {
-    StartView(onStartLearning: {}, onSelectLesson: { _ in })
+    StartView(onStartLearning: {}, onStartShortRepeat: {}, onSelectLesson: { _ in })
         .environmentObject(ProgressEnvironment())
 }
