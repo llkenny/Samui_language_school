@@ -18,7 +18,8 @@ struct SamuiLanguageSchoolTests {
         #expect(lessons.map(\.id) == [
             "articles-discourse-part-2",
             "unless-as-long-as",
-            "reflexive-pronouns"
+            "reflexive-pronouns",
+            "countable-nouns-b1"
         ])
     }
 
