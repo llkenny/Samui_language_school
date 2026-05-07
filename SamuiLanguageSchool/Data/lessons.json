@@ -3809,5 +3809,1388 @@
       "Identify and correct use-based errors with reflexive pronouns.",
       "Use reflexive pronouns naturally in a conversation with a partner."
     ]
+  },
+  {
+    "id": "countable-nouns-b1",
+    "title": "Countable Nouns: a/an and some",
+    "level": {
+      "code": "B1",
+      "label": "B1",
+      "descriptor": "Intermediate"
+    },
+    "subtitle": "Use a, an, some, and zero article correctly with countable and uncountable nouns.",
+    "estimatedMinutes": {
+      "min": 45,
+      "max": 60
+    },
+    "tags": [
+      "grammar",
+      "countable-nouns",
+      "uncountable-nouns",
+      "articles",
+      "some",
+      "zero-article",
+      "speaking",
+      "writing"
+    ],
+    "source": {
+      "fileName": "countable_nouns_b1.pdf",
+      "pageCount": 9,
+      "extractionMethod": "PDFKit selectable text extraction"
+    },
+    "screenSummary": {
+      "themeTitle": "Countable Nouns",
+      "levelLabel": "B1",
+      "lessonBadge": "Lesson: a/an and some",
+      "shortDescription": "Decide whether nouns are countable or uncountable, choose a or an by sound, and use some for specific unspecified quantities.",
+      "estimatedReadTimeLabel": "45-60 min",
+      "primaryPracticeLabel": "Start Countable Nouns Practice",
+      "progressLabel": "3 theory sections, 7 activities"
+    },
+    "learningPath": [
+      {
+        "id": "read-notice",
+        "title": "Read & Notice",
+        "instructions": "Read each grammar panel before starting the tasks. Try the embedded tasks before checking the answers."
+      },
+      {
+        "id": "practise-build",
+        "title": "Practise & Build",
+        "instructions": "Complete Activities 1-5 in order. Work alone first, then check the Answer Key."
+      },
+      {
+        "id": "use-it",
+        "title": "Use It",
+        "instructions": "Complete Activities 6-7. Use your own examples and keep speaking without stopping to check every form."
+      }
+    ],
+    "objectives": [
+      "Identify whether a noun is countable or uncountable.",
+      "Use a or an correctly with singular countable nouns.",
+      "Choose a or an based on the sound of the following word, not only the spelling.",
+      "Use some to express a specific but unspecified quantity or amount.",
+      "Use zero article when talking about things in general.",
+      "Correct common mistakes with a, an, some, and uncountable nouns.",
+      "Write personal sentences using a, an, some, and zero article.",
+      "Use countable and uncountable noun patterns naturally in conversation."
+    ],
+    "difficultyGuide": [
+      {
+        "rating": "*",
+        "label": "Activity 1 - a/an practice",
+        "taskIds": [
+          "countable-activity-1"
+        ]
+      },
+      {
+        "rating": "**",
+        "label": "Activities 2, 3 & 5 - Controlled practice",
+        "taskIds": [
+          "countable-activity-2",
+          "countable-activity-3",
+          "countable-activity-5"
+        ]
+      },
+      {
+        "rating": "***",
+        "label": "Activities 4, 6 & 7 - Error correction and production",
+        "taskIds": [
+          "countable-activity-4",
+          "countable-activity-6",
+          "countable-activity-7"
+        ]
+      }
+    ],
+    "review": {
+      "title": "Quick Review - Reflexive Pronouns",
+      "contentBlocks": [
+        {
+          "type": "table",
+          "columns": [
+            "Use",
+            "Forms",
+            "Example"
+          ],
+          "rows": [
+            {
+              "use": "Refer back to the subject",
+              "forms": "myself, yourself, himself, herself, itself, ourselves, yourselves, themselves",
+              "example": "I made this cake myself."
+            },
+            {
+              "use": "Do something without help",
+              "forms": "same forms as above",
+              "example": "She repaired her bike herself."
+            }
+          ]
+        }
+      ],
+      "warmUpTask": {
+        "id": "countable-review-warmup",
+        "title": "Warm-up - Reflexive pronouns review",
+        "kind": "warmUp",
+        "mode": "review",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write the correct reflexive pronoun in each gap.",
+        "items": [
+          {
+            "id": "countable-review-warmup-1",
+            "type": "gapFill",
+            "prompt": "Be careful - don't burn ___ on the stove.",
+            "number": 1,
+            "answerType": "reflexive pronoun"
+          },
+          {
+            "id": "countable-review-warmup-2",
+            "type": "gapFill",
+            "prompt": "We repainted the apartment ___ over the long weekend.",
+            "number": 2,
+            "answerType": "reflexive pronoun"
+          },
+          {
+            "id": "countable-review-warmup-3",
+            "type": "gapFill",
+            "prompt": "He taught ___ to use video-editing software.",
+            "number": 3,
+            "answerType": "reflexive pronoun"
+          },
+          {
+            "id": "countable-review-warmup-4",
+            "type": "gapFill",
+            "prompt": "The app updates ___ automatically every night.",
+            "number": 4,
+            "answerType": "reflexive pronoun"
+          }
+        ]
+      }
+    },
+    "theorySections": [
+      {
+        "id": "countable-and-uncountable-nouns",
+        "title": "Section 1 - Countable and Uncountable Nouns",
+        "order": 1,
+        "tryItTaskIds": [
+          "countable-try-it-a"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "A countable noun names something you can count one by one. It has singular and plural forms: a contract / two contracts."
+          },
+          {
+            "type": "paragraph",
+            "text": "An uncountable noun names a substance, material, or abstract idea. It has no plural form and cannot be used with a or an."
+          },
+          {
+            "type": "table",
+            "title": "Countable and uncountable nouns",
+            "columns": [
+              "Type",
+              "Can you count it?",
+              "Examples"
+            ],
+            "rows": [
+              {
+                "type": "Countable",
+                "countable": "Yes - one, two, three...",
+                "examples": "a booking, an email, a contract, a meeting, a flight"
+              },
+              {
+                "type": "Uncountable",
+                "countable": "No",
+                "examples": "money, information, advice, luggage, traffic, equipment, furniture"
+              }
+            ]
+          },
+          {
+            "type": "exampleList",
+            "title": "Examples",
+            "examples": [
+              "Countable: I missed a flight. She sent three emails. He signed a new contract.",
+              "Uncountable: I need some advice. We don't have much equipment. There's a lot of traffic."
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "She gave me some informations.",
+            "correct": "She gave me some information.",
+            "explanation": "Information is uncountable. There is no plural form."
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "I need an advice about the contract.",
+            "correct": "I need some advice about the contract.",
+            "explanation": "Advice is uncountable. Use some advice, not an advice."
+          }
+        ]
+      },
+      {
+        "id": "using-a-and-an",
+        "title": "Section 2 - Using a and an",
+        "order": 2,
+        "tryItTaskIds": [
+          "countable-try-it-b"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Use a or an with singular countable nouns. They mean one and signal that the noun is new information."
+          },
+          {
+            "type": "ruleList",
+            "items": [
+              "Use a before a consonant sound: a book, a hotel, a useful tip.",
+              "Use an before a vowel sound: an email, an offer, an hour.",
+              "The choice depends on the sound of the next word, not only the spelling.",
+              "Every singular countable noun in English needs a determiner such as a or an."
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Three-step check",
+            "columns": [
+              "Step",
+              "Rule",
+              "Example"
+            ],
+            "rows": [
+              {
+                "step": "1",
+                "rule": "Check whether the noun is singular and countable.",
+                "example": "meeting, not meetings or money"
+              },
+              {
+                "step": "2",
+                "rule": "Listen to the first sound of the next word.",
+                "example": "meeting begins with /m/"
+              },
+              {
+                "step": "3",
+                "rule": "Use a before a consonant sound and an before a vowel sound.",
+                "example": "a meeting / an email"
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Tricky sounds",
+            "columns": [
+              "Phrase",
+              "Why"
+            ],
+            "rows": [
+              {
+                "phrase": "an hour",
+                "why": "h is silent, so the word begins with a vowel sound"
+              },
+              {
+                "phrase": "a university",
+                "why": "university starts with /j/, a consonant sound"
+              },
+              {
+                "phrase": "a one-way ticket",
+                "why": "one starts with /w/, a consonant sound"
+              },
+              {
+                "phrase": "an honest answer",
+                "why": "h is silent, so the word begins with a vowel sound"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "thaiLearnerNote",
+            "title": "Thai-speaking learner note",
+            "incorrect": "I have meeting at nine. / She is good teacher.",
+            "correct": "I have a meeting at nine. / She is a good teacher.",
+            "explanation": "Thai has no articles. In English, every singular countable noun requires a determiner such as a or an."
+          },
+          {
+            "type": "exampleList",
+            "title": "More examples",
+            "examples": [
+              "She got a promotion last month.",
+              "He booked an economy ticket for the weekend.",
+              "I need an honest answer.",
+              "That was a useful workshop.",
+              "It is a one-hour drive from the city.",
+              "She is doing an online course in nutrition."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "using-some-and-zero-article",
+        "title": "Section 3 - Using some",
+        "order": 3,
+        "tryItTaskIds": [
+          "countable-try-it-c"
+        ],
+        "contentBlocks": [
+          {
+            "type": "paragraph",
+            "text": "Use some when talking about an unspecified quantity or amount. You mean a real quantity, but you do not say exactly how many or how much."
+          },
+          {
+            "type": "ruleList",
+            "items": [
+              "some + plural countable noun: some books, some emails, some colleagues",
+              "some + uncountable noun: some advice, some money, some furniture",
+              "Use zero article for general statements: Books are expensive. Money doesn't grow on trees."
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Some or zero article",
+            "columns": [
+              "Situation",
+              "Use",
+              "Example"
+            ],
+            "rows": [
+              {
+                "situation": "Specific but unspecified quantity with a plural countable noun",
+                "use": "some",
+                "example": "I bought some books for the course."
+              },
+              {
+                "situation": "Specific but unspecified amount with an uncountable noun",
+                "use": "some",
+                "example": "She gave me some advice."
+              },
+              {
+                "situation": "General or habitual meaning",
+                "use": "Ø",
+                "example": "Books are expensive. Money doesn't grow on trees."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "calloutType": "commonMistake",
+            "incorrect": "Some money is important in life.",
+            "correct": "Money is important in life.",
+            "explanation": "Do not use some for general statements. Use zero article."
+          },
+          {
+            "type": "callout",
+            "calloutType": "thaiLearnerNote",
+            "title": "Thai-speaking learner note",
+            "text": "In Thai, quantity words are often optional. In English, use some when you mean a specific but unspecified amount. For general statements, use no article."
+          },
+          {
+            "type": "exampleList",
+            "title": "Compare specific and general meaning",
+            "examples": [
+              "She gave me some feedback on my report. This is a specific event.",
+              "I need some cash - the ATM is not working. This is a specific need.",
+              "Feedback is essential. Cash is useful to carry. These are general statements.",
+              "I sent some questions to the client this morning.",
+              "She picked up some medication from the pharmacy.",
+              "He gave me some really useful advice before the interview.",
+              "We found some affordable accommodation near the conference centre."
+            ]
+          }
+        ]
+      }
+    ],
+    "practiceTasks": [
+      {
+        "id": "countable-try-it-a",
+        "title": "Try It A - Sort countable and uncountable nouns",
+        "kind": "tryIt",
+        "mode": "noticing",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Sort these eight words into the correct column.",
+        "items": [
+          {
+            "id": "countable-try-it-a-1",
+            "type": "sorting",
+            "number": 1,
+            "prompt": "money",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-2",
+            "type": "sorting",
+            "number": 2,
+            "prompt": "appointment",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-3",
+            "type": "sorting",
+            "number": 3,
+            "prompt": "luggage",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-4",
+            "type": "sorting",
+            "number": 4,
+            "prompt": "contract",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-5",
+            "type": "sorting",
+            "number": 5,
+            "prompt": "question",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-6",
+            "type": "sorting",
+            "number": 6,
+            "prompt": "colleague",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-7",
+            "type": "sorting",
+            "number": 7,
+            "prompt": "rice",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          },
+          {
+            "id": "countable-try-it-a-8",
+            "type": "sorting",
+            "number": 8,
+            "prompt": "feedback",
+            "categories": [
+              "Countable nouns",
+              "Uncountable nouns"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "countable-try-it-b",
+        "title": "Try It B - a or an",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write a or an before each word or phrase.",
+        "items": [
+          {
+            "id": "countable-try-it-b-1",
+            "type": "gapFill",
+            "number": 1,
+            "prompt": "___ update",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-try-it-b-2",
+            "type": "gapFill",
+            "number": 2,
+            "prompt": "___ honest answer",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-try-it-b-3",
+            "type": "gapFill",
+            "number": 3,
+            "prompt": "___ European passport",
+            "context": "European starts with /j/ sound.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-try-it-b-4",
+            "type": "gapFill",
+            "number": 4,
+            "prompt": "___ useful tip",
+            "context": "Useful starts with /j/ sound.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-try-it-b-5",
+            "type": "gapFill",
+            "number": 5,
+            "prompt": "___ hour-long meeting",
+            "context": "The h is silent.",
+            "answerType": "article"
+          }
+        ]
+      },
+      {
+        "id": "countable-try-it-c",
+        "title": "Try It C - some or zero article",
+        "kind": "tryIt",
+        "mode": "practice",
+        "difficulty": null,
+        "estimatedMinutes": null,
+        "instructions": "Write some or Ø (nothing) in each gap.",
+        "items": [
+          {
+            "id": "countable-try-it-c-1",
+            "type": "gapFill",
+            "number": 1,
+            "prompt": "___ water is essential for life.",
+            "context": "General statement",
+            "answerType": "some or Ø"
+          },
+          {
+            "id": "countable-try-it-c-2",
+            "type": "gapFill",
+            "number": 2,
+            "prompt": "I drank ___ water after the run.",
+            "context": "Specific amount",
+            "answerType": "some or Ø"
+          },
+          {
+            "id": "countable-try-it-c-3",
+            "type": "gapFill",
+            "number": 3,
+            "prompt": "___ money does not always bring happiness.",
+            "context": "General statement",
+            "answerType": "some or Ø"
+          },
+          {
+            "id": "countable-try-it-c-4",
+            "type": "gapFill",
+            "number": 4,
+            "prompt": "She borrowed ___ money to cover the deposit.",
+            "context": "Specific amount",
+            "answerType": "some or Ø"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-1",
+        "title": "Activity 1 - a or an Practice",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "*",
+        "estimatedMinutes": {
+          "min": 5,
+          "max": 8
+        },
+        "instructions": "Write a or an in each gap.",
+        "items": [
+          {
+            "id": "countable-activity-1-1",
+            "type": "gapFill",
+            "number": 1,
+            "prompt": "I need ___ new password - the old one expired.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-2",
+            "type": "gapFill",
+            "number": 2,
+            "prompt": "We made ___ appointment at the clinic for Thursday.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-3",
+            "type": "gapFill",
+            "number": 3,
+            "prompt": "He got ___ one-hour massage after the dive.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-4",
+            "type": "gapFill",
+            "number": 4,
+            "prompt": "That was ___ honest mistake - don't worry about it.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-5",
+            "type": "gapFill",
+            "number": 5,
+            "prompt": "She is looking for ___ flat near the station.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-6",
+            "type": "gapFill",
+            "number": 6,
+            "prompt": "The client sent ___ urgent email about the deadline.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-7",
+            "type": "gapFill",
+            "number": 7,
+            "prompt": "I saw ___ excellent documentary about ocean plastic.",
+            "answerType": "article"
+          },
+          {
+            "id": "countable-activity-1-8",
+            "type": "gapFill",
+            "number": 8,
+            "prompt": "She took ___ year off to travel Southeast Asia.",
+            "answerType": "article"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-2",
+        "title": "Activity 2 - a, an, some, or nothing?",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 8,
+          "max": 10
+        },
+        "instructions": "Write a, an, some, or Ø (nothing) in each gap.",
+        "items": [
+          {
+            "id": "countable-activity-2-1",
+            "type": "gapFill",
+            "number": 1,
+            "prompt": "___ rice is the main ingredient in most Thai dishes.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-2",
+            "type": "gapFill",
+            "number": 2,
+            "prompt": "She always carries ___ portable charger when she travels.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-3",
+            "type": "gapFill",
+            "number": 3,
+            "prompt": "We need ___ advice before we sign the lease.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-4",
+            "type": "gapFill",
+            "number": 4,
+            "prompt": "He gave his team ___ useful feedback after the presentation.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-5",
+            "type": "gapFill",
+            "number": 5,
+            "prompt": "Can you bring ___ extra chairs from the storage room?",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-6",
+            "type": "gapFill",
+            "number": 6,
+            "prompt": "___ good coffee completely changes your mood in the morning.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-7",
+            "type": "gapFill",
+            "number": 7,
+            "prompt": "I downloaded ___ app that tracks your sleep patterns.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-8",
+            "type": "gapFill",
+            "number": 8,
+            "prompt": "She found ___ old photograph of her parents in the drawer.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-9",
+            "type": "gapFill",
+            "number": 9,
+            "prompt": "They couldn't find ___ affordable accommodation near the venue.",
+            "answerType": "a, an, some, or Ø"
+          },
+          {
+            "id": "countable-activity-2-10",
+            "type": "gapFill",
+            "number": 10,
+            "prompt": "He always takes ___ cash when he travels - just in case.",
+            "answerType": "a, an, some, or Ø"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-3",
+        "title": "Activity 3 - Put the words in order",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 8,
+          "max": 10
+        },
+        "instructions": "Put the words in the correct order to make a complete sentence.",
+        "items": [
+          {
+            "id": "countable-activity-3-1",
+            "type": "rewrite",
+            "number": 1,
+            "prompt": "she / an / interview / has / this / afternoon"
+          },
+          {
+            "id": "countable-activity-3-2",
+            "type": "rewrite",
+            "number": 2,
+            "prompt": "some / the / team / feedback / appreciated / constructive"
+          },
+          {
+            "id": "countable-activity-3-3",
+            "type": "rewrite",
+            "number": 3,
+            "prompt": "a / for / near / the / she / station / flat / is / looking"
+          },
+          {
+            "id": "countable-activity-3-4",
+            "type": "rewrite",
+            "number": 4,
+            "prompt": "I / some / always / when / I / cash / travel / carry"
+          },
+          {
+            "id": "countable-activity-3-5",
+            "type": "rewrite",
+            "number": 5,
+            "prompt": "she / an / in / took / design / course / online / graphic"
+          },
+          {
+            "id": "countable-activity-3-6",
+            "type": "rewrite",
+            "number": 6,
+            "prompt": "some / project / for / we / the / need / equipment / new"
+          },
+          {
+            "id": "countable-activity-3-7",
+            "type": "rewrite",
+            "number": 7,
+            "prompt": "regular / exercise / big / a / difference / makes"
+          },
+          {
+            "id": "countable-activity-3-8",
+            "type": "rewrite",
+            "number": 8,
+            "prompt": "for / he / downloaded / apps / some / useful / the / trip"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-4",
+        "title": "Activity 4 - Spot and Correct the Error",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 12
+        },
+        "instructions": "Each sentence has one error with a, an, or some. Write the corrected sentence and name the error type.",
+        "items": [
+          {
+            "id": "countable-activity-4-1",
+            "type": "errorCorrection",
+            "number": 1,
+            "prompt": "She is excellent manager."
+          },
+          {
+            "id": "countable-activity-4-2",
+            "type": "errorCorrection",
+            "number": 2,
+            "prompt": "He gave me an advice about the interview."
+          },
+          {
+            "id": "countable-activity-4-3",
+            "type": "errorCorrection",
+            "number": 3,
+            "prompt": "I need a accommodation near the city centre."
+          },
+          {
+            "id": "countable-activity-4-4",
+            "type": "errorCorrection",
+            "number": 4,
+            "prompt": "They sent a useful feedbacks to the team."
+          },
+          {
+            "id": "countable-activity-4-5",
+            "type": "errorCorrection",
+            "number": 5,
+            "prompt": "Can you carry a luggage to the van?"
+          },
+          {
+            "id": "countable-activity-4-6",
+            "type": "errorCorrection",
+            "number": 6,
+            "prompt": "She took an year off to travel."
+          },
+          {
+            "id": "countable-activity-4-7",
+            "type": "errorCorrection",
+            "number": 7,
+            "prompt": "He bought some new phone last week."
+          },
+          {
+            "id": "countable-activity-4-8",
+            "type": "errorCorrection",
+            "number": 8,
+            "prompt": "Some money is the most important thing in life."
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-5",
+        "title": "Activity 5 - Expand the Prompts",
+        "kind": "activity",
+        "mode": "practice",
+        "difficulty": "**",
+        "estimatedMinutes": {
+          "min": 8,
+          "max": 10
+        },
+        "instructions": "Use the key words to write a full, natural sentence. Add a, an, some, or Ø where needed.",
+        "items": [
+          {
+            "id": "countable-activity-5-1",
+            "type": "freeResponse",
+            "number": 1,
+            "prompt": "he / need / advice / about / career change"
+          },
+          {
+            "id": "countable-activity-5-2",
+            "type": "freeResponse",
+            "number": 2,
+            "prompt": "we / book / accommodation / near / conference centre"
+          },
+          {
+            "id": "countable-activity-5-3",
+            "type": "freeResponse",
+            "number": 3,
+            "prompt": "I / have / question / for / manager"
+          },
+          {
+            "id": "countable-activity-5-4",
+            "type": "freeResponse",
+            "number": 4,
+            "prompt": "they / bought / equipment / for / new studio"
+          },
+          {
+            "id": "countable-activity-5-5",
+            "type": "freeResponse",
+            "number": 5,
+            "prompt": "she / gave / presentation / interesting / last week"
+          },
+          {
+            "id": "countable-activity-5-6",
+            "type": "freeResponse",
+            "number": 6,
+            "prompt": "I / always / carry / cash / and / portable charger / when / travel"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-6",
+        "title": "Activity 6 - Write About Your Own Life",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 12
+        },
+        "instructions": "Write one sentence for each prompt. Use a, an, some, or Ø where needed.",
+        "items": [
+          {
+            "id": "countable-activity-6-1",
+            "type": "paragraphWriting",
+            "number": 1,
+            "prompt": "Something you need to buy or get.",
+            "targetForm": "some or a/an"
+          },
+          {
+            "id": "countable-activity-6-2",
+            "type": "paragraphWriting",
+            "number": 2,
+            "prompt": "A job or role you have or want to have.",
+            "targetForm": "a/an"
+          },
+          {
+            "id": "countable-activity-6-3",
+            "type": "paragraphWriting",
+            "number": 3,
+            "prompt": "Something you need advice or information about right now.",
+            "targetForm": "some + uncountable noun"
+          },
+          {
+            "id": "countable-activity-6-4",
+            "type": "paragraphWriting",
+            "number": 4,
+            "prompt": "Something you own and use every day.",
+            "targetForm": "a/an or some"
+          },
+          {
+            "id": "countable-activity-6-5",
+            "type": "paragraphWriting",
+            "number": 5,
+            "prompt": "Something important to you in general.",
+            "targetForm": "zero article"
+          },
+          {
+            "id": "countable-activity-6-6",
+            "type": "paragraphWriting",
+            "number": 6,
+            "prompt": "A plan you have for this week or weekend.",
+            "targetForm": "a/an, some, or zero article"
+          }
+        ]
+      },
+      {
+        "id": "countable-activity-7",
+        "title": "Activity 7 - Ask and Tell",
+        "kind": "activity",
+        "mode": "production",
+        "difficulty": "***",
+        "estimatedMinutes": {
+          "min": 10,
+          "max": 15
+        },
+        "instructions": "Ask a partner these questions. Give full answers using what you have learned.",
+        "supportingPrompts": [
+          "Try to keep talking for at least one minute each.",
+          "After your partner answers, ask one follow-up question."
+        ],
+        "items": [
+          {
+            "id": "countable-activity-7-1",
+            "type": "speakingPrompt",
+            "prompt": "What kind of work are you hoping to do in the next few years?",
+            "targetForm": "Share a goal or ambition"
+          },
+          {
+            "id": "countable-activity-7-2",
+            "type": "speakingPrompt",
+            "prompt": "What do you feel you need more of right now - time, money, energy, or something else?",
+            "targetForm": "Express a personal need"
+          },
+          {
+            "id": "countable-activity-7-3",
+            "type": "speakingPrompt",
+            "prompt": "Tell me about something you bought recently that you are happy with.",
+            "targetForm": "Describe a recent purchase"
+          },
+          {
+            "id": "countable-activity-7-4",
+            "type": "speakingPrompt",
+            "prompt": "Is there something at work or at home that you think needs to change?",
+            "targetForm": "Give an opinion"
+          },
+          {
+            "id": "countable-activity-7-5",
+            "type": "speakingPrompt",
+            "prompt": "Ask your partner for some advice about something real in your life.",
+            "targetForm": "Make a genuine request"
+          },
+          {
+            "id": "countable-activity-7-6",
+            "type": "speakingPrompt",
+            "prompt": "What is one thing that is really important in your life, and why?",
+            "targetForm": "Make a general statement with zero article"
+          }
+        ]
+      }
+    ],
+    "answerKey": [
+      {
+        "taskId": "countable-review-warmup",
+        "entries": [
+          {
+            "itemId": "countable-review-warmup-1",
+            "answer": "yourself"
+          },
+          {
+            "itemId": "countable-review-warmup-2",
+            "answer": "ourselves"
+          },
+          {
+            "itemId": "countable-review-warmup-3",
+            "answer": "himself"
+          },
+          {
+            "itemId": "countable-review-warmup-4",
+            "answer": "itself"
+          }
+        ]
+      },
+      {
+        "taskId": "countable-try-it-a",
+        "entries": [
+          {
+            "itemId": "countable-try-it-a-category-countable",
+            "answer": [
+              2,
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "itemId": "countable-try-it-a-category-uncountable",
+            "answer": [
+              1,
+              3,
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "taskId": "countable-try-it-b",
+        "entries": [
+          {
+            "itemId": "countable-try-it-b-1",
+            "answer": "an"
+          },
+          {
+            "itemId": "countable-try-it-b-2",
+            "answer": "an"
+          },
+          {
+            "itemId": "countable-try-it-b-3",
+            "answer": "a"
+          },
+          {
+            "itemId": "countable-try-it-b-4",
+            "answer": "a"
+          },
+          {
+            "itemId": "countable-try-it-b-5",
+            "answer": "an"
+          }
+        ]
+      },
+      {
+        "taskId": "countable-try-it-c",
+        "entries": [
+          {
+            "itemId": "countable-try-it-c-1",
+            "answer": "Ø",
+            "acceptedAnswers": [
+              "Ø",
+              "zero article",
+              "nothing",
+              ""
+            ]
+          },
+          {
+            "itemId": "countable-try-it-c-2",
+            "answer": "some"
+          },
+          {
+            "itemId": "countable-try-it-c-3",
+            "answer": "Ø",
+            "acceptedAnswers": [
+              "Ø",
+              "zero article",
+              "nothing",
+              ""
+            ]
+          },
+          {
+            "itemId": "countable-try-it-c-4",
+            "answer": "some"
+          }
+        ]
+      },
+      {
+        "taskId": "countable-activity-1",
+        "entries": [
+          {
+            "itemId": "countable-activity-1-1",
+            "answer": "a",
+            "explanation": "a new password - new begins with consonant /n/."
+          },
+          {
+            "itemId": "countable-activity-1-2",
+            "answer": "an",
+            "explanation": "an appointment - appointment begins with a vowel sound."
+          },
+          {
+            "itemId": "countable-activity-1-3",
+            "answer": "a",
+            "explanation": "a one-hour massage - one begins with consonant /w/."
+          },
+          {
+            "itemId": "countable-activity-1-4",
+            "answer": "an",
+            "explanation": "an honest mistake - h is silent."
+          },
+          {
+            "itemId": "countable-activity-1-5",
+            "answer": "a",
+            "explanation": "a flat - flat begins with consonant /f/."
+          },
+          {
+            "itemId": "countable-activity-1-6",
+            "answer": "an",
+            "explanation": "an urgent email - urgent begins with a vowel sound."
+          },
+          {
+            "itemId": "countable-activity-1-7",
+            "answer": "an",
+            "explanation": "an excellent documentary - excellent begins with a vowel sound."
+          },
+          {
+            "itemId": "countable-activity-1-8",
+            "answer": "a",
+            "explanation": "a year - year begins with consonant /j/."
+          }
+        ]
+      },
+      {
+        "taskId": "countable-activity-2",
+        "entries": [
+          {
+            "itemId": "countable-activity-2-1",
+            "answer": "Ø",
+            "acceptedAnswers": [
+              "Ø",
+              "zero article",
+              "nothing",
+              ""
+            ],
+            "explanation": "Rice is an uncountable noun used in a general statement."
+          },
+          {
+            "itemId": "countable-activity-2-2",
+            "answer": "a",
+            "explanation": "A portable charger is a singular countable noun; portable begins with consonant /p/."
+          },
+          {
+            "itemId": "countable-activity-2-3",
+            "answer": "some",
+            "explanation": "Advice is uncountable and the sentence refers to a specific situation."
+          },
+          {
+            "itemId": "countable-activity-2-4",
+            "answer": "some",
+            "explanation": "Feedback is uncountable and the sentence refers to a specific event."
+          },
+          {
+            "itemId": "countable-activity-2-5",
+            "answer": "some",
+            "explanation": "Extra chairs is plural countable and the sentence makes a specific request."
+          },
+          {
+            "itemId": "countable-activity-2-6",
+            "answer": "Ø",
+            "acceptedAnswers": [
+              "Ø",
+              "zero article",
+              "nothing",
+              ""
+            ],
+            "explanation": "Good coffee is uncountable and used in a general or habitual statement."
+          },
+          {
+            "itemId": "countable-activity-2-7",
+            "answer": "an",
+            "explanation": "An app is singular countable; app begins with a vowel sound."
+          },
+          {
+            "itemId": "countable-activity-2-8",
+            "answer": "an",
+            "explanation": "An old photograph is singular countable; old begins with a vowel sound."
+          },
+          {
+            "itemId": "countable-activity-2-9",
+            "answer": "some",
+            "explanation": "Accommodation is uncountable and the sentence refers to a specific search."
+          },
+          {
+            "itemId": "countable-activity-2-10",
+            "answer": "some",
+            "explanation": "Cash is uncountable and refers to an unspecified amount."
+          }
+        ]
+      },
+      {
+        "taskId": "countable-activity-3",
+        "entries": [
+          {
+            "itemId": "countable-activity-3-1",
+            "answer": "She has an interview this afternoon."
+          },
+          {
+            "itemId": "countable-activity-3-2",
+            "answer": "The team appreciated some constructive feedback."
+          },
+          {
+            "itemId": "countable-activity-3-3",
+            "answer": "She is looking for a flat near the station."
+          },
+          {
+            "itemId": "countable-activity-3-4",
+            "answer": "I always carry some cash when I travel."
+          },
+          {
+            "itemId": "countable-activity-3-5",
+            "answer": "She took an online course in graphic design."
+          },
+          {
+            "itemId": "countable-activity-3-6",
+            "answer": "We need some new equipment for the project."
+          },
+          {
+            "itemId": "countable-activity-3-7",
+            "answer": "Regular exercise makes a big difference."
+          },
+          {
+            "itemId": "countable-activity-3-8",
+            "answer": "He downloaded some useful apps for the trip."
+          }
+        ]
+      },
+      {
+        "taskId": "countable-activity-4",
+        "entries": [
+          {
+            "itemId": "countable-activity-4-1",
+            "answer": "She is an excellent manager.",
+            "errorType": "Missing article: a/an omitted before singular countable noun."
+          },
+          {
+            "itemId": "countable-activity-4-2",
+            "answer": "He gave me some advice about the interview.",
+            "errorType": "a/an used with uncountable noun."
+          },
+          {
+            "itemId": "countable-activity-4-3",
+            "answer": "I need some accommodation near the city centre.",
+            "errorType": "a used with uncountable noun."
+          },
+          {
+            "itemId": "countable-activity-4-4",
+            "answer": "They sent some useful feedback to the team.",
+            "errorType": "a used with uncountable noun; incorrect plural -s removed."
+          },
+          {
+            "itemId": "countable-activity-4-5",
+            "answer": "Can you carry some luggage to the van?",
+            "acceptedAnswers": [
+              "Can you carry some luggage to the van?",
+              "Can you carry the luggage to the van?"
+            ],
+            "errorType": "a used with uncountable noun."
+          },
+          {
+            "itemId": "countable-activity-4-6",
+            "answer": "She took a year off to travel.",
+            "errorType": "an used before the consonant sound /j/ in year."
+          },
+          {
+            "itemId": "countable-activity-4-7",
+            "answer": "He bought a new phone last week.",
+            "errorType": "some used with a singular countable noun."
+          },
+          {
+            "itemId": "countable-activity-4-8",
+            "answer": "Money is the most important thing in life.",
+            "errorType": "some used in a general statement; zero article needed."
+          }
+        ]
+      },
+      {
+        "taskId": "countable-activity-5",
+        "entries": [
+          {
+            "itemId": "countable-activity-5-1",
+            "answer": "He needs some advice about a career change.",
+            "sampleAnswers": [
+              "He needs some advice about a career change."
+            ]
+          },
+          {
+            "itemId": "countable-activity-5-2",
+            "answer": "We booked some accommodation near the conference centre.",
+            "sampleAnswers": [
+              "We booked some accommodation near the conference centre."
+            ]
+          },
+          {
+            "itemId": "countable-activity-5-3",
+            "answer": "I have a question for the manager.",
+            "sampleAnswers": [
+              "I have a question for the manager."
+            ]
+          },
+          {
+            "itemId": "countable-activity-5-4",
+            "answer": "They bought some equipment for the new studio.",
+            "sampleAnswers": [
+              "They bought some equipment for the new studio."
+            ]
+          },
+          {
+            "itemId": "countable-activity-5-5",
+            "answer": "She gave an interesting presentation last week.",
+            "sampleAnswers": [
+              "She gave an interesting presentation last week."
+            ]
+          },
+          {
+            "itemId": "countable-activity-5-6",
+            "answer": "I always carry some cash and a portable charger when I travel.",
+            "sampleAnswers": [
+              "I always carry some cash and a portable charger when I travel."
+            ]
+          }
+        ],
+        "teacherNotes": "Other correct versions are acceptable."
+      },
+      {
+        "taskId": "countable-activity-6",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Accept natural sentences that use a, an, some, or zero article appropriately for the prompt."
+      },
+      {
+        "taskId": "countable-activity-7",
+        "entries": [],
+        "teacherNotes": "Teacher-assessed. Listen for accurate use of a/an with singular countable nouns, some with specific quantities, and zero article for general statements."
+      }
+    ],
+    "selfAssessment": [
+      "I can identify whether a noun is countable or uncountable.",
+      "I can use a or an correctly with a singular countable noun.",
+      "I can choose between a and an based on the sound of the following word.",
+      "I can use some with a plural countable noun in an affirmative sentence.",
+      "I can use some with an uncountable noun in an affirmative sentence.",
+      "I can use Ø (no article) when making a general statement.",
+      "I can correct a sentence where a or an is used with an uncountable noun.",
+      "I can correct a sentence where an article has been left out before a countable noun.",
+      "I can write six sentences about my own life using a, an, some, and Ø correctly.",
+      "I can use a, an, and some naturally in a conversation with a partner."
+    ]
   }
 ]
